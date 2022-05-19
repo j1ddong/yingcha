@@ -1,5 +1,5 @@
 from django.db import models
-from ..yingcha import settings
+from django.conf import settings
 from ..movies.models import Movie, Genre
 
 # Create your models here.
@@ -27,6 +27,6 @@ class Comment(models.Model):
 
 # Food, Genre간 중개 테이블; 추천 알고리즘에 사용
 class BlackList(models.Model):       
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
     dislike = models.IntegerField()
