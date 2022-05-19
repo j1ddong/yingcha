@@ -35,7 +35,7 @@ class Review(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_reviews')
 
 
 class reply(models.Model):

@@ -1,12 +1,12 @@
 from django.db import models
 from django.conf import settings
-from ..movies.models import Movie, Genre
+from movies.models import Movie, Genre
 
 # Create your models here.
 class Food(models.Model):
     food_name = models.CharField(max_length=50)    
     food_image = models.TextField()
-    blacklist = models.ManyToManyField(Genre, through='BlackList')
+    food_blacklist = models.ManyToManyField(Genre, through='BlackList')
 
 class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
