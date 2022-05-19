@@ -8,6 +8,10 @@ class Food(models.Model):
     food_image = models.TextField()
     food_blacklist = models.ManyToManyField(Genre, through='BlackList')
 
+    def __str__(self):
+        return self.food_name
+        
+
 class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
