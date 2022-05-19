@@ -38,7 +38,7 @@ class Review(models.Model):
     like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_reviews')
 
 
-class reply(models.Model):
+class Reply(models.Model):
     content = models.TextField()
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
