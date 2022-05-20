@@ -2,11 +2,19 @@ from django.db import models
 from django.conf import settings
 from movies.models import Movie, Genre
 
-# Create your models here.
+
+class Taste(models.Model):
+    taste_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.taste_name
+
+
 class Food(models.Model):
     food_name = models.CharField(max_length=50)    
     food_image = models.TextField()
     food_blacklist = models.ManyToManyField(Genre, through='BlackList')
+    taste = models.ManyToManyField(Taste, related_name="food_taste")
 
     def __str__(self):
         return self.food_name
@@ -34,3 +42,5 @@ class BlackList(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
     dislike = models.IntegerField()
+
+
