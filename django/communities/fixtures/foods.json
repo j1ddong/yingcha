@@ -1,10 +1,70 @@
 [
 {
+    "model": "communities.taste",
+    "pk": 1,
+    "fields": {
+        "taste_name": "sweet"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 2,
+    "fields": {
+        "taste_name": "sour"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 3,
+    "fields": {
+        "taste_name": "salty"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 4,
+    "fields": {
+        "taste_name": "spicy"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 5,
+    "fields": {
+        "taste_name": "umami"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 6,
+    "fields": {
+        "taste_name": "bitter"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 7,
+    "fields": {
+        "taste_name": "oily"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 8,
+    "fields": {
+        "taste_name": "fresh"
+    }
+},
+{
     "model": "communities.food",
     "pk": 1,
     "fields": {
         "food_name": "삼겹살",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200727/gv00000109790_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200727/gv00000109790_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -12,7 +72,10 @@
     "pk": 2,
     "fields": {
         "food_name": "백반",
-        "food_image": "https://w.namu.la/s/911e72e0cc5f9e2629c13920455630be3e08a4c8799046c7eb45ea0c888e7bf973b06f4819672b61ef9445c58fa1a66cecb5762793eb5228f8735f458292810f567fab6eccff322cdb1ba8ab4519da3a5037d3492a1fe2cfe49c10e17b01b64d"
+        "food_image": "https://w.namu.la/s/911e72e0cc5f9e2629c13920455630be3e08a4c8799046c7eb45ea0c888e7bf973b06f4819672b61ef9445c58fa1a66cecb5762793eb5228f8735f458292810f567fab6eccff322cdb1ba8ab4519da3a5037d3492a1fe2cfe49c10e17b01b64d",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -20,7 +83,12 @@
     "pk": 3,
     "fields": {
         "food_name": "라면",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191011/gv20000064219_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191011/gv20000064219_1.jpg",
+        "taste": [
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -28,15 +96,21 @@
     "pk": 4,
     "fields": {
         "food_name": "순대국밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181105/gv00000034721_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181105/gv00000034721_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
     "model": "communities.food",
     "pk": 5,
     "fields": {
-        "food_name": "Į칼국수",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191007/gv20000063879_1.jpg"
+        "food_name": "칼국수",
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191007/gv20000063879_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -44,7 +118,12 @@
     "pk": 6,
     "fields": {
         "food_name": "비빔국수",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200612/gv20000100650_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200612/gv20000100650_1.jpg",
+        "taste": [
+            2,
+            4,
+            5
+        ]
     }
 },
 {
@@ -52,7 +131,11 @@
     "pk": 7,
     "fields": {
         "food_name": "아귀찜",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191219/gv30000074023_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191219/gv30000074023_1.jpg",
+        "taste": [
+            4,
+            5
+        ]
     }
 },
 {
@@ -60,7 +143,12 @@
     "pk": 8,
     "fields": {
         "food_name": "냉면",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180712/gv40000027113_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180712/gv40000027113_1.jpg",
+        "taste": [
+            2,
+            5,
+            8
+        ]
     }
 },
 {
@@ -68,7 +156,10 @@
     "pk": 9,
     "fields": {
         "food_name": "보쌈",
-        "food_image": "https://i.pinimg.com/originals/64/b1/cc/64b1cc4579111b824180113238b757b7.jpg"
+        "food_image": "https://i.pinimg.com/originals/64/b1/cc/64b1cc4579111b824180113238b757b7.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -76,7 +167,10 @@
     "pk": 10,
     "fields": {
         "food_name": "닭발",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200304/gv40000084019_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200304/gv40000084019_1.jpg",
+        "taste": [
+            4
+        ]
     }
 },
 {
@@ -84,7 +178,11 @@
     "pk": 11,
     "fields": {
         "food_name": "족발",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200317/gv10000085838_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200317/gv10000085838_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -92,7 +190,11 @@
     "pk": 12,
     "fields": {
         "food_name": "야채곱창",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211026/gv40000237391_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211026/gv40000237391_1.jpg",
+        "taste": [
+            4,
+            5
+        ]
     }
 },
 {
@@ -100,7 +202,11 @@
     "pk": 13,
     "fields": {
         "food_name": "튀김",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210304/gv30000162387_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210304/gv30000162387_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -108,7 +214,11 @@
     "pk": 14,
     "fields": {
         "food_name": "막창",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190926/gv10000063025_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190926/gv10000063025_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -116,7 +226,11 @@
     "pk": 15,
     "fields": {
         "food_name": "쭈꾸미",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211020/gv40000235469_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211020/gv40000235469_1.jpg",
+        "taste": [
+            4,
+            5
+        ]
     }
 },
 {
@@ -124,7 +238,13 @@
     "pk": 16,
     "fields": {
         "food_name": "김치요리",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191220/gv10000074254_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191220/gv10000074254_1.jpg",
+        "taste": [
+            1,
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -132,7 +252,11 @@
     "pk": 17,
     "fields": {
         "food_name": "육회",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211208/gv00000255912_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211208/gv00000255912_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -140,7 +264,10 @@
     "pk": 18,
     "fields": {
         "food_name": "김밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210310/gv10000164303_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210310/gv10000164303_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -148,7 +275,12 @@
     "pk": 19,
     "fields": {
         "food_name": "전",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200707/gv00000105764_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200707/gv00000105764_1.jpg",
+        "taste": [
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -156,7 +288,12 @@
     "pk": 20,
     "fields": {
         "food_name": "갈비",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211111/gv40000242059_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211111/gv40000242059_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -164,7 +301,11 @@
     "pk": 21,
     "fields": {
         "food_name": "순대",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200728/gv10000109970_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200728/gv10000109970_1.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -172,7 +313,10 @@
     "pk": 22,
     "fields": {
         "food_name": "콩나물국밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210402/gv30000169532_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210402/gv30000169532_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -180,7 +324,12 @@
     "pk": 23,
     "fields": {
         "food_name": "닭갈비",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200609/gv30000099867_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200609/gv30000099867_1.jpg",
+        "taste": [
+            1,
+            4,
+            5
+        ]
     }
 },
 {
@@ -188,7 +337,10 @@
     "pk": 24,
     "fields": {
         "food_name": "만두",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210625/gv30000196596_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210625/gv30000196596_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -196,7 +348,12 @@
     "pk": 25,
     "fields": {
         "food_name": "해장국",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210503/gv20000179051_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210503/gv20000179051_1.jpg",
+        "taste": [
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -204,7 +361,12 @@
     "pk": 26,
     "fields": {
         "food_name": "감자탕",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210728/gv40000206731_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210728/gv40000206731_1.jpg",
+        "taste": [
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -212,7 +374,11 @@
     "pk": 27,
     "fields": {
         "food_name": "찜닭",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220321/gv30000292432_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220321/gv30000292432_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -220,7 +386,11 @@
     "pk": 28,
     "fields": {
         "food_name": "낙지탕탕이",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201103/gv20000131776_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201103/gv20000131776_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -228,7 +398,12 @@
     "pk": 29,
     "fields": {
         "food_name": "짜장면",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201012/gv10000126356_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201012/gv10000126356_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -236,7 +411,12 @@
     "pk": 30,
     "fields": {
         "food_name": "짬뽕",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210531/gv10000188583_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210531/gv10000188583_1.jpg",
+        "taste": [
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -244,7 +424,13 @@
     "pk": 31,
     "fields": {
         "food_name": "마라탕",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211117/gv20000244636_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211117/gv20000244636_1.jpg",
+        "taste": [
+            2,
+            4,
+            5,
+            7
+        ]
     }
 },
 {
@@ -252,7 +438,11 @@
     "pk": 32,
     "fields": {
         "food_name": "훠궈",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181207/gv10000037977_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181207/gv10000037977_1.jpg",
+        "taste": [
+            4,
+            5
+        ]
     }
 },
 {
@@ -260,7 +450,11 @@
     "pk": 33,
     "fields": {
         "food_name": "볶음밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210720/gv40000204119_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210720/gv40000204119_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -268,7 +462,11 @@
     "pk": 34,
     "fields": {
         "food_name": "양장피",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211216/gv30000258602_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211216/gv30000258602_1.jpg",
+        "taste": [
+            2,
+            8
+        ]
     }
 },
 {
@@ -276,7 +474,12 @@
     "pk": 35,
     "fields": {
         "food_name": "탕수육",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv00000125450_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv00000125450_1.jpg",
+        "taste": [
+            1,
+            5,
+            7
+        ]
     }
 },
 {
@@ -284,7 +487,12 @@
     "pk": 36,
     "fields": {
         "food_name": "마라룽샤",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220119/gv10000269237_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220119/gv10000269237_1.jpg",
+        "taste": [
+            3,
+            4,
+            7
+        ]
     }
 },
 {
@@ -292,7 +500,12 @@
     "pk": 37,
     "fields": {
         "food_name": "깐풍기",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211008/gv10000232474_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211008/gv10000232474_1.jpg",
+        "taste": [
+            1,
+            4,
+            7
+        ]
     }
 },
 {
@@ -300,7 +513,12 @@
     "pk": 38,
     "fields": {
         "food_name": "크림새우",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv10000125469_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv10000125469_1.jpg",
+        "taste": [
+            1,
+            5,
+            7
+        ]
     }
 },
 {
@@ -308,7 +526,11 @@
     "pk": 39,
     "fields": {
         "food_name": "딤섬",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190911/gv30000061846_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190911/gv30000061846_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -316,7 +538,12 @@
     "pk": 40,
     "fields": {
         "food_name": "돈까스",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190716/gv10000055915_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190716/gv10000055915_1.jpg",
+        "taste": [
+            1,
+            5,
+            7
+        ]
     }
 },
 {
@@ -324,7 +551,11 @@
     "pk": 41,
     "fields": {
         "food_name": "스시",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220105/gv40000264715_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220105/gv40000264715_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -332,7 +563,10 @@
     "pk": 42,
     "fields": {
         "food_name": "우동",
-        "food_image": "http://img-cf.kurly.com/shop/data/goodsview/20200730/gv00000110412_1.jpg"
+        "food_image": "http://img-cf.kurly.com/shop/data/goodsview/20200730/gv00000110412_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -340,7 +574,11 @@
     "pk": 43,
     "fields": {
         "food_name": "스키야끼",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201224/gv40000146453_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201224/gv40000146453_1.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -348,7 +586,12 @@
     "pk": 44,
     "fields": {
         "food_name": "닭꼬치",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191017/gv20000064910_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191017/gv20000064910_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -356,7 +599,12 @@
     "pk": 45,
     "fields": {
         "food_name": "타코야끼",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210610/gv40000192019_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210610/gv40000192019_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -364,7 +612,12 @@
     "pk": 46,
     "fields": {
         "food_name": "라멘",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211125/gv00000248650_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211125/gv00000248650_1.jpg",
+        "taste": [
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -372,7 +625,10 @@
     "pk": 47,
     "fields": {
         "food_name": "회",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220311/gv30000288062_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220311/gv30000288062_1.jpg",
+        "taste": [
+            8
+        ]
     }
 },
 {
@@ -380,7 +636,11 @@
     "pk": 48,
     "fields": {
         "food_name": "카레",
-        "food_image": "https://img-cf.kurly.com/shop/data/goods/1587111006357z0.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goods/1587111006357z0.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -388,7 +648,10 @@
     "pk": 49,
     "fields": {
         "food_name": "나베",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201211/gv20000142496_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201211/gv20000142496_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -396,7 +659,11 @@
     "pk": 50,
     "fields": {
         "food_name": "소바",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20170512/gv40000003045_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20170512/gv40000003045_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -404,7 +671,11 @@
     "pk": 51,
     "fields": {
         "food_name": "함박스테이크",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190717/gv20000056157_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190717/gv20000056157_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -412,7 +683,11 @@
     "pk": 52,
     "fields": {
         "food_name": "텐동",
-        "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000958/img/basic/a0000958_main.jpg?20210219125514&q=80&rw=750&rh=536"
+        "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000958/img/basic/a0000958_main.jpg?20210219125514&q=80&rw=750&rh=536",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -420,7 +695,11 @@
     "pk": 53,
     "fields": {
         "food_name": "연어덮밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180514/gv40000023320_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180514/gv40000023320_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -428,7 +707,12 @@
     "pk": 54,
     "fields": {
         "food_name": "규동",
-        "food_image": "https://img.bizthenaum.com/img2020/s_gyudong_01.jpg"
+        "food_image": "https://img.bizthenaum.com/img2020/s_gyudong_01.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -436,7 +720,11 @@
     "pk": 55,
     "fields": {
         "food_name": "장어덮밥",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180608/gv20000025023_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180608/gv20000025023_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -444,7 +732,12 @@
     "pk": 56,
     "fields": {
         "food_name": "멘보샤",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200417/gv00000091053_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200417/gv00000091053_1.jpg",
+        "taste": [
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -452,7 +745,11 @@
     "pk": 57,
     "fields": {
         "food_name": "월남쌈",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210504/gv40000179673_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210504/gv40000179673_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -460,7 +757,10 @@
     "pk": 58,
     "fields": {
         "food_name": "쌀국수",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210909/gv40000225004_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210909/gv40000225004_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -468,7 +768,10 @@
     "pk": 59,
     "fields": {
         "food_name": "죽",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201124/gv20000137066_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201124/gv20000137066_1.jpg",
+        "taste": [
+            5
+        ]
     }
 },
 {
@@ -476,7 +779,12 @@
     "pk": 60,
     "fields": {
         "food_name": "팟타이",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210106/gv20000149546_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210106/gv20000149546_1.jpg",
+        "taste": [
+            1,
+            5,
+            7
+        ]
     }
 },
 {
@@ -484,7 +792,11 @@
     "pk": 61,
     "fields": {
         "food_name": "똠양꿍",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220127/gv10000272927_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220127/gv10000272927_1.jpg",
+        "taste": [
+            2,
+            6
+        ]
     }
 },
 {
@@ -492,7 +804,12 @@
     "pk": 62,
     "fields": {
         "food_name": "케밥",
-        "food_image": "https://img.medicalreport.kr/resources/2019/02/02/CMBbwKcvaWZHMfPT.jpg"
+        "food_image": "https://img.medicalreport.kr/resources/2019/02/02/CMBbwKcvaWZHMfPT.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -500,7 +817,14 @@
     "pk": 63,
     "fields": {
         "food_name": "파스타",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210409/gv30000171490_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210409/gv30000171490_1.jpg",
+        "taste": [
+            1,
+            3,
+            4,
+            5,
+            7
+        ]
     }
 },
 {
@@ -508,7 +832,13 @@
     "pk": 64,
     "fields": {
         "food_name": "피자",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210527/gv20000187808_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210527/gv20000187808_1.jpg",
+        "taste": [
+            1,
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -516,7 +846,11 @@
     "pk": 65,
     "fields": {
         "food_name": "치킨",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200210/gv40000080867_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200210/gv40000080867_1.jpg",
+        "taste": [
+            3,
+            7
+        ]
     }
 },
 {
@@ -524,7 +858,11 @@
     "pk": 66,
     "fields": {
         "food_name": "샐러드",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200504/gv30000093675_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200504/gv30000093675_1.jpg",
+        "taste": [
+            5,
+            8
+        ]
     }
 },
 {
@@ -532,7 +870,11 @@
     "pk": 67,
     "fields": {
         "food_name": "타코",
-        "food_image": "https://w.namu.la/s/88af822ea5d69430bc611b1031ac76d122168911563a1dc69600ad239b23d2cfe638665ced281094dd776808dd6a08ac027029a0745a7477f0e7e046bd7f83eed6719c205287c08d31530d7064f255131e2096112dbc4e688989c889bae81692"
+        "food_image": "https://w.namu.la/s/88af822ea5d69430bc611b1031ac76d122168911563a1dc69600ad239b23d2cfe638665ced281094dd776808dd6a08ac027029a0745a7477f0e7e046bd7f83eed6719c205287c08d31530d7064f255131e2096112dbc4e688989c889bae81692",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -540,7 +882,11 @@
     "pk": 68,
     "fields": {
         "food_name": "부리또",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220125/gv20000271667_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220125/gv20000271667_1.jpg",
+        "taste": [
+            4,
+            5
+        ]
     }
 },
 {
@@ -548,7 +894,12 @@
     "pk": 69,
     "fields": {
         "food_name": "나쵸",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210521/gv40000185195_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210521/gv40000185195_1.jpg",
+        "taste": [
+            1,
+            3,
+            7
+        ]
     }
 },
 {
@@ -556,7 +907,11 @@
     "pk": 70,
     "fields": {
         "food_name": "리조또",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211215/gv10000258152_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211215/gv10000258152_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -564,7 +919,11 @@
     "pk": 71,
     "fields": {
         "food_name": "감바스 알 아히요",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211126/gv40000248880_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211126/gv40000248880_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -572,7 +931,11 @@
     "pk": 72,
     "fields": {
         "food_name": "오므라이스",
-        "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000641/img/ko/a2000641_parts_6163a58ebd19c.jpg?20211011103126&q=80&rw=686&rh=490"
+        "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000641/img/ko/a2000641_parts_6163a58ebd19c.jpg?20211011103126&q=80&rw=686&rh=490",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -580,7 +943,11 @@
     "pk": 73,
     "fields": {
         "food_name": "스테이크",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211123/gv30000247160_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211123/gv30000247160_1.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -588,7 +955,11 @@
     "pk": 74,
     "fields": {
         "food_name": "샌드위치",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200624/gv10000103104_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200624/gv10000103104_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -596,7 +967,11 @@
     "pk": 75,
     "fields": {
         "food_name": "뇨끼",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201218/gv30000144369_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201218/gv30000144369_1.jpg",
+        "taste": [
+            5,
+            7
+        ]
     }
 },
 {
@@ -604,7 +979,12 @@
     "pk": 76,
     "fields": {
         "food_name": "매운 떡볶이",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200818/gv00000105647_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200818/gv00000105647_1.jpg",
+        "taste": [
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -612,7 +992,13 @@
     "pk": 77,
     "fields": {
         "food_name": "로제 떡볶이",
-        "food_image": "https://recipe1.ezmember.co.kr/cache/recipe/2021/03/09/ce6f18d448de2fde1e9e3147f1b0a69f1.jpg"
+        "food_image": "https://recipe1.ezmember.co.kr/cache/recipe/2021/03/09/ce6f18d448de2fde1e9e3147f1b0a69f1.jpg",
+        "taste": [
+            1,
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -620,7 +1006,13 @@
     "pk": 78,
     "fields": {
         "food_name": "토핑 떡볶이",
-        "food_image": "https://contents.lotteon.com/itemimage/_v164418/LO/17/37/87/36/24/_1/73/78/73/62/5/LO1737873624_1737873625_1.jpg"
+        "food_image": "https://contents.lotteon.com/itemimage/_v164418/LO/17/37/87/36/24/_1/73/78/73/62/5/LO1737873624_1737873625_1.jpg",
+        "taste": [
+            1,
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -628,7 +1020,12 @@
     "pk": 79,
     "fields": {
         "food_name": "토스트",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180416/gv30000021364_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180416/gv30000021364_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -636,7 +1033,13 @@
     "pk": 80,
     "fields": {
         "food_name": "햄버거",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180423/gv00000021957_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180423/gv00000021957_1.jpg",
+        "taste": [
+            1,
+            3,
+            5,
+            7
+        ]
     }
 },
 {
@@ -644,15 +1047,24 @@
     "pk": 81,
     "fields": {
         "food_name": "핫도그",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191002/gv00000063598_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191002/gv00000063598_1.jpg",
+        "taste": [
+            1,
+            3
+        ]
     }
 },
 {
     "model": "communities.food",
     "pk": 82,
     "fields": {
-        "food_name": "버터구이 오징어",
-        "food_image": "https://img-cf.kurly.com/shop/data/goods/1640757181753z0.jpg"
+        "food_name": "버터구이오징어",
+        "food_image": "https://img-cf.kurly.com/shop/data/goods/1640757181753z0.jpg",
+        "taste": [
+            1,
+            5,
+            7
+        ]
     }
 },
 {
@@ -660,7 +1072,10 @@
     "pk": 83,
     "fields": {
         "food_name": "빵류",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210930/gv00000230645_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210930/gv00000230645_1.jpg",
+        "taste": [
+            1
+        ]
     }
 },
 {
@@ -668,7 +1083,10 @@
     "pk": 84,
     "fields": {
         "food_name": "디저트류",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220210/gv20000277616_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220210/gv20000277616_1.jpg",
+        "taste": [
+            1
+        ]
     }
 },
 {
@@ -676,7 +1094,11 @@
     "pk": 85,
     "fields": {
         "food_name": "호떡",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200529/gv10000097997_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200529/gv10000097997_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -684,7 +1106,11 @@
     "pk": 86,
     "fields": {
         "food_name": "붕어빵",
-        "food_image": "http://www.bncmarket.com/shopimages/ezbaking/020008000049.jpg?1510189347"
+        "food_image": "http://www.bncmarket.com/shopimages/ezbaking/020008000049.jpg?1510189347",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -692,7 +1118,11 @@
     "pk": 87,
     "fields": {
         "food_name": "어묵",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201104/gv00000132257_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201104/gv00000132257_1.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 },
 {
@@ -700,7 +1130,11 @@
     "pk": 88,
     "fields": {
         "food_name": "크로플",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201221/gv40000144914_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201221/gv40000144914_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -708,7 +1142,11 @@
     "pk": 89,
     "fields": {
         "food_name": "빙수",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200714/gv20000107150_2.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200714/gv20000107150_2.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -716,7 +1154,11 @@
     "pk": 90,
     "fields": {
         "food_name": "도넛",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211102/gv10000239122_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211102/gv10000239122_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -724,7 +1166,11 @@
     "pk": 91,
     "fields": {
         "food_name": "와플",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv40000079620_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv40000079620_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -732,7 +1178,11 @@
     "pk": 92,
     "fields": {
         "food_name": "츄러스",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210115/gv20000151907_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210115/gv20000151907_1.jpg",
+        "taste": [
+            1,
+            5
+        ]
     }
 },
 {
@@ -740,7 +1190,11 @@
     "pk": 93,
     "fields": {
         "food_name": "과일",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210126/gv10000154382_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210126/gv10000154382_1.jpg",
+        "taste": [
+            1,
+            2
+        ]
     }
 },
 {
@@ -748,7 +1202,11 @@
     "pk": 94,
     "fields": {
         "food_name": "커피",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200826/gv20000116250_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200826/gv20000116250_1.jpg",
+        "taste": [
+            2,
+            6
+        ]
     }
 },
 {
@@ -756,7 +1214,13 @@
     "pk": 95,
     "fields": {
         "food_name": "닭강정",
-        "food_image": "https://i.ytimg.com/vi/geaKyeytGvo/maxresdefault.jpg"
+        "food_image": "https://i.ytimg.com/vi/geaKyeytGvo/maxresdefault.jpg",
+        "taste": [
+            1,
+            3,
+            4,
+            5
+        ]
     }
 },
 {
@@ -764,7 +1228,11 @@
     "pk": 96,
     "fields": {
         "food_name": "쫄면",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200311/gv10000085111_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200311/gv10000085111_1.jpg",
+        "taste": [
+            2,
+            4
+        ]
     }
 },
 {
@@ -772,7 +1240,10 @@
     "pk": 97,
     "fields": {
         "food_name": "요거트",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv00000080006_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv00000080006_1.jpg",
+        "taste": [
+            2
+        ]
     }
 },
 {
@@ -780,7 +1251,12 @@
     "pk": 98,
     "fields": {
         "food_name": "팝콘",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210617/gv00000193942_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210617/gv00000193942_1.jpg",
+        "taste": [
+            1,
+            3,
+            5
+        ]
     }
 },
 {
@@ -788,7 +1264,11 @@
     "pk": 99,
     "fields": {
         "food_name": "스무디",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210226/gv00000161484_2.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210226/gv00000161484_2.jpg",
+        "taste": [
+            1,
+            2
+        ]
     }
 },
 {
@@ -796,7 +1276,11 @@
     "pk": 100,
     "fields": {
         "food_name": "소시지",
-        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200211/gv40000081019_1.jpg"
+        "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200211/gv40000081019_1.jpg",
+        "taste": [
+            3,
+            5
+        ]
     }
 }
 ]
