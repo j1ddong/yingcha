@@ -3,7 +3,7 @@
     "model": "communities.food",
     "pk": 1,
     "fields": {
-        "food_name": "»ï°ã»ì",
+        "food_name": "ì‚¼ê²¹ì‚´",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200727/gv00000109790_1.jpg"
     }
 },
@@ -11,7 +11,7 @@
     "model": "communities.food",
     "pk": 2,
     "fields": {
-        "food_name": "¹é¹Ý",
+        "food_name": "ï¿½ï¿½ï¿½",
         "food_image": "https://w.namu.la/s/911e72e0cc5f9e2629c13920455630be3e08a4c8799046c7eb45ea0c888e7bf973b06f4819672b61ef9445c58fa1a66cecb5762793eb5228f8735f458292810f567fab6eccff322cdb1ba8ab4519da3a5037d3492a1fe2cfe49c10e17b01b64d"
     }
 },
@@ -19,7 +19,7 @@
     "model": "communities.food",
     "pk": 3,
     "fields": {
-        "food_name": "¶ó¸é",
+        "food_name": "ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191011/gv20000064219_1.jpg"
     }
 },
@@ -27,7 +27,7 @@
     "model": "communities.food",
     "pk": 4,
     "fields": {
-        "food_name": "¼ø´ë±¹¹ä",
+        "food_name": "ï¿½ï¿½ï¿½ë±¹ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181105/gv00000034721_1.jpg"
     }
 },
@@ -35,7 +35,7 @@
     "model": "communities.food",
     "pk": 5,
     "fields": {
-        "food_name": "Ä®±¹¼ö",
+        "food_name": "Ä®ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191007/gv20000063879_1.jpg"
     }
 },
@@ -43,7 +43,7 @@
     "model": "communities.food",
     "pk": 6,
     "fields": {
-        "food_name": "ºñºö±¹¼ö",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200612/gv20000100650_1.jpg"
     }
 },
@@ -51,7 +51,7 @@
     "model": "communities.food",
     "pk": 7,
     "fields": {
-        "food_name": "¾Æ±ÍÂò",
+        "food_name": "ï¿½Æ±ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191219/gv30000074023_1.jpg"
     }
 },
@@ -59,7 +59,7 @@
     "model": "communities.food",
     "pk": 8,
     "fields": {
-        "food_name": "³Ã¸é",
+        "food_name": "ï¿½Ã¸ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180712/gv40000027113_1.jpg"
     }
 },
@@ -67,7 +67,7 @@
     "model": "communities.food",
     "pk": 9,
     "fields": {
-        "food_name": "º¸½Ó",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://i.pinimg.com/originals/64/b1/cc/64b1cc4579111b824180113238b757b7.jpg"
     }
 },
@@ -75,7 +75,7 @@
     "model": "communities.food",
     "pk": 10,
     "fields": {
-        "food_name": "´ß¹ß",
+        "food_name": "ï¿½ß¹ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200304/gv40000084019_1.jpg"
     }
 },
@@ -83,7 +83,7 @@
     "model": "communities.food",
     "pk": 11,
     "fields": {
-        "food_name": "Á·¹ß",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200317/gv10000085838_1.jpg"
     }
 },
@@ -91,7 +91,7 @@
     "model": "communities.food",
     "pk": 12,
     "fields": {
-        "food_name": "¾ßÃ¤°öÃ¢",
+        "food_name": "ï¿½ï¿½Ã¤ï¿½ï¿½Ã¢",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211026/gv40000237391_1.jpg"
     }
 },
@@ -99,7 +99,7 @@
     "model": "communities.food",
     "pk": 13,
     "fields": {
-        "food_name": "Æ¢±è",
+        "food_name": "Æ¢ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210304/gv30000162387_1.jpg"
     }
 },
@@ -107,7 +107,7 @@
     "model": "communities.food",
     "pk": 14,
     "fields": {
-        "food_name": "¸·Ã¢",
+        "food_name": "ï¿½ï¿½Ã¢",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190926/gv10000063025_1.jpg"
     }
 },
@@ -115,7 +115,7 @@
     "model": "communities.food",
     "pk": 15,
     "fields": {
-        "food_name": "ÂÞ²Ù¹Ì",
+        "food_name": "ï¿½Þ²Ù¹ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211020/gv40000235469_1.jpg"
     }
 },
@@ -123,7 +123,7 @@
     "model": "communities.food",
     "pk": 16,
     "fields": {
-        "food_name": "±èÄ¡¿ä¸®",
+        "food_name": "ï¿½ï¿½Ä¡ï¿½ä¸®",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191220/gv10000074254_1.jpg"
     }
 },
@@ -131,7 +131,7 @@
     "model": "communities.food",
     "pk": 17,
     "fields": {
-        "food_name": "À°È¸",
+        "food_name": "ï¿½ï¿½È¸",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211208/gv00000255912_1.jpg"
     }
 },
@@ -139,7 +139,7 @@
     "model": "communities.food",
     "pk": 18,
     "fields": {
-        "food_name": "±è¹ä",
+        "food_name": "ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210310/gv10000164303_1.jpg"
     }
 },
@@ -147,7 +147,7 @@
     "model": "communities.food",
     "pk": 19,
     "fields": {
-        "food_name": "Àü",
+        "food_name": "ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200707/gv00000105764_1.jpg"
     }
 },
@@ -155,7 +155,7 @@
     "model": "communities.food",
     "pk": 20,
     "fields": {
-        "food_name": "°¥ºñ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211111/gv40000242059_1.jpg"
     }
 },
@@ -163,7 +163,7 @@
     "model": "communities.food",
     "pk": 21,
     "fields": {
-        "food_name": "¼ø´ë",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200728/gv10000109970_1.jpg"
     }
 },
@@ -171,7 +171,7 @@
     "model": "communities.food",
     "pk": 22,
     "fields": {
-        "food_name": "Äá³ª¹°±¹¹ä",
+        "food_name": "ï¿½á³ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210402/gv30000169532_1.jpg"
     }
 },
@@ -179,7 +179,7 @@
     "model": "communities.food",
     "pk": 23,
     "fields": {
-        "food_name": "´ß°¥ºñ/¸·±¹¼ö",
+        "food_name": "ï¿½ß°ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200609/gv30000099867_1.jpg"
     }
 },
@@ -187,7 +187,7 @@
     "model": "communities.food",
     "pk": 24,
     "fields": {
-        "food_name": "¸¸µÎ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210625/gv30000196596_1.jpg"
     }
 },
@@ -195,7 +195,7 @@
     "model": "communities.food",
     "pk": 25,
     "fields": {
-        "food_name": "ÇØÀå±¹",
+        "food_name": "ï¿½ï¿½ï¿½å±¹",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210503/gv20000179051_1.jpg"
     }
 },
@@ -203,7 +203,7 @@
     "model": "communities.food",
     "pk": 26,
     "fields": {
-        "food_name": "°¨ÀÚÅÁ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210728/gv40000206731_1.jpg"
     }
 },
@@ -211,7 +211,7 @@
     "model": "communities.food",
     "pk": 27,
     "fields": {
-        "food_name": "Âò´ß",
+        "food_name": "ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220321/gv30000292432_1.jpg"
     }
 },
@@ -219,7 +219,7 @@
     "model": "communities.food",
     "pk": 28,
     "fields": {
-        "food_name": "³«ÁöÅÁÅÁÀÌ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201103/gv20000131776_1.jpg"
     }
 },
@@ -227,7 +227,7 @@
     "model": "communities.food",
     "pk": 29,
     "fields": {
-        "food_name": "Â¥Àå¸é",
+        "food_name": "Â¥ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201012/gv10000126356_1.jpg"
     }
 },
@@ -235,7 +235,7 @@
     "model": "communities.food",
     "pk": 30,
     "fields": {
-        "food_name": "Â«»Í",
+        "food_name": "Â«ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210531/gv10000188583_1.jpg"
     }
 },
@@ -243,7 +243,7 @@
     "model": "communities.food",
     "pk": 31,
     "fields": {
-        "food_name": "¸¶¶óÅÁ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211117/gv20000244636_1.jpg"
     }
 },
@@ -251,7 +251,7 @@
     "model": "communities.food",
     "pk": 32,
     "fields": {
-        "food_name": "ÈÌ±Å",
+        "food_name": "ï¿½Ì±ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20181207/gv10000037977_1.jpg"
     }
 },
@@ -259,7 +259,7 @@
     "model": "communities.food",
     "pk": 33,
     "fields": {
-        "food_name": "ººÀ½¹ä",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210720/gv40000204119_1.jpg"
     }
 },
@@ -267,7 +267,7 @@
     "model": "communities.food",
     "pk": 34,
     "fields": {
-        "food_name": "¾çÀåÇÇ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211216/gv30000258602_1.jpg"
     }
 },
@@ -275,7 +275,7 @@
     "model": "communities.food",
     "pk": 35,
     "fields": {
-        "food_name": "ÅÁ¼öÀ°",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv00000125450_1.jpg"
     }
 },
@@ -283,7 +283,7 @@
     "model": "communities.food",
     "pk": 36,
     "fields": {
-        "food_name": "¸¶¶ó·î»þ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220119/gv10000269237_1.jpg"
     }
 },
@@ -291,7 +291,7 @@
     "model": "communities.food",
     "pk": 37,
     "fields": {
-        "food_name": "±ñÇ³±â",
+        "food_name": "ï¿½ï¿½Ç³ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211008/gv10000232474_1.jpg"
     }
 },
@@ -299,7 +299,7 @@
     "model": "communities.food",
     "pk": 38,
     "fields": {
-        "food_name": "Å©¸²»õ¿ì",
+        "food_name": "Å©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201005/gv10000125469_1.jpg"
     }
 },
@@ -307,7 +307,7 @@
     "model": "communities.food",
     "pk": 39,
     "fields": {
-        "food_name": "µõ¼¶",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190911/gv30000061846_1.jpg"
     }
 },
@@ -315,7 +315,7 @@
     "model": "communities.food",
     "pk": 40,
     "fields": {
-        "food_name": "µ·±î½º",
+        "food_name": "ï¿½ï¿½ï¿½î½º",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190716/gv10000055915_1.jpg"
     }
 },
@@ -323,7 +323,7 @@
     "model": "communities.food",
     "pk": 41,
     "fields": {
-        "food_name": "½º½Ã",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220105/gv40000264715_1.jpg"
     }
 },
@@ -331,7 +331,7 @@
     "model": "communities.food",
     "pk": 42,
     "fields": {
-        "food_name": "¿ìµ¿",
+        "food_name": "ï¿½ìµ¿",
         "food_image": "http://img-cf.kurly.com/shop/data/goodsview/20200730/gv00000110412_1.jpg"
     }
 },
@@ -339,7 +339,7 @@
     "model": "communities.food",
     "pk": 43,
     "fields": {
-        "food_name": "½ºÅ°¾ß³¢",
+        "food_name": "ï¿½ï¿½Å°ï¿½ß³ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201224/gv40000146453_1.jpg"
     }
 },
@@ -347,7 +347,7 @@
     "model": "communities.food",
     "pk": 44,
     "fields": {
-        "food_name": "´ß²¿Ä¡",
+        "food_name": "ï¿½ß²ï¿½Ä¡",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191017/gv20000064910_1.jpg"
     }
 },
@@ -355,7 +355,7 @@
     "model": "communities.food",
     "pk": 45,
     "fields": {
-        "food_name": "Å¸ÄÚ¾ß³¢",
+        "food_name": "Å¸ï¿½Ú¾ß³ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210610/gv40000192019_1.jpg"
     }
 },
@@ -363,7 +363,7 @@
     "model": "communities.food",
     "pk": 46,
     "fields": {
-        "food_name": "¶ó¸à",
+        "food_name": "ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211125/gv00000248650_1.jpg"
     }
 },
@@ -379,7 +379,7 @@
     "model": "communities.food",
     "pk": 48,
     "fields": {
-        "food_name": "Ä«·¹",
+        "food_name": "Ä«ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goods/1587111006357z0.jpg"
     }
 },
@@ -387,7 +387,7 @@
     "model": "communities.food",
     "pk": 49,
     "fields": {
-        "food_name": "³ªº£",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201211/gv20000142496_1.jpg"
     }
 },
@@ -395,7 +395,7 @@
     "model": "communities.food",
     "pk": 50,
     "fields": {
-        "food_name": "¼Ò¹Ù",
+        "food_name": "ï¿½Ò¹ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20170512/gv40000003045_1.jpg"
     }
 },
@@ -403,7 +403,7 @@
     "model": "communities.food",
     "pk": 51,
     "fields": {
-        "food_name": "ÇÔ¹Ú½ºÅ×ÀÌÅ©",
+        "food_name": "ï¿½Ô¹Ú½ï¿½ï¿½ï¿½ï¿½ï¿½Å©",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20190717/gv20000056157_1.jpg"
     }
 },
@@ -411,7 +411,7 @@
     "model": "communities.food",
     "pk": 52,
     "fields": {
-        "food_name": "ÅÙµ¿",
+        "food_name": "ï¿½Ùµï¿½",
         "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000958/img/basic/a0000958_main.jpg?20210219125514&q=80&rw=750&rh=536"
     }
 },
@@ -419,7 +419,7 @@
     "model": "communities.food",
     "pk": 53,
     "fields": {
-        "food_name": "¿¬¾îµ¤¹ä",
+        "food_name": "ï¿½ï¿½ï¿½îµ¤ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180514/gv40000023320_1.jpg"
     }
 },
@@ -427,7 +427,7 @@
     "model": "communities.food",
     "pk": 54,
     "fields": {
-        "food_name": "±Ôµ¿",
+        "food_name": "ï¿½Ôµï¿½",
         "food_image": "https://img.bizthenaum.com/img2020/s_gyudong_01.jpg"
     }
 },
@@ -435,7 +435,7 @@
     "model": "communities.food",
     "pk": 55,
     "fields": {
-        "food_name": "Àå¾îµ¤¹ä",
+        "food_name": "ï¿½ï¿½îµ¤ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180608/gv20000025023_1.jpg"
     }
 },
@@ -443,7 +443,7 @@
     "model": "communities.food",
     "pk": 56,
     "fields": {
-        "food_name": "¸àº¸»þ",
+        "food_name": "ï¿½àº¸ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200417/gv00000091053_1.jpg"
     }
 },
@@ -451,7 +451,7 @@
     "model": "communities.food",
     "pk": 57,
     "fields": {
-        "food_name": "¿ù³²½Ó",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210504/gv40000179673_1.jpg"
     }
 },
@@ -459,7 +459,7 @@
     "model": "communities.food",
     "pk": 58,
     "fields": {
-        "food_name": "½Ò±¹¼ö",
+        "food_name": "ï¿½Ò±ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210909/gv40000225004_1.jpg"
     }
 },
@@ -467,7 +467,7 @@
     "model": "communities.food",
     "pk": 59,
     "fields": {
-        "food_name": "Á×",
+        "food_name": "ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201124/gv20000137066_1.jpg"
     }
 },
@@ -475,7 +475,7 @@
     "model": "communities.food",
     "pk": 60,
     "fields": {
-        "food_name": "ÆÌÅ¸ÀÌ",
+        "food_name": "ï¿½ï¿½Å¸ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210106/gv20000149546_1.jpg"
     }
 },
@@ -483,7 +483,7 @@
     "model": "communities.food",
     "pk": 61,
     "fields": {
-        "food_name": "Œc¾ç²á",
+        "food_name": "ï¿½cï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220127/gv10000272927_1.jpg"
     }
 },
@@ -491,7 +491,7 @@
     "model": "communities.food",
     "pk": 62,
     "fields": {
-        "food_name": "ÄÉ¹ä",
+        "food_name": "ï¿½É¹ï¿½",
         "food_image": "https://img.medicalreport.kr/resources/2019/02/02/CMBbwKcvaWZHMfPT.jpg"
     }
 },
@@ -499,7 +499,7 @@
     "model": "communities.food",
     "pk": 63,
     "fields": {
-        "food_name": "ÆÄ½ºÅ¸",
+        "food_name": "ï¿½Ä½ï¿½Å¸",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210409/gv30000171490_1.jpg"
     }
 },
@@ -507,7 +507,7 @@
     "model": "communities.food",
     "pk": 64,
     "fields": {
-        "food_name": "ÇÇÀÚ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210527/gv20000187808_1.jpg"
     }
 },
@@ -523,7 +523,7 @@
     "model": "communities.food",
     "pk": 66,
     "fields": {
-        "food_name": "»ø·¯µå",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200504/gv30000093675_1.jpg"
     }
 },
@@ -531,7 +531,7 @@
     "model": "communities.food",
     "pk": 67,
     "fields": {
-        "food_name": "Å¸ÄÚ",
+        "food_name": "Å¸ï¿½ï¿½",
         "food_image": "https://w.namu.la/s/88af822ea5d69430bc611b1031ac76d122168911563a1dc69600ad239b23d2cfe638665ced281094dd776808dd6a08ac027029a0745a7477f0e7e046bd7f83eed6719c205287c08d31530d7064f255131e2096112dbc4e688989c889bae81692"
     }
 },
@@ -539,7 +539,7 @@
     "model": "communities.food",
     "pk": 68,
     "fields": {
-        "food_name": "ºÎ¸®¶Ç",
+        "food_name": "ï¿½Î¸ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220125/gv20000271667_1.jpg"
     }
 },
@@ -547,7 +547,7 @@
     "model": "communities.food",
     "pk": 69,
     "fields": {
-        "food_name": "³ªÃÝ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210521/gv40000185195_1.jpg"
     }
 },
@@ -555,7 +555,7 @@
     "model": "communities.food",
     "pk": 70,
     "fields": {
-        "food_name": "¸®Á¶¶Ç",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211215/gv10000258152_1.jpg"
     }
 },
@@ -563,7 +563,7 @@
     "model": "communities.food",
     "pk": 71,
     "fields": {
-        "food_name": "°¨¹Ù½º ¾Ë ¾ÆÈ÷¿ä",
+        "food_name": "ï¿½ï¿½ï¿½Ù½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211126/gv40000248880_1.jpg"
     }
 },
@@ -571,7 +571,7 @@
     "model": "communities.food",
     "pk": 72,
     "fields": {
-        "food_name": "¿À¹Ç¶óÀÌ½º",
+        "food_name": "ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½Ì½ï¿½",
         "food_image": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000641/img/ko/a2000641_parts_6163a58ebd19c.jpg?20211011103126&q=80&rw=686&rh=490"
     }
 },
@@ -579,7 +579,7 @@
     "model": "communities.food",
     "pk": 73,
     "fields": {
-        "food_name": "½ºÅ×ÀÌÅ©",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å©",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211123/gv30000247160_1.jpg"
     }
 },
@@ -587,7 +587,7 @@
     "model": "communities.food",
     "pk": 74,
     "fields": {
-        "food_name": "»÷µåÀ§Ä¡",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200624/gv10000103104_1.jpg"
     }
 },
@@ -595,7 +595,7 @@
     "model": "communities.food",
     "pk": 75,
     "fields": {
-        "food_name": "´¢³¢",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201218/gv30000144369_1.jpg"
     }
 },
@@ -603,7 +603,7 @@
     "model": "communities.food",
     "pk": 76,
     "fields": {
-        "food_name": "¸Å¿î ¶±ººÀÌ",
+        "food_name": "ï¿½Å¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200818/gv00000105647_1.jpg"
     }
 },
@@ -611,7 +611,7 @@
     "model": "communities.food",
     "pk": 77,
     "fields": {
-        "food_name": "·ÎÁ¦ ¶±ººÀÌ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://recipe1.ezmember.co.kr/cache/recipe/2021/03/09/ce6f18d448de2fde1e9e3147f1b0a69f1.jpg"
     }
 },
@@ -619,7 +619,7 @@
     "model": "communities.food",
     "pk": 78,
     "fields": {
-        "food_name": "ÅäÇÎ ¶±ººÀÌ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://contents.lotteon.com/itemimage/_v164418/LO/17/37/87/36/24/_1/73/78/73/62/5/LO1737873624_1737873625_1.jpg"
     }
 },
@@ -627,7 +627,7 @@
     "model": "communities.food",
     "pk": 79,
     "fields": {
-        "food_name": "Åä½ºÆ®",
+        "food_name": "ï¿½ä½ºÆ®",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180416/gv30000021364_1.jpg"
     }
 },
@@ -635,7 +635,7 @@
     "model": "communities.food",
     "pk": 80,
     "fields": {
-        "food_name": "ÇÜ¹ö°Å",
+        "food_name": "ï¿½Ü¹ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20180423/gv00000021957_1.jpg"
     }
 },
@@ -643,7 +643,7 @@
     "model": "communities.food",
     "pk": 81,
     "fields": {
-        "food_name": "ÇÖµµ±×",
+        "food_name": "ï¿½Öµï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20191002/gv00000063598_1.jpg"
     }
 },
@@ -651,7 +651,7 @@
     "model": "communities.food",
     "pk": 82,
     "fields": {
-        "food_name": "¹öÅÍ±¸ÀÌ¿ÀÂ¡¾î",
+        "food_name": "ï¿½ï¿½ï¿½Í±ï¿½ï¿½Ì¿ï¿½Â¡ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goods/1640757181753z0.jpg"
     }
 },
@@ -659,7 +659,7 @@
     "model": "communities.food",
     "pk": 83,
     "fields": {
-        "food_name": "»§",
+        "food_name": "ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210930/gv00000230645_1.jpg"
     }
 },
@@ -667,7 +667,7 @@
     "model": "communities.food",
     "pk": 84,
     "fields": {
-        "food_name": "µðÀúÆ®·ù",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220210/gv20000277616_1.jpg"
     }
 },
@@ -675,7 +675,7 @@
     "model": "communities.food",
     "pk": 85,
     "fields": {
-        "food_name": "È£¶±",
+        "food_name": "È£ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200529/gv10000097997_1.jpg"
     }
 },
@@ -683,7 +683,7 @@
     "model": "communities.food",
     "pk": 86,
     "fields": {
-        "food_name": "ºØ¾î»§",
+        "food_name": "ï¿½Ø¾î»§",
         "food_image": "http://www.bncmarket.com/shopimages/ezbaking/020008000049.jpg?1510189347"
     }
 },
@@ -691,7 +691,7 @@
     "model": "communities.food",
     "pk": 87,
     "fields": {
-        "food_name": "¾î¹¬",
+        "food_name": "ï¿½î¹¬",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201104/gv00000132257_1.jpg"
     }
 },
@@ -699,7 +699,7 @@
     "model": "communities.food",
     "pk": 88,
     "fields": {
-        "food_name": "Å©·ÎÇÃ",
+        "food_name": "Å©ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20201221/gv40000144914_1.jpg"
     }
 },
@@ -707,7 +707,7 @@
     "model": "communities.food",
     "pk": 89,
     "fields": {
-        "food_name": "ºù¼ö",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200714/gv20000107150_2.jpg"
     }
 },
@@ -715,7 +715,7 @@
     "model": "communities.food",
     "pk": 90,
     "fields": {
-        "food_name": "µµ³Ó",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20211102/gv10000239122_1.jpg"
     }
 },
@@ -723,7 +723,7 @@
     "model": "communities.food",
     "pk": 91,
     "fields": {
-        "food_name": "¿ÍÇÃ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv40000079620_1.jpg"
     }
 },
@@ -731,7 +731,7 @@
     "model": "communities.food",
     "pk": 92,
     "fields": {
-        "food_name": "Ãò·¯½º",
+        "food_name": "ï¿½ò·¯½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210115/gv20000151907_1.jpg"
     }
 },
@@ -739,7 +739,7 @@
     "model": "communities.food",
     "pk": 93,
     "fields": {
-        "food_name": "°úÀÏ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210126/gv10000154382_1.jpg"
     }
 },
@@ -747,7 +747,7 @@
     "model": "communities.food",
     "pk": 94,
     "fields": {
-        "food_name": "Ä¿ÇÇ",
+        "food_name": "Ä¿ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200826/gv20000116250_1.jpg"
     }
 },
@@ -755,7 +755,7 @@
     "model": "communities.food",
     "pk": 95,
     "fields": {
-        "food_name": "´ß°­Á¤",
+        "food_name": "ï¿½ß°ï¿½ï¿½ï¿½",
         "food_image": "https://i.ytimg.com/vi/geaKyeytGvo/maxresdefault.jpg"
     }
 },
@@ -763,7 +763,7 @@
     "model": "communities.food",
     "pk": 96,
     "fields": {
-        "food_name": "ÂÌ¸é",
+        "food_name": "ï¿½Ì¸ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200311/gv10000085111_1.jpg"
     }
 },
@@ -771,7 +771,7 @@
     "model": "communities.food",
     "pk": 97,
     "fields": {
-        "food_name": "¿ä°ÅÆ®",
+        "food_name": "ï¿½ï¿½ï¿½Æ®",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200203/gv00000080006_1.jpg"
     }
 },
@@ -779,7 +779,7 @@
     "model": "communities.food",
     "pk": 98,
     "fields": {
-        "food_name": "ÆËÄÜ",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210617/gv00000193942_1.jpg"
     }
 },
@@ -787,7 +787,7 @@
     "model": "communities.food",
     "pk": 99,
     "fields": {
-        "food_name": "½º¹«µð",
+        "food_name": "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210226/gv00000161484_2.jpg"
     }
 },
@@ -795,7 +795,7 @@
     "model": "communities.food",
     "pk": 100,
     "fields": {
-        "food_name": "¼Ò½ÃÁö",
+        "food_name": "ï¿½Ò½ï¿½ï¿½ï¿½",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20200211/gv40000081019_1.jpg"
     }
 }
