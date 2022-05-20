@@ -3,18 +3,27 @@ from django.conf import settings
 
 
 class Genre(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
 
 
 class Director(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
 
 
 class Actor(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
 
 
+class Provider(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=20)
+
+
 class Movie(models.Model):
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100)
     release_date = models.DateField()
     description = models.CharField(max_length=300)
@@ -23,9 +32,10 @@ class Movie(models.Model):
     original_title = models.CharField(max_length=100)
     adult = models.BooleanField()
     poster_url = models.TextField()
-    genres = models.ManyToManyField(Genre, related_name='movies')
+    genres = models.ManyToManyField(Genre, related_name='movies')  
     directors = models.ManyToManyField(Director, related_name='movies')
     actors = models.ManyToManyField(Actor, related_name='movies')
+    providers = models.ManyToManyField(Provider, related_name='movies')
 
 
 class Review(models.Model):
