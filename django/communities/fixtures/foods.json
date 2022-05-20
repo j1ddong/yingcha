@@ -1,5 +1,61 @@
 [
 {
+    "model": "communities.taste",
+    "pk": 1,
+    "fields": {
+        "taste_name": "sweet"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 2,
+    "fields": {
+        "taste_name": "sour"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 3,
+    "fields": {
+        "taste_name": "salty"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 4,
+    "fields": {
+        "taste_name": "spicy"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 5,
+    "fields": {
+        "taste_name": "umami"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 6,
+    "fields": {
+        "taste_name": "bitter"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 7,
+    "fields": {
+        "taste_name": "oily"
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 8,
+    "fields": {
+        "taste_name": "fresh"
+    }
+},
+{
     "model": "communities.food",
     "pk": 1,
     "fields": {
@@ -497,7 +553,7 @@
         "food_name": "스시",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220105/gv40000264715_1.jpg",
         "taste": [
-            6,
+            5,
             8
         ]
     }
@@ -1002,7 +1058,7 @@
     "model": "communities.food",
     "pk": 82,
     "fields": {
-        "food_name": "버터구이 오징어",
+        "food_name": "버터구이오징어",
         "food_image": "https://img-cf.kurly.com/shop/data/goods/1640757181753z0.jpg",
         "taste": [
             1,
@@ -1029,8 +1085,7 @@
         "food_name": "디저트류",
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20220210/gv20000277616_1.jpg",
         "taste": [
-            1,
-            5
+            1
         ]
     }
 },
@@ -1138,7 +1193,7 @@
         "food_image": "https://img-cf.kurly.com/shop/data/goodsview/20210126/gv10000154382_1.jpg",
         "taste": [
             1,
-            2    
+            2
         ]
     }
 },
