@@ -36,15 +36,13 @@ export default {
     API_KEY = '44f9d36b9d8fa8e880839899c577f866'
     URL_BASE = 'https://api.themoviedb.org/3'
     params = {'api_key': API_KEY, 'language': 'ko', 'region': 'KR'}
-    getBoxoffice() {
+    getBoxoffice: function () {
       PATH = '/movie/now_playing'
       axios.get(URL_BASE + PATH, parms=params)
       .then(res =>{
         console.log(res)
       })
     }
-    
-    
   }
 }
 </script>
