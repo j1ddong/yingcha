@@ -22,10 +22,30 @@ export default {
   components: {
     MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDetailRecommendList
   },
+  data () {
+    return {
+      moviePk: this.$route.params.moviepk
+    }
+  },
   computed: {
 
+  },
+  methods: {
+    fetchMovieDetail () {
+      this.$store.dispatch('fetchMovieDetail', this.moviePk)
+    },
+    fetchMovieProvider () {
+      this.$store.dispatch('fetchMovieProvider', this.moviePk)
+    },
+    fetchMovieCredits () {
+      this.$store.dispatch('fetchMovieCredits', this.moviePk)
+    }
+  },
+  created () {
+    this.fetchMovieDetail(),
+    this.fetchMovieProvider(),
+    this.fetchMovieCredits()
   }
-
 }
 </script>
 
