@@ -18,9 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tmdb/', include('movies.urls')),
-    path('accounts/', include('dj_rest_auth.urls')),  # 로그인/ 로그아웃
-    path('accounts/signup/', include('dj_rest_auth.registration.urls')),  # 회원가입
-    path('accounts/', include('allauth.urls')),  # 소셜로그인
+    path('api/movies/', include('movies.urls')),
+    path('api/accounts/', include('dj_rest_auth.urls')),  # 로그인/ 로그아웃
+    path('api/accounts/signup/', include('dj_rest_auth.registration.urls')),  # 회원가입
+    path('api/accounts/', include('allauth.urls')),  # 소셜로그인
 ]
 #  "62dce5b0fcd66e70995b0910547c151d80a46bb3"
