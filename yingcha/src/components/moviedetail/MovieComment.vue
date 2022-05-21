@@ -1,13 +1,11 @@
 <template>
   <div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: MovieComment,
-
+  name: 'MovieComment',
 }
 </script>
 

@@ -14,13 +14,13 @@ import MovieDetail from '@/components/moviedetail/MovieDetail.vue'
 import MovieProduct from '@/components/moviedetail/MovieProduct.vue'
 import MovieComment from '@/components/moviedetail/MovieComment.vue'
 import MovieDetailFood from '@/components/moviedetail/MovieDetailFood.vue'
-import MovieDeatailRecommendList from '@/components/moviedetail/MovieDetailRecommendList.vue'
+import MovieDetailRecommendList from '@/components/moviedetail/MovieDetailRecommendList.vue'
 
 
 export default {
   name: 'MovieDetail',
   components: {
-    MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDeatailRecommendList
+    MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDetailRecommendList
   },
   computed: {
 
