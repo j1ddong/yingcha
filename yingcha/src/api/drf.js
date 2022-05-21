@@ -11,7 +11,7 @@ export default {
     logout () {
       return HOST + ACCOUNTS + 'logout/'
     },
-    signup () {
+      signup () {
       return HOST + ACCOUNTS +  'signup/'
     }
   },
