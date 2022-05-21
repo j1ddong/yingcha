@@ -1,12 +1,25 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
     <nav>
-      <router-link to="/">MainPage</router-link> |
-      <router-link to="/about">Detail</router-link>
+      <router-link :to="{ name: 'MovieMain' }">MainPage</router-link> | 
+      <router-link :to="{ name: 'MovieDetail', params: {moviepk: 1} }">Detail</router-link> 
     </nav>
     <router-view/>
   </div>
 </template>
+
+<script>
+  import NavBar from '@/components/NavBar.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      NavBar,
+    }
+  }
+
+</script>
 
 <style>
 #app {
