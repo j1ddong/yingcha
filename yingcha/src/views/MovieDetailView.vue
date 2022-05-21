@@ -18,7 +18,7 @@ import MovieDetailRecommendList from '@/components/moviedetail/MovieDetailRecomm
 
 
 export default {
-  name: 'MovieDetail',
+  name: 'MovieDetailView',
   components: {
     MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDetailRecommendList
   },
