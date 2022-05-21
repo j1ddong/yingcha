@@ -6,6 +6,7 @@
     <movie-list-popular></movie-list-popular>
     <movie-list-best></movie-list-best>
     <movie-list-genre></movie-list-genre>
+
   </div>
 </template>
 
@@ -15,12 +16,12 @@ import MovieListBox from '@/components/MovieListBox.vue'
 import MovieListPopular from '@/components/MovieListPopular.vue'
 import MovieListBest from '@/components/MovieListBest.vue'
 import MovieListGenre from '@/components/MovieListGenre.vue'
-// import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 
 export default {
-  name: 'MovieMain',
-  component: {
+  name: 'MovieMainView',
+  components: {
     MainCarousel,
     MovieListBox,
     MovieListPopular,
@@ -28,14 +29,21 @@ export default {
     MovieListGenre,
   },
   computed: {
-
+    ...mapGetters(['boxoffices'])
   },
   methods: {
+    // a: function() {
+    //   this.$store.dispatch('fetchBoxOffice')
+    //   // console.log(2)
+    // },
+    ...mapActions(['fetchBoxOffice'])
 
   },
   created() {
-
-    }
+    // this.a()
+    this.fetchBoxOffice()
+    // console.log(1)
+  },
   }
 
 </script>
