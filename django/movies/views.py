@@ -13,31 +13,31 @@ params = {'api_key': API_KEY, 'language': 'ko', 'region': 'KR'}
 # movie = r1.json()
 
 def index(request):
-    return_dict = {}
+    # return_dict = {}
 
-    #1. tmdb에서 현재 박스오피스 순위 받아오기
-    PATH1 = '/movie/now_playing'
-    boxoffice_r = requests.get(URL_BASE + PATH1, params=params)
-    boxoffice_all = boxoffice_r.json()['results']
-    boxoffice_selected = []
-    # pprint(boxoffice_all[:10]) # 객체 형태로 넘어옴
+    # #1. tmdb에서 현재 박스오피스 순위 받아오기
+    # PATH1 = '/movie/now_playing'
+    # boxoffice_r = requests.get(URL_BASE + PATH1, params=params)
+    # boxoffice_all = boxoffice_r.json()['results']
+    # boxoffice_selected = []
+    # # pprint(boxoffice_all[:10]) # 객체 형태로 넘어옴
 
-    cnt = 0
-    for movie in boxoffice_all:
-        if cnt == 10 :
-            break
+    # cnt = 0
+    # for movie in boxoffice_all:
+    #     if cnt == 10 :
+    #         break
 
-        boxoffice_selected.append(
-            {
-                'id' : movie['id'],
-                'title' : movie['title'],
-                'poster_path' : movie['poster_path'],
-                # 'popularity' : movie['popularity']
-            }
-        )
-        cnt += 1
-    # return JsonResponse(boxoffice_selected, safe=False)
-    return_dict['boxoffice'] = boxoffice_selected
+    #     boxoffice_selected.append(
+    #         {
+    #             'id' : movie['id'],
+    #             'title' : movie['title'],
+    #             'poster_path' : movie['poster_path'],
+    #             # 'popularity' : movie['popularity']
+    #         }
+    #     )
+    #     cnt += 1
+    # # return JsonResponse(boxoffice_selected, safe=False)
+    # return_dict['boxoffice'] = boxoffice_selected
 
     
     #2. tmdb에서 천만 영화 받아오기
@@ -56,30 +56,30 @@ def index(request):
             }
         )
         # pprint(popular_selected)
-    return_dict['popular'] = popular_selected
+    return JsonResponse(popular_selected, safe=False)
     
     #3. tmdb에서 평균 별점이 높은 영화 받아오기
-    PATH3 = '/movie/top_rated'
-    top_r = requests.get(URL_BASE + PATH3, params=params)
-    top_all = top_r.json()['results']
-    top_selected = []
-    pprint(top_all[:10]) # 객체 형태로 넘어옴
+    # PATH3 = '/movie/top_rated'
+    # top_r = requests.get(URL_BASE + PATH3, params=params)
+    # top_all = top_r.json()['results']
+    # top_selected = []
+    # pprint(top_all[:10]) # 객체 형태로 넘어옴
 
-    cnt2 = 0
-    for movie in top_all:
-        if cnt2 == 10 :
-            break
+    # cnt2 = 0
+    # for movie in top_all:
+    #     if cnt2 == 10 :
+    #         break
 
-        top_selected.append(
-            {
-                'id' : movie['id'],
-                'title' : movie['title'],
-                'poster_path' : movie['poster_path'],
-                # 'popularity' : movie['popularity']
-            }
-        )
-        cnt2 += 1
-    return_dict['top'] = top_selected
+    #     top_selected.append(
+    #         {
+    #             'id' : movie['id'],
+    #             'title' : movie['title'],
+    #             'poster_path' : movie['poster_path'],
+    #             # 'popularity' : movie['popularity']
+    #         }
+    #     )
+    #     cnt2 += 1
+    # return_dict['top'] = top_selected
     
     #4. tmdb에서 장르별 영화 받아오기
     # 1) 장르 리스트에서 id값만 받아온다.
