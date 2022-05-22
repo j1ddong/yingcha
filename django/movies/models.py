@@ -37,6 +37,9 @@ class Movie(models.Model):
     actors = models.ManyToManyField(Actor, related_name='movies')
     providers = models.ManyToManyField(Provider, related_name='movies')
 
+    def __str__(self) :
+        return self.title
+
 
 class Review(models.Model):
     vote_average = models.IntegerField()
