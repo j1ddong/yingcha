@@ -3,6 +3,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import _ from 'lodash'
+import drf from '@/api/drf'
 
 Vue.use(Vuex)
 const API_KEY = '44f9d36b9d8fa8e880839899c577f866'
@@ -14,17 +15,21 @@ export default {
     boxoffices: [],
     popularmovies: [],
     bestmovies: [],
-    // genreMovie: [],
+    genremovies: [],
   },
   getters: {
     boxoffices: state => state.boxoffices,
     bestmovies: state => state.bestmovies,
     popularmovies: state => state.popularmovies,
+    genremovies: state => state.genremovies,
+
   },
   mutations: {
     GET_BOXOFFICE: (state, boxoffices) => state.boxoffices = boxoffices['results'].slice(0,10),
+    GET_POPULARMOVIE: (state, popularmovies) => state.popularmovies = popularmovies,
     GET_BESTMOVIE: (state, bestmovies) => state.bestmovies = bestmovies['results'].slice(0,10),
-    GET_POPULARMOVIE: (state, popularmovies) => state.popularmovies = popularmovies.slice(0,10),
+    GET_GENREMOVIE: (state, genremovies) => state.genremovies = genremovies,
+
   },
   actions: {
     fetchBoxOffice: function ({commit}) {
@@ -40,11 +45,20 @@ export default {
     },
     fecthPopularMovie: function ({commit}) {
       // django와 통신하기 
-      koreaPopular = [282631, 567646, 397567, 313108, 299534, 330457, 346646, 19995, 1255, 124157, 158445, 291549, 420817, 133200, 45035, 518068, 437068, 11658, 396535, 33196, 242452, 299536, 19644, 99861, 496243, 157336, 109445]
-      popularRandom = _.random(korea_popular, 10)
+      const koreaPopular = [282631, 567646, 397567, 313108, 299534, 330457, 346646, 19995, 1255, 124157, 158445, 291549, 420817, 133200, 45035, 518068, 437068, 11658, 396535, 33196, 242452, 299536, 19644, 99861, 496243, 157336, 109445]
+      const popularRandom = _.sampleSize(koreaPopular, 10)
+      let resultObject = []
       popularRandom.forEach(popularId => {
-        axios.get()
+        axios.get(`${URL_BASE}/movie/${popularId}`, {params:
+          {'api_key': API_KEY, 'language': 'ko', 'region': 'KR'}
+        })
+        .then(res => {
+          // console.log(typeof(res.data))
+          resultObject.push(res.data)
+        })
       });
+      commit('GET_POPULARMOVIE', resultObject)
+      // console.log(resultObject)
     },
     fetchBestMovie: function ({commit}) {
       axios.get(URL_BASE + '/movie/top_rated', {params:
@@ -56,5 +70,12 @@ export default {
         // console.log(state.bestmovies)
       })
     },
-  },
+    fetchGenreMovie: function ({commit}) {
+      axios({
+        url: drf.movies.movies(),
+        method: 'get',
+      })
+      .then(res => commit('GET_GENREMOVIE', res.data))
+      }
+  }
 }
