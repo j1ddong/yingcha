@@ -45,7 +45,7 @@ def index(request):
                 'id' : chosen_movie.pk,
                 'title': chosen_movie.title,
                 'poster_url': chosen_movie.poster_url,
-                'genre': pk,
+                'genre': genre.name,
                 # 'release_date' : movie_genre.release_date,
                 # 'description': movie_genre.description,
                 # 'run_time': movie_genre.run_time,
