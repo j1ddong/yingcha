@@ -18,14 +18,35 @@ import MovieDetailRecommendList from '@/components/moviedetail/MovieDetailRecomm
 
 
 export default {
-  name: 'MovieDetail',
+  name: 'MovieDetailView',
   components: {
     MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDetailRecommendList
   },
-  computed: {
-
+  data () {
+    return {
+      moviePk: this.$route.params.moviepk
+    }
+  },
+  methods: {
+    fetchMovieDetail () {
+      this.$store.dispatch('fetchMovieDetail', this.moviePk)
+    },
+    fetchMovieProvider () {
+      this.$store.dispatch('fetchMovieProvider', this.moviePk)
+    },
+    fetchMovieCredits () {
+      this.$store.dispatch('fetchMovieCredits', this.moviePk)
+    },
+    fetchRelatedName () {
+      this.$store.dispatch('fetchRelatedName', this.moviePk)
+    }
+  },
+  created () {
+    this.fetchMovieDetail(),
+    this.fetchMovieProvider(),
+    this.fetchMovieCredits(),
+    this.fetchRelatedName()
   }
-
 }
 </script>
 
