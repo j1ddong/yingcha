@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>mainpage</h1>
+    <h1>yingcha</h1>
     <main-carousel></main-carousel>
     <movie-list-box :boxofficemovies="boxoffices"></movie-list-box>
     <movie-list-popular :popularmovies="popularmovies"></movie-list-popular>
     <movie-list-best :bestmovies="bestmovies"></movie-list-best>
-    <movie-list-genre></movie-list-genre>
+    <movie-list-genre :genremovies="genremovies"></movie-list-genre>
 
   </div>
 </template>
@@ -29,14 +29,14 @@ export default {
     MovieListGenre,
   },
   computed: {
-    ...mapGetters(['boxoffices', 'bestmovies', 'popularmovies'])
+    ...mapGetters(['boxoffices', 'bestmovies', 'popularmovies', 'genremovies'])
   },
   methods: {
     // a: function() {
     //   this.$store.dispatch('fetchBoxOffice')
     //   // console.log(2)
     // },
-    ...mapActions(['fetchBoxOffice', 'fetchBestMovie', 'fecthPopularMovie'])
+    ...mapActions(['fetchBoxOffice', 'fetchBestMovie', 'fecthPopularMovie', 'fetchGenreMovie'])
 
   },
   created() {
@@ -44,6 +44,8 @@ export default {
     this.fetchBoxOffice()
     this.fetchBestMovie()
     this.fecthPopularMovie()
+    this.fetchGenreMovie()
+
     // console.log(1)
   },
   }
