@@ -27,9 +27,6 @@ export default {
       moviePk: this.$route.params.moviepk
     }
   },
-  computed: {
-
-  },
   methods: {
     fetchMovieDetail () {
       this.$store.dispatch('fetchMovieDetail', this.moviePk)
@@ -39,12 +36,16 @@ export default {
     },
     fetchMovieCredits () {
       this.$store.dispatch('fetchMovieCredits', this.moviePk)
+    },
+    fetchRelatedName () {
+      this.$store.dispatch('fetchRelatedName', this.moviePk)
     }
   },
   created () {
     this.fetchMovieDetail(),
     this.fetchMovieProvider(),
-    this.fetchMovieCredits()
+    this.fetchMovieCredits(),
+    this.fetchRelatedName()
   }
 }
 </script>

@@ -15,10 +15,16 @@ export default {
       title: null, posterUrl: null, overview: null, release_date: null, genres: [], original_title: null
     },
     movieProvider: [],
-    movieDirector: {id: null, name: null, profile_url: null},
-    movieActors: []
+    movieDirector: null,
+    movieActors: [],
+    relatedMovies: []
   },
   getters: {
+    movieDetail: state => state.movieDetail,
+    movieProvider: state => state.movieProvider,
+    movieDirector: state => state.movieDirector,
+    movieActors: state => state.movieActors,
+    relatedMovies: state => state.relatedMovies
   },
   mutations: {
     GET_MOVIE_DETAIL ({ movieDetail }, movie) {
@@ -36,12 +42,15 @@ export default {
       const director = crews.crew.find(crew => {
         return crew.known_for_department === 'Directing'
       })
-      state.movieDirector.id = director.id
-      console.log(crews.cast.splice(0,5))  
-      state.movieActors = crews.cast.splice(0,5).reduce((acc, crew) => {
-        acc['id'] = crew.id
-        return acc
-      }, {})
+      state.movieDirector = director.id
+      state.movieActors = crews.cast.splice(0,5).map(crew => {
+        return crew.id
+      })
+    },
+    GET_RELATED_NAME ( state, relatedMovies) {
+      state.relatedMovies = relatedMovies.splice(0,10).map(movie => {
+        return movie.id
+      })
     }
   },
   actions: {
@@ -61,6 +70,12 @@ export default {
       axios.get(URL_BASE + `/movie/${moviePk}/credits`, {params: {'api_key': API_KEY, 'language': 'ko'}})
       .then(res => {
         commit('GET_MOVIE_CREDITS', res.data)
+      })
+    },
+    fetchRelatedName ({commit}, moviePk ) {
+      axios.get(URL_BASE + `/movie/${moviePk}/similar`, {params: {'api_key': API_KEY, 'language': 'ko'}})
+      .then(res => {
+        commit('GET_RELATED_NAME', res.data.results)
       })
     }
   },

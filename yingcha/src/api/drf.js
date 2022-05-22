@@ -21,6 +21,12 @@ export default {
     },
     movie (moviePk) {
       return HOST + MOVIES + `${moviePk}/`
+    },
+    movieDirector (directorPk) {
+      return HOST + MOVIES + 'director/' + `${directorPk}/`
+    },
+    movieActor (actorPk) {
+      return HOST + MOVIES + 'actor/' + `${actorPk}`
     }
 
   }
