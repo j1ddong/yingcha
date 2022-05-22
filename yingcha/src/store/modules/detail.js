@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const API_KEY = '44f9d36b9d8fa8e880839899c577f866'
 const URL_BASE = 'https://api.themoviedb.org/3'
-const BASIC_URL_FOR_IMAGE = 'https://image.tmdb.org/t/p/original'
+const BASIC_URL_FOR_IMAGE = 'https://image.tmdb.org/t/p/w200'
 
 
 export default {

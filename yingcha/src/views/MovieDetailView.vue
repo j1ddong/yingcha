@@ -2,7 +2,7 @@
   <div>
     <p>Detail</p>
     <movie-detail></movie-detail>
-    <movie-product></movie-product>
+    <movie-product :director="movieDirector" :actor="movieActors"></movie-product>
     <movie-comment></movie-comment>
     <movie-detail-food></movie-detail-food>
     <movie-detail-recommend-list></movie-detail-recommend-list>
