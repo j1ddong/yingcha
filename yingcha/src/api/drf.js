@@ -2,7 +2,7 @@ const HOST = 'http://localhost:8000/api/'
 
 const ACCOUNTS = 'accounts/'
 const MOVIES = 'movies/'
-const ARTICLES = 'articles/'
+const COMMUNITIES = 'communities/'
 
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
   communities: {
     articles() {
-      return HOST + ARTICLES + 'create/' 
+      return HOST + COMMUNITIES + 'create/' 
     }
   }
 }
