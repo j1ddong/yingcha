@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import drf from '@/api/drf'
 import axios from 'axios'
 
@@ -24,11 +25,15 @@ export default {
       url: null
     }
   },
+  computed: {
+    ...mapGetters(['authHeader'])
+  },
   methods: {
     getActorName () {
       axios({
         method: 'get',
-        url: drf.movies.movieActor(this.actor)
+        url: drf.movies.movieActor(this.actor),
+        headers: this.authHeader,
       })
         .then(res => {
           this.name = res.data.name
