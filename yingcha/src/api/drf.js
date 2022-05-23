@@ -30,11 +30,11 @@ export default {
     movieActor (actorPk) {
       return HOST + MOVIES + 'actor/' + `${actorPk}`
     },
-    communities: {
-      articles() {
-        return HOST + ARTICLES + 'new/' 
-      }
+    
+  },
+  communities: {
+    articles() {
+      return HOST + ARTICLES + 'new/' 
     }
-
   }
 }
