@@ -14,10 +14,12 @@ export default {
   state: {
     // articles: [],
     article: {},
+    keyword: '',
   },
   getters: {
     // articles: state => state.articles,
     article: state => state.article,
+    keyword: state => state.keyword,
     // isAuthor: (state, getters) => {
     //   return state.article.user?.username === getters.currentUser.username
     // },
@@ -26,11 +28,13 @@ export default {
   mutations: {
     // SET_ARTICLES: (state, articles) => state.articles = articles,
     GET_ARTICLE: (state, article) => state.article = article,
+    GET_KEYWORD: (state, keyword) => state.keyword = keyword,
+
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
   actions: {
     createArticle({ commit, getters }, article) {
-      console.log(111111)
+      // console.log(111111)
       /* 게시글 생성
       POST: articles URL (게시글 입력정보, token)
         성공하면
@@ -46,7 +50,7 @@ export default {
         headers: getters.authHeader,
       })
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         commit('GET_ARTICLE', res.data)
         // router.push({
         //   name: 'article',
@@ -54,5 +58,16 @@ export default {
         // })
       })
     },
+    searchKeyword({getters},keyword) {
+      axios({
+        url: drf.communities.search(),
+        method:'get',
+        data: keyword,
+        headers: getters.authHeader
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+    }
   }
 }
