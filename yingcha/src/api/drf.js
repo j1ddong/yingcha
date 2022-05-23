@@ -36,7 +36,7 @@ export default {
   },
   communities: {
     articles() {
-      return HOST + ARTICLES + 'new/' 
+      return HOST + ARTICLES + 'create/' 
     }
   }
 }
