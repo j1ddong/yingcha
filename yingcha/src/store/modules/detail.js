@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import drf from '@/api/drf'
+import drf from '@/api/drf'
 
 Vue.use(Vuex)
 const API_KEY = '44f9d36b9d8fa8e880839899c577f866'
@@ -39,18 +39,17 @@ export default {
       state.movieProvider = providers.map(provider => provider.provider_name)
     },
     GET_MOVIE_CREDITS (state, crews) {
-      const director = crews.crew.find(crew => {
-        return crew.known_for_department === 'Directing'
-      })
-      state.movieDirector = director.id
       state.movieActors = crews.cast.splice(0,5).map(crew => {
         return crew.id
       })
     },
-    GET_RELATED_NAME ( state, relatedMovies) {
+    GET_RELATED_NAME (state, relatedMovies) {
       state.relatedMovies = relatedMovies.splice(0,10).map(movie => {
         return movie.id
       })
+    },
+    GET_MOVIE_DIRECTOR (state, director) {
+      state.movieDirector = director 
     }
   },
   actions: {
@@ -72,11 +71,21 @@ export default {
         commit('GET_MOVIE_CREDITS', res.data)
       })
     },
-    fetchRelatedName ({commit}, moviePk ) {
+    fetchRelatedName ({ commit }, moviePk) {
       axios.get(URL_BASE + `/movie/${moviePk}/similar`, {params: {'api_key': API_KEY, 'language': 'ko'}})
       .then(res => {
         commit('GET_RELATED_NAME', res.data.results)
       })
+    },
+    fetchMovieDirector ({ commit }, moviePk) {
+      axios({
+        method: 'get',
+        url: drf.movies.movieDirectorId(moviePk)
+      })
+        .then(res => {
+          console.log(res.data.directors[0])
+          commit('GET_MOVIE_DIRECTOR', res.data.directors[0])
+        })
     }
   },
 }

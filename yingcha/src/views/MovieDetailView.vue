@@ -39,13 +39,17 @@ export default {
     },
     fetchRelatedName () {
       this.$store.dispatch('fetchRelatedName', this.moviePk)
+    },
+    fetchMovieDirector () {
+      this.$store.dispatch('fetchMovieDirector', this.moviePk)
     }
   },
   created () {
     this.fetchMovieDetail(),
     this.fetchMovieProvider(),
     this.fetchMovieCredits(),
-    this.fetchRelatedName()
+    this.fetchRelatedName(),
+    this.fetchMovieDirector()
   }
 }
 </script>
