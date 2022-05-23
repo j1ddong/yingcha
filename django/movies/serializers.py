@@ -64,7 +64,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = ('pk', 'user', 'content', 'movie', 'like_user')
+        fields = ('pk', 'user', 'content', 'movie', 'like_user', 'vote_average')
         read_only_fields = ('movie',)
 
 
@@ -100,5 +100,5 @@ class ReviewUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = ('pk', 'user', 'content', 'movie',)
+        fields = ('pk', 'user', 'content', 'movie', 'vote_average')
         read_only_fields = ('movie',)

@@ -95,7 +95,7 @@ def review_update_or_delete(request, movie_pk, review_pk):
     def update_review():
         if request.user == review.user:
             serializer = ReviewUpdateSerializer(review, request.data)
-            print(serializer)
+            print(request.data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
                 reviews = movie.review_set.all()
@@ -138,9 +138,9 @@ def create_review(request, movie_pk):
     user = request.user
     movie = get_object_or_404(Movie, pk=movie_pk)
     
-    serializer = ReviewSerializer(data=request.data)
+    serializer = ReviewUpdateSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(movie=movie, user=user)
         reviews = movie.review_set.all()
-        serializer = ReviewSerializer(reviews, many=True)
+        serializer = ReviewUpdateSerializer(reviews, many=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
