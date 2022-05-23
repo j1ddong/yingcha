@@ -3,7 +3,8 @@
     <nav-bar></nav-bar>
     <nav>
       <router-link :to="{ name: 'MovieMain' }">MainPage</router-link> | 
-      <router-link :to="{ name: 'MovieDetail', params: {moviepk: 282631} }">Detail</router-link> 
+      <router-link :to="{ name: 'MovieDetail', params: {moviepk: 282631} }">Detail</router-link> |
+      <router-link :to="{ name: 'FoodCreate'}">Food Create</router-link> 
     </nav>
     <router-view/>
   </div>

@@ -2,6 +2,8 @@ const HOST = 'http://localhost:8000/api/'
 
 const ACCOUNTS = 'accounts/'
 const MOVIES = 'movies/'
+const ARTICLES = 'articles/'
+
 
 export default {
   accounts: {
@@ -27,6 +29,11 @@ export default {
     },
     movieActor (actorPk) {
       return HOST + MOVIES + 'actor/' + `${actorPk}`
+    },
+    communities: {
+      articles() {
+        return HOST + ARTICLES + 'new/' 
+      }
     }
 
   }
