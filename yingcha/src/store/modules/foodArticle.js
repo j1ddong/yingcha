@@ -39,7 +39,6 @@ export default {
         실패하면
           에러 메시지 표시
       */
-      commit;
       axios({
         url: drf.communities.articles(),
         method: 'post',

@@ -1,23 +1,34 @@
 <template>
-  <form @submit.prevent="onSubmit">
-    <div>
-      <input v-model="newArticle.title" type="text" id="title" placeholder="제목을 입력하세요">
-    </div>
-    <div>
-      <textarea v-model="newArticle.content" type="text" id="content" placeholder="내용을 입력하세요"></textarea>
-    </div>
-    <div>
-      <button>create</button>
-    </div>
-  </form>
+  <div>
+    <food-select></food-select>
+    <movie-select></movie-select>
+
+    <form @submit.prevent="onSubmit">
+      <div>
+        <input v-model="newArticle.title" type="text" id="title" placeholder="제목을 입력하세요">
+      </div>
+      <div>
+        <textarea v-model="newArticle.content" type="text" id="content" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div>
+        <button>create</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
 import {mapActions} from 'vuex'
+import FoodSelect from '@/components/foodcreate/FoodSelect.vue'
+import MovieSelect from '@/components/foodcreate/MovieSelect.vue'
 
 
 export default {
   name: 'FoodCreateForm',
+  components: {
+    FoodSelect,
+    MovieSelect,
+  },
   props: {
     article: Object,
     // action: String,
