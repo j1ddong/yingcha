@@ -3,6 +3,7 @@ const HOST = 'http://localhost:8000/api/'
 const ACCOUNTS = 'accounts/'
 const MOVIES = 'movies/'
 const COMMUNITIES = 'communities/'
+const REVIEWS = 'reviews/'
 
 
 export default {
@@ -37,6 +38,15 @@ export default {
     movieReviews (moviePk) {
       return HOST + MOVIES + 'reviews/' + `${moviePk}/`
     },
+    review (moviePk, reviewPk) {
+      return HOST + MOVIES + `${moviePk}/` + REVIEWS + `${reviewPk}/`
+    },
+    likeReview (moviePk, reviewPk) {
+      return  HOST + MOVIES + `${moviePk}/` + `${reviewPk}/` + 'like/'
+    },
+    reviews (moviePk) {
+      return HOST + MOVIES + `${moviePk}/` + REVIEWS
+    }
   },
   communities: {
     articles() {

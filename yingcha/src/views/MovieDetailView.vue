@@ -3,7 +3,7 @@
     <p>Detail</p>
     <movie-detail></movie-detail>
     <movie-product></movie-product>
-    <movie-comment></movie-comment>
+    <movie-review></movie-review>
     <movie-detail-food></movie-detail-food>
     <movie-detail-recommend-list></movie-detail-recommend-list>
   </div>
@@ -12,7 +12,7 @@
 <script>
 import MovieDetail from '@/components/moviedetail/MovieDetail.vue'
 import MovieProduct from '@/components/moviedetail/MovieProduct.vue'
-import MovieComment from '@/components/moviedetail/MovieComment.vue'
+import MovieReview from '@/components/moviedetail/MovieReview.vue'
 import MovieDetailFood from '@/components/moviedetail/MovieDetailFood.vue'
 import MovieDetailRecommendList from '@/components/moviedetail/MovieDetailRecommendList.vue'
 
@@ -20,7 +20,7 @@ import MovieDetailRecommendList from '@/components/moviedetail/MovieDetailRecomm
 export default {
   name: 'MovieDetailView',
   components: {
-    MovieDetail, MovieProduct, MovieComment, MovieDetailFood, MovieDetailRecommendList
+    MovieDetail, MovieProduct, MovieReview, MovieDetailFood, MovieDetailRecommendList
   },
   data () {
     return {

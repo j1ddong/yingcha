@@ -19,7 +19,7 @@ export default {
     movieDirectorUrl: null,
     movieActors: [],
     relatedMovies: [],
-    comments: []
+    reviews: []
   },
   getters: {
     movieDetail: state => state.movieDetail,
@@ -28,7 +28,7 @@ export default {
     movieActors: state => state.movieActors,
     relatedMovies: state => state.relatedMovies,
     movieDirectorUrl: state => state.movieDirectorUrl,
-    comments: state => state.comments
+    reviews: state => state.reviews
   },
   mutations: {
     GET_MOVIE_DETAIL ({ movieDetail }, movie) {
@@ -58,10 +58,10 @@ export default {
     GET_MOVIE_DIRECTOR_URL (state, url) {
       state.movieDirectorUrl = BASIC_URL_FOR_IMAGE + url
     },
-    GET_COMMENTS (state, comments) {
-      state.comments = comments
+    GET_REVIEWS (state, reviews) {
+      state.reviews = reviews
     },
-    SET_ARTICLE_COMMENTS: (state, comments) => (state.comments = comments),
+    SET_ARTICLE_REVIEWS: (state, reviews) => (state.reviews = reviews),
   },
   actions: {
     fetchMovieDetail ({ commit }, moviePk) {
@@ -115,38 +115,59 @@ export default {
         headers: getters.authHeader,
       })
         .then(res => {
-          commit('GET_COMMENTS', res.data.review_set)
+          commit('GET_REVIEWS', res.data.review_set)
         })
     },
-    updateComment({ commit, getters }, { articlePk, commentPk, content }) {
-      const comment = { content }
-
+    updateReview({ commit, getters }, { moviePk, reviewPk, content }) {
+      const review = { content }
       axios({
-        url: drf.articles.comment(articlePk, commentPk),
+        url: drf.movies.review(moviePk, reviewPk),
         method: 'put',
-        data: comment,
+        data: review,
         headers: getters.authHeader,
       })
         .then(res => {
-          commit('SET_ARTICLE_COMMENTS', res.data)
+          commit('SET_ARTICLE_REVIEWS', res.data)
         })
         .catch(err => console.error(err.response))
     },
-
-    deleteComment({ commit, getters }, { articlePk, commentPk }) {
+    deleteReview({ commit, getters }, { moviePk, reviewPk }) {
         if (confirm('정말 삭제하시겠습니까?')) {
           axios({
-            url: drf.articles.comment(articlePk, commentPk),
+            url: drf.movies.review(moviePk, reviewPk),
             method: 'delete',
             data: {},
             headers: getters.authHeader,
           })
             .then(res => {
-              commit('SET_ARTICLE_COMMENTS', res.data)
+              console.log(res.data)
+              commit('SET_ARTICLE_REVIEWS', res.data)
             })
             .catch(err => console.error(err.response))
         }
-      },
-    
+    },
+    likeReview({ commit, getters }, {moviePk, reviewPk}) {
+      axios({
+        url: drf.movies.likeReview(moviePk, reviewPk),
+        method: 'post',
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('SET_ARTICLE_REVIEWS', res.data)})
+        .catch(err => console.error(err.response))
+    },
+		createReview({ commit, getters }, { moviePk, content }) {
+      const review = { content }
+      axios({
+        url: drf.movies.reviews(moviePk),
+        method: 'post',
+        data: review,
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('SET_ARTICLE_REVIEWS', res.data)
+        })
+        .catch(err => console.error(err.response))
+    },
   },
 }
