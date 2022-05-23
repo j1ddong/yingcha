@@ -15,11 +15,13 @@ export default {
     // articles: [],
     article: {},
     keywords: '',
+    foods: ''
   },
   getters: {
     // articles: state => state.articles,
     article: state => state.article,
     keywords: state => state.keywords,
+    foods: state => state.foods,
     // isAuthor: (state, getters) => {
     //   return state.article.user?.username === getters.currentUser.username
     // },
@@ -29,6 +31,7 @@ export default {
     // SET_ARTICLES: (state, articles) => state.articles = articles,
     GET_ARTICLE: (state, article) => state.article = article,
     GET_KEYWORD: (state, keywords) => state.keywords = keywords,
+    GET_FOOD: (state, foods) => state.foods = foods,
 
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
@@ -71,6 +74,16 @@ export default {
       .then(res => {
         // console.log(res.data) // 휴 해결함
         commit('GET_KEYWORD', res.data)
+      })
+    },
+    searchFood({commit, getters}, foods) {
+      axios({
+        url: drf.communities.searchFood(foods),
+        method: 'get',
+        headers: getters.authHeader
+      })
+      .then(res =>{
+        commit('GET_FOOD', res.data)
       })
     }
   }
