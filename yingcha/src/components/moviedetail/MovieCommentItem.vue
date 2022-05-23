@@ -1,12 +1,12 @@
 <template>
   <div>
-    {{comment}}
-    {{ comment.user }}
     <li class="comment-list-item">
       <!-- <router-link :to="{ name: 'profile', params: { username: comment.user.username } }"> -->
       <!-- </router-link>:  -->
+      작성자: {{ comment.user }}
+      좋아요 수{{likeNum}}
       
-      <span v-if="!isEditing">{{ payload.content }}</span>
+      <span v-if="!isEditing">내용: {{ payload.content }}</span>
 
       <span v-if="isEditing">
         <input type="text" v-model="payload.content">
@@ -34,10 +34,11 @@ export default {
     return {
       isEditing: false,
       payload: {
-        articlePk: this.$$route.params.moviepk,
+        articlePk: this.$route.params.moviepk,
         commentPk: this.comment.id,
         content: this.comment.content
       },
+      likeNum: this.comment.like_user.length
     }
   },
   computed: {
