@@ -29,7 +29,7 @@ export default {
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
   actions: {
-    createArticle({ commit }, article) {
+    createArticle({ commit, getters }, article) {
       console.log(111111)
       /* 게시글 생성
       POST: articles URL (게시글 입력정보, token)
@@ -44,7 +44,7 @@ export default {
         url: drf.communities.articles(),
         method: 'post',
         data: article,
-        // headers: getters.authHeader,
+        headers: getters.authHeader,
       })
       .then(res => {
         console.log(res.data)
