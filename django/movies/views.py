@@ -1,13 +1,9 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Genre, Movie, Director, Actor
 import random
-from pprint import pprint
-from django.shortcuts import render
-from pprint import pprint
-from django.core import serializers
-from .serializers import GenreSerializer, MovieSerializer, DirectorSerializer, ActorSerializer, MovieDirectorSerializer, ReviewSerializer
+from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer
 from rest_framework.response import Response
-from django.http.response import JsonResponse, HttpResponse
+from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
 
 
@@ -84,8 +80,8 @@ def movie_director(request, movie_pk):
 
 
 @api_view(['GET'])
-def movie_director(request, movie_pk):
+def reviews(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
-    serializer = MovieDirectorSerializer(movie)
+    serializer = MovieReviewSerializer(movie)
     return Response(serializer.data)
 

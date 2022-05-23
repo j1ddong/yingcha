@@ -42,6 +42,9 @@ export default {
     },
     fetchMovieDirector () {
       this.$store.dispatch('fetchMovieDirector', this.moviePk)
+    },
+    fetchReviews () {
+      this.$store.dispatch('fetchReviews', this.moviePk)
     }
   },
   created () {
@@ -49,7 +52,8 @@ export default {
     this.fetchMovieProvider(),
     this.fetchMovieCredits(),
     this.fetchRelatedName(),
-    this.fetchMovieDirector()
+    this.fetchMovieDirector(),
+    this.fetchReviews()
   }
 }
 </script>
