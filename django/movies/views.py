@@ -5,7 +5,7 @@ from pprint import pprint
 from django.shortcuts import render
 from pprint import pprint
 from django.core import serializers
-from .serializers import GenreSerializer, MovieSerializer, DirectorSerializer, ActorSerializer
+from .serializers import GenreSerializer, MovieSerializer, DirectorSerializer, ActorSerializer, MovieDirectorSerializer, ReviewSerializer
 from rest_framework.response import Response
 from django.http.response import JsonResponse, HttpResponse
 from rest_framework.decorators import api_view
@@ -76,4 +76,16 @@ def actor(request, actor_pk):
     return Response(serializer.data)
 
 
+@api_view(['GET'])
+def movie_director(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieDirectorSerializer(movie)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def movie_director(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieDirectorSerializer(movie)
+    return Response(serializer.data)
 
