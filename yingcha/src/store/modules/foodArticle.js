@@ -14,12 +14,12 @@ export default {
   state: {
     // articles: [],
     article: {},
-    keyword: '',
+    keywords: '',
   },
   getters: {
     // articles: state => state.articles,
     article: state => state.article,
-    keyword: state => state.keyword,
+    keywords: state => state.keywords,
     // isAuthor: (state, getters) => {
     //   return state.article.user?.username === getters.currentUser.username
     // },
@@ -28,7 +28,7 @@ export default {
   mutations: {
     // SET_ARTICLES: (state, articles) => state.articles = articles,
     GET_ARTICLE: (state, article) => state.article = article,
-    GET_KEYWORD: (state, keyword) => state.keyword = keyword,
+    GET_KEYWORD: (state, keywords) => state.keywords = keywords,
 
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
@@ -58,15 +58,19 @@ export default {
         // })
       })
     },
-    searchKeyword({getters}, keyword) {
+    searchKeyword({commit, getters}, keywords) {
+      //console.log('before axios') //이것도 ok
+      // console.log(keyword) //여기로 keyword가 안넘어 온다.
+
       axios({
-        url: drf.communities.search(),
-        method:'get',
-        data: keyword,
+        url: drf.communities.search(keywords),
+        method: 'get',
         headers: getters.authHeader
       })
+        // 여기에서 문제가 생김 ; keyword에 아무 것도 안넘어옴
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data) // 휴 해결함
+        commit('GET_KEYWORD', res.data)
       })
     }
   }

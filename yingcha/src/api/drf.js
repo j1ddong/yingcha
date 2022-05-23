@@ -42,8 +42,8 @@ export default {
     articles() {
       return HOST + COMMUNITIES + 'create/' 
     },
-    search() {
-      return HOST + COMMUNITIES + 'search/'
+    search(keyword) {
+      return HOST + COMMUNITIES + `search?keyword=${keyword}`
     }
   }
 }
