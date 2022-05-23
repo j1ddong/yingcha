@@ -77,15 +77,17 @@ export default {
         commit('GET_RELATED_NAME', res.data.results)
       })
     },
-    fetchMovieDirector ({ commit }, moviePk) {
+    fetchMovieDirector ({ commit, getters }, moviePk) {
       axios({
         method: 'get',
-        url: drf.movies.movieDirectorId(moviePk)
+        url: drf.movies.movieDirectorId(moviePk),
+        headers: getters.authHeader,
       })
         .then(res => {
           console.log(res.data.directors[0])
           commit('GET_MOVIE_DIRECTOR', res.data.directors[0])
         })
-    }
+    },
+    
   },
 }
