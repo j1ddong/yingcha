@@ -65,3 +65,10 @@ class MovieReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ('id', 'review_set',)
+
+class MovieListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie,
+        fields =('id', 'title',)
+

@@ -41,6 +41,9 @@ export default {
   communities: {
     articles() {
       return HOST + COMMUNITIES + 'create/' 
+    },
+    search() {
+      return HOST + COMMUNITIES + 'search/'
     }
   }
 }

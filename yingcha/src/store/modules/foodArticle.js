@@ -58,7 +58,7 @@ export default {
         // })
       })
     },
-    searchKeyword({getters},keyword) {
+    searchKeyword({getters}, keyword) {
       axios({
         url: drf.communities.search(),
         method:'get',
