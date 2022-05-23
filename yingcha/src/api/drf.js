@@ -53,7 +53,10 @@ export default {
       return HOST + COMMUNITIES + 'create/' 
     },
     search(keyword) {
-      return HOST + COMMUNITIES + `search?keyword=${keyword}`
+      return HOST + COMMUNITIES + `search/movie?keyword=${keyword}`
+    },
+    searchFood(food) {
+      return HOST + COMMUNITIES + `search/food?food=${food}`
     }
   }
 }

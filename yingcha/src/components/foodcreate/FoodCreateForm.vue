@@ -1,7 +1,7 @@
 <template>
   <div>
-    <food-select></food-select>
-    <movie-select></movie-select>
+    <food-select @emit-food-id="foodIdSave"></food-select>
+    <movie-select @emit-movie-id="movieIdSave"></movie-select>
 
     <form @submit.prevent="onSubmit">
       <div>
@@ -25,19 +25,21 @@ import MovieSelect from '@/components/foodcreate/MovieSelect.vue'
 
 export default {
   name: 'FoodCreateForm',
-  components: {
-    FoodSelect,
-    MovieSelect,
-  },
   props: {
     article: Object,
     // action: String,
+  },
+  components:{
+    FoodSelect,
+    MovieSelect,
   },
   data() {
     return {
       newArticle : {
         title: this.article.title,
         content: this.article.content,
+        food_id : '',
+        movie_id : '',
         // buttonLabel : null,
       }
     }
@@ -56,6 +58,12 @@ export default {
      onSubmit() {
      // console.log(1111)
       this.createArticle(this.newArticle)
+    },
+    movieIdSave (movieId) {
+      this.movie_id = movieId
+    },
+    foodIdSave(foodId) {
+      this.food_id = foodId
     }
   }
 }

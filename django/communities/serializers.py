@@ -9,12 +9,14 @@ from movies.serializers import MovieSerializer
 
 User = get_user_model()
 
-class FoodSerializer(serializers.ModelSerializer):
 
-    class TasteSerializer(serializers.ModelSerializer):
+class TasteSerializer(serializers.ModelSerializer):
         class Meta:
             model = Taste
             fields = '__all__'
+
+
+class FoodSerializer(serializers.ModelSerializer):
 
     taste = TasteSerializer(many=True)
 
@@ -22,6 +24,12 @@ class FoodSerializer(serializers.ModelSerializer):
         model = Food
         fields = ('id', 'food_name', 'food_image', 'taste',)
 
+
+class FoodListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Food
+        fields = ('id', 'food_name',)
 
 class ArticleSerializer(serializers.ModelSerializer):
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .serializers import ArticleSerializer
+from .models import Food
+from .serializers import ArticleSerializer, FoodListSerializer
 from movies.serializers import MovieListSerializer
 from movies.models import Movie
 from rest_framework.decorators import api_view
@@ -17,7 +18,7 @@ def create_article(request):
 
 
 @api_view(['GET'])
-def search(request):
+def search_movie(request):
     # print(request)
     keyword = request.GET.get('keyword')
     # print(keyword) #여기에 한글이 정상적으로 온다.
@@ -34,3 +35,19 @@ def search(request):
     #         data: '검색 결과가 없습니다.'
     #     }
     #     return Response(data)
+
+
+@api_view(['GET'])
+def search_food(request):
+    # print(request)
+    # print('------------------')
+    food = request.GET.get('food')
+    # print(food) #여기에 한글이 정상적으로 온다.
+    # print('------------------')
+    foods = Food.objects.filter(food_name__icontains=food)[:10]
+    # print(foods)
+    # print('------------------')
+
+    serializers = FoodListSerializer(foods, many=True)
+    print(serializers.data)
+    return Response(serializers.data)

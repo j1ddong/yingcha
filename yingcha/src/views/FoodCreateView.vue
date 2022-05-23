@@ -13,6 +13,7 @@ export default {
   name: 'FoodCreateView',
   components:{
     FoodCreateForm,
+
   },
   data() {
     return {

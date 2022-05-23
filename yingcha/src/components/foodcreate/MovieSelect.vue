@@ -2,14 +2,16 @@
   <div id="nav">
     <div class="menu-nav">
       <form @submit.prevent="inputKeyword">
+        <label for="inputMovie">영화 선택: </label>
         <input type="text" v-model="apple" placeholder="검색되는 영화만 선택 가능합니다." 
         @keyup.space="inputKeyword"
-        value="inputSelectedValue" id="input">
+        value="inputSelectedMovieValue" id="inputMovie">
+        <button>검색</button>
       </form>
     </div>
-    <div id="resultUl" style="display: none;">
+    <div id="resultMovieUl" style="display: none;">
       <ul v-show="!!keywords" v-for="keyword in keywords" :key="keyword.id">
-        <li @click="saveOnInput(keyword.id)" :id="`selectedTitle${keyword.id}`"> {{ keyword.title }}</li>
+        <li @click="[saveOnMovieInput(keyword.id), emitMovieId()]" :id="`selectedMovieTitle${keyword.id}`"> {{ keyword.title }}</li>
       </ul>
       <ul id="noneText" v-if="isEmpty(keywords)">
         <!-- <li>{{ keywords }}</li> -->
@@ -28,7 +30,7 @@ export default {
   data() {
     return {
       apple: '',
-      inputSelectedValue : '',
+      inputSelectedMovieValue : '',
       selectedMovieId: ''
     }
   },
@@ -43,37 +45,43 @@ export default {
     //   this.searchKeyword(this.keyword)
     // }
     inputKeyword() {
-      const resultUl = document.querySelector('#resultUl')
-      if (resultUl.style.display === 'none') {
-      // console.log(resultUl.style.display)
-        resultUl.style.display = 'block'
+      const resultMovieUl = document.querySelector('#resultMovieUl')
+      // console.log(resultMovieUl.style.display)
+      if (resultMovieUl.style.display === 'none') {
+      // console.log(resultMovieUl.style.display)
+        resultMovieUl.style.display = 'block'
+        // console.log('changed')
         this.searchKeyword(this.apple)
       } else {
         this.searchKeyword(this.apple)
       }
     },
-    saveOnInput(id) {
+    saveOnMovieInput(id) {
       // 1. 클릭한 영화 id 저장
       this.selectedMovieId = id
       // console.log(this.selectedMovieId)
 
       //2. 클릭한 영화 title 저장
-      const selectedTitle = document.querySelector(`#selectedTitle${id}`)
-      // console.log(selectedTitle)
-      this.inputSelectedValue = selectedTitle.innerText
-      // console.log(this.inputSelectedValue)
+      const selectedMovieTitle = document.querySelector(`#selectedMovieTitle${id}`)
+      // console.log(selectedMovieTitle)
+      this.inputSelectedMovieValue = selectedMovieTitle.innerText
+      // console.log(this.inputSelectedMovieValue)
 
       // 3. 클릭한 영화 title 출력
-      const input = document.querySelector('#input')
-      input.value = this.inputSelectedValue
-      // console.log(selectedTitle.innerText)
-      const resultUl = document.querySelector('#resultUl')
-      // console.log(resultUl.style)
-      resultUl.style.display = 'none'
+      const inputMovie = document.querySelector('#inputMovie')
+      inputMovie.value = this.inputSelectedMovieValue
+      // console.log(selectedMovieTitle.innerText)
+      const resultMovieUl = document.querySelector('#resultMovieUl')
+      // console.log(resultMovieUl.style)
+      resultMovieUl.style.display = 'none'
     },
     isEmpty(value) {
       return _.isEmpty(value)
     },
+    emitMovieId(){
+      // console.log(`emitmovieid ${this.selectedMovieId}!!`)
+      this.$emit('emit-movie-id', this.selectedMovieId)
+    }
     // showNone() {
     //   const searchList = document.querySelector('#noneText')
     //   searchList.style.visibility = "visible"
