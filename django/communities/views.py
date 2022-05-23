@@ -14,16 +14,23 @@ def create_article(request):
     if serializer.is_valid(raise_exception=True):
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+
+
+@api_view(['GET'])
 def search(request):
+    # print(request)
     keyword = request.GET.get('keyword')
-    # print(keyword) 이게 None이 뜬다.
-    movies = Movie.objects.filter(title__icontains=keyword)
-    if movies != None:
-        serializers = MovieListSerializer(movies, many=True)
-        return Response(serializers.data)
-    else:
-        data = {
-            data: '검색 결과가 없습니다.'
-        }
-        return Response(data)
+    # print(keyword) #여기에 한글이 정상적으로 온다.
+    movies = Movie.objects.filter(title__icontains=keyword)[:10]
+    # print(movies)
+    serializers = MovieListSerializer(movies, many=True)
+    # print(serializers.data)
+    return Response(serializers.data)
+    # if movies != None:
+    #     serializers = MovieListSerializer(movies, many=True)
+    #     return Response(serializers.data)
+    # else:
+    #     data = {
+    #         data: '검색 결과가 없습니다.'
+    #     }
+    #     return Response(data)
