@@ -118,8 +118,9 @@ export default {
           commit('GET_REVIEWS', res.data.review_set)
         })
     },
-    updateReview({ commit, getters }, { moviePk, reviewPk, content }) {
-      const review = { content }
+    updateReview({ commit, getters }, { moviePk, reviewPk, content, voteAverage }) {
+      const review = { content, vote_average: voteAverage}
+      console.log(review)
       axios({
         url: drf.movies.review(moviePk, reviewPk),
         method: 'put',
@@ -132,6 +133,7 @@ export default {
         .catch(err => console.error(err.response))
     },
     deleteReview({ commit, getters }, { moviePk, reviewPk }) {
+        console.log(reviewPk)
         if (confirm('정말 삭제하시겠습니까?')) {
           axios({
             url: drf.movies.review(moviePk, reviewPk),
@@ -156,8 +158,8 @@ export default {
           commit('SET_ARTICLE_REVIEWS', res.data)})
         .catch(err => console.error(err.response))
     },
-		createReview({ commit, getters }, { moviePk, content }) {
-      const review = { content }
+		createReview({ commit, getters }, { moviePk, content, voteAverage }) {
+      const review = { content, vote_average: voteAverage }
       axios({
         url: drf.movies.reviews(moviePk),
         method: 'post',
