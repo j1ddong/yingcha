@@ -22,7 +22,8 @@ export default {
     SET_TOKEN: (state, token) => state.token = token,
     SET_CURRENT_USER: (state, user) => state.currentUser = user,
     SET_PROFILE: (state, profile) => state.profile = profile,
-    SET_AUTH_ERROR: (state, error) => state.authError = error
+    SET_AUTH_ERROR: (state, error) => state.authError = error,
+    RESET_ERROR: (state) => state.authError = null 
   },
 
   actions: {
@@ -46,6 +47,7 @@ export default {
           const token = res.data.key
           dispatch('saveToken', token)
           dispatch('fetchCurrentUser')
+          dispatch('resetError')
           router.push({ name: 'MovieMain' })
         })
         .catch(err => {
@@ -64,6 +66,7 @@ export default {
           const token = res.data.key
           dispatch('saveToken', token)
           dispatch('fetchCurrentUser')
+          dispatch('resetError')
           router.push({ name: 'MovieMain' })
         })
         .catch(err => {
@@ -115,5 +118,8 @@ export default {
           commit('SET_PROFILE', res.data)
         })
     },
+    resetError({ commit }) {
+      commit('RESET_ERROR')
+    }
   },
 }
