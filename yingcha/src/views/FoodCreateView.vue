@@ -12,6 +12,7 @@ import FoodSelect from '@/components/foodcreate/FoodSelect.vue'
 import MovieSelect from '@/components/foodcreate/MovieSelect.vue'
 import FoodCreateForm from '@/components/foodcreate/FoodCreateForm.vue'
 
+
 export default {
   name: 'FoodCreateView',
   components:{
@@ -27,7 +28,7 @@ export default {
         content: '',
       }
     }
-  }
+  },
 }
 </script>
 

@@ -7,7 +7,7 @@
       <textarea v-model="newArticle.content" type="text" id="content" placeholder="내용을 입력하세요"></textarea>
     </div>
     <div>
-      <button>{{ action }}</button>
+      <button>create</button>
     </div>
   </form>
 </template>
@@ -20,23 +20,31 @@ export default {
   name: 'FoodCreateForm',
   props: {
     article: Object,
-    action: String,
+    // action: String,
   },
   data() {
     return {
       newArticle : {
         title: this.article.title,
         content: this.article.content,
+        // buttonLabel : null,
       }
     }
   },
-  methods: {
+  computed: {
+    // buttonLabel() {
+    //   if (this.action === 'create') {
+    //     return '작성하기'
+    //   } else {
+    //     return '수정하기'
+    //   }
+    // }
+  },
+  methods :{
     ...mapActions(['createArticle',]),
-    onSubmit() {
-      // console.log(this.action)
-      if (this.action === 'create') {
-        this.createArticle(this.newArticle)
-      }
+     onSubmit() {
+     // console.log(1111)
+      this.createArticle(this.newArticle)
     }
   }
 }
