@@ -60,7 +60,8 @@ export default {
     },
     GET_COMMENTS (state, comments) {
       state.comments = comments
-    }
+    },
+    SET_ARTICLE_COMMENTS: (state, comments) => (state.comments = comments),
   },
   actions: {
     fetchMovieDetail ({ commit }, moviePk) {
@@ -116,7 +117,36 @@ export default {
         .then(res => {
           commit('GET_COMMENTS', res.data.review_set)
         })
-    }
+    },
+    updateComment({ commit, getters }, { articlePk, commentPk, content }) {
+      const comment = { content }
+
+      axios({
+        url: drf.articles.comment(articlePk, commentPk),
+        method: 'put',
+        data: comment,
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('SET_ARTICLE_COMMENTS', res.data)
+        })
+        .catch(err => console.error(err.response))
+    },
+
+    deleteComment({ commit, getters }, { articlePk, commentPk }) {
+        if (confirm('정말 삭제하시겠습니까?')) {
+          axios({
+            url: drf.articles.comment(articlePk, commentPk),
+            method: 'delete',
+            data: {},
+            headers: getters.authHeader,
+          })
+            .then(res => {
+              commit('SET_ARTICLE_COMMENTS', res.data)
+            })
+            .catch(err => console.error(err.response))
+        }
+      },
     
   },
 }

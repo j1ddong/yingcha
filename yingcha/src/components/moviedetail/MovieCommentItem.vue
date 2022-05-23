@@ -1,9 +1,10 @@
 <template>
   <div>
-    <!-- <li class="comment-list-item">
-      <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
-        {{ comment.user.username }}
-      </router-link>: 
+    {{comment}}
+    {{ comment.user }}
+    <li class="comment-list-item">
+      <!-- <router-link :to="{ name: 'profile', params: { username: comment.user.username } }"> -->
+      <!-- </router-link>:  -->
       
       <span v-if="!isEditing">{{ payload.content }}</span>
 
@@ -17,15 +18,12 @@
         <button @click="switchIsEditing">Edit</button> |
         <button @click="deleteComment(payload)">Delete</button>
       </span>
-    </li> -->
-    <p>작성자 {{comment.user}}</p>
-    <p>내용 {{comment.content}}</p>
-    <p>좋아요 수: {{comment}}</p>
+    </li>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'MovieCommentItem',
@@ -36,14 +34,24 @@ export default {
     return {
       isEditing: false,
       payload: {
-        articlePk: this.comment.article,
-        commentPk: this.comment.pk,
+        articlePk: this.$$route.params.moviepk,
+        commentPk: this.comment.id,
         content: this.comment.content
       },
     }
   },
   computed: {
     ...mapGetters(['currentUser']),
+  },
+   methods: {
+    ...mapActions(['updateComment', 'deleteComment']),
+    switchIsEditing() {
+      this.isEditing = !this.isEditing
+    },
+    onUpdate() {
+      this.updateComment(this.payload)
+      this.isEditing = false
+    }
   },
 
 }
