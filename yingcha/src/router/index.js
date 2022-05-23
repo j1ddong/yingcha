@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MovieMainView from '@/views/MovieMainView'
 import MovieDetailView from '@/views/MovieDetailView'
-
+import FoodCreateView from '@/views/FoodCreateView'
 
 Vue.use(VueRouter)
 
@@ -16,6 +16,11 @@ const routes = [
     path: '/movies/:moviepk',
     name: 'MovieDetail',
     component: MovieDetailView
+  },
+  {
+    path: '/article/new',
+    name: 'FoodCreate',
+    component: FoodCreateView
   }
 ]
 
