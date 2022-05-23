@@ -28,9 +28,11 @@ export default {
       return HOST + MOVIES + 'director/' + `${directorPk}/`
     },
     movieActor (actorPk) {
-      return HOST + MOVIES + 'actor/' + `${actorPk}`
+      return HOST + MOVIES + 'actor/' + `${actorPk}/`
     },
-    
+    movieDirectorId (moviePk) {
+      return HOST + MOVIES + 'movie/director/' + `${moviePk}/`
+    }
   },
   communities: {
     articles() {

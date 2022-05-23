@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>감독: {{ directorName }}</p>
+    <p>감독: {{ movieDirector.name }}</p>
     <img :src="directorUrl" alt="directorImage">
     <movie-actor v-for="actor in movieActors" :key="actor" :actor="actor"></movie-actor>
   </div>
@@ -9,7 +9,6 @@
 <script>
 import MovieActor from '@/components/moviedetail/MovieActor.vue'
 import { mapGetters } from 'vuex'
-import drf from '@/api/drf'
 import axios from 'axios'
 
 const API_KEY = '44f9d36b9d8fa8e880839899c577f866'
@@ -24,7 +23,6 @@ export default {
   },
   data () {
     return {
-    directorName: null,
     directorUrl: null
     }
   },
@@ -32,24 +30,14 @@ export default {
     ...mapGetters(['movieDirector', 'movieActors'])
   },
   methods: {
-    getDirectorName () {
-      axios({
-        method: 'get',
-        url: drf.movies.movieDirector(this.movieDirector)
-      })
-        .then(res => {
-          this.directorName = res.data.name
-        })
-    },
     getDirectorUrl () {
-      axios.get(URL_BASE + `/person/${this.movieDirector}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
+      axios.get(URL_BASE + `/person/${this.movieDirector.id}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
       .then(res => {
         this.directorUrl = BASIC_URL_FOR_IMAGE + res.data.profile_path
       })
     },
   },
   created () {
-    this.getDirectorName(),
     this.getDirectorUrl()
   }
 }

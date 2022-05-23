@@ -4,9 +4,35 @@ import MovieMainView from '@/views/MovieMainView'
 import MovieDetailView from '@/views/MovieDetailView'
 import FoodCreateView from '@/views/FoodCreateView'
 
+import LoginView from '@/views/LoginView.vue'
+import LogoutView from '@/views/LogoutView.vue'
+import SignupView from '@/views/SignupView.vue'
+import ProfileView from '@/views/ProfileView.vue'
+import NotFound404 from '../views/NotFound404.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutView
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignupView
+  },
+  {
+    path: '/profile/:username',  // /profile/neo
+    name: 'profile',
+    component: ProfileView,
+  },
   {
     path: '/',
     name: 'MovieMain',
@@ -21,7 +47,16 @@ const routes = [
     path: '/article/new',
     name: 'FoodCreate',
     component: FoodCreateView
-  }
+  },
+  {
+    path: '/404',
+    name: 'NotFound404',
+    component: NotFound404
+  },
+  {
+    path: '*',
+    redirect: '/404'
+  },
 ]
 
 const router = new VueRouter({
