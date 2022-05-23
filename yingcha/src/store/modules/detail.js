@@ -16,15 +16,18 @@ export default {
     },
     movieProvider: [],
     movieDirector: null,
+    movieDirectorUrl: null,
     movieActors: [],
-    relatedMovies: []
+    relatedMovies: [],
+    comments: []
   },
   getters: {
     movieDetail: state => state.movieDetail,
     movieProvider: state => state.movieProvider,
     movieDirector: state => state.movieDirector,
     movieActors: state => state.movieActors,
-    relatedMovies: state => state.relatedMovies
+    relatedMovies: state => state.relatedMovies,
+    movieDirectorUrl: state => state.movieDirectorUrl
   },
   mutations: {
     GET_MOVIE_DETAIL ({ movieDetail }, movie) {
@@ -50,6 +53,12 @@ export default {
     },
     GET_MOVIE_DIRECTOR (state, director) {
       state.movieDirector = director 
+    },
+    GET_MOVIE_DIRECTOR_URL (state, url) {
+      state.movieDirectorUrl = BASIC_URL_FOR_IMAGE + url
+    },
+    GET_COMMENTS (state, comments) {
+      state.comments = comments
     }
   },
   actions: {
@@ -77,17 +86,32 @@ export default {
         commit('GET_RELATED_NAME', res.data.results)
       })
     },
-    fetchMovieDirector ({ commit, getters }, moviePk) {
+    fetchMovieDirector ({ commit, getters, dispatch }, moviePk) {
       axios({
         method: 'get',
         url: drf.movies.movieDirectorId(moviePk),
         headers: getters.authHeader,
       })
         .then(res => {
-          console.log(res.data.directors[0])
           commit('GET_MOVIE_DIRECTOR', res.data.directors[0])
         })
+         .then(res => {
+            res
+            dispatch('fetchDirectorUrl')
+         })
     },
+    fetchDirectorUrl ({commit, getters}) {
+      axios.get(URL_BASE + `/person/${getters.movieDirector.id}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
+      .then(res => {
+        commit('GET_MOVIE_DIRECTOR_URL', res.data.profile_path)
+      })
+    },
+    // fetchComments ({commit} ) {
+    //   axios({
+    //     method: 'get',
+    //     url:
+    //   })
+    // }
     
   },
 }
