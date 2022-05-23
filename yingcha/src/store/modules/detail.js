@@ -27,7 +27,8 @@ export default {
     movieDirector: state => state.movieDirector,
     movieActors: state => state.movieActors,
     relatedMovies: state => state.relatedMovies,
-    movieDirectorUrl: state => state.movieDirectorUrl
+    movieDirectorUrl: state => state.movieDirectorUrl,
+    comments: state => state.comments
   },
   mutations: {
     GET_MOVIE_DETAIL ({ movieDetail }, movie) {
@@ -106,12 +107,16 @@ export default {
         commit('GET_MOVIE_DIRECTOR_URL', res.data.profile_path)
       })
     },
-    // fetchComments ({commit} ) {
-    //   axios({
-    //     method: 'get',
-    //     url:
-    //   })
-    // }
+    fetchReviews ({commit, getters}, moviePk ) {
+      axios({
+        method: 'get',
+        url: drf.movies.movieReviews(moviePk),
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('GET_COMMENTS', res.data.review_set)
+        })
+    }
     
   },
 }

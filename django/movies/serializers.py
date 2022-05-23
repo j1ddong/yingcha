@@ -52,8 +52,16 @@ class MovieDirectorSerializer(serializers.ModelSerializer):
         fields = ('id', 'directors',)
 
 
-class ReviewSerializer(serializers.ModelSerializer):
+class MovieReviewSerializer(serializers.ModelSerializer):
+
+    class ReviewSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model = Review
+            fields = '__all__'
+
+    review_set = ReviewSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Review
-        fields = '__all__'
+        model = Movie
+        fields = ('id', 'review_set',)

@@ -33,7 +33,10 @@ export default {
     },
     movieDirectorId (moviePk) {
       return HOST + MOVIES + 'movie/director/' + `${moviePk}/`
-    }
+    },
+    movieReviews (moviePk) {
+      return HOST + MOVIES + 'reviews/' + `${moviePk}/`
+    },
   },
   communities: {
     articles() {
