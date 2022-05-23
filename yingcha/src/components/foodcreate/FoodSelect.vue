@@ -17,7 +17,7 @@ export default {
   name: 'FoodSelect',
   data() {
     return {
-      keyword: '',
+      keyword: this.keyword,
     }
   },
   methods: {
