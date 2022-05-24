@@ -56,10 +56,13 @@ export default {
       return HOST + COMMUNITIES + `${articlePk}/`
     },
     search(keyword) {
-      return HOST + COMMUNITIES + `search/movie?keyword=${keyword}/`
+      return HOST + COMMUNITIES + `search/movie?keyword=${keyword}`
     },
     searchFood(food) {
-      return HOST + COMMUNITIES + `search/food?food=${food}/`
+      return HOST + COMMUNITIES + `search/food?food=${food}`
+    },
+    food(foodPk) {
+      return HOST + COMMUNITIES + 'food/' + `${foodPk}/`
     }
   }
 }

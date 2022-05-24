@@ -31,7 +31,7 @@ def index(request):
 
         def check(movie_genre, movies_json):
             while movie_genre in movies_json:
-                movie_genre = random.choce(movies)
+                movie_genre = random.choice(movies)
             return movie_genre
             
 

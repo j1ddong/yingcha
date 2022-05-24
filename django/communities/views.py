@@ -64,8 +64,17 @@ def search_food(request):
     return Response(serializers.data)
 
 
+@api_view(['GET'])
 def article_detail(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
 
     serializer = ArticleSerializer(article)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def get_article_list(request, food_pk):
+    print(request)
+    food = get_object_or_404(Food, pk=food_pk)
+    articles = food.article_set.all()
+    print(articles)

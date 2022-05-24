@@ -4,6 +4,7 @@ import MovieMainView from '@/views/MovieMainView'
 import MovieDetailView from '@/views/MovieDetailView'
 import FoodCreateView from '@/views/FoodCreateView'
 import ArticleDetailView from '@/views/ArticleDetailView'
+import FoodDetailView from '@/views/FoodDetailView'
 
 import LoginView from '@/views/LoginView.vue'
 import LogoutView from '@/views/LogoutView.vue'
@@ -53,6 +54,11 @@ const routes = [
     path: '/article/:articlePk',
     name: 'ArticleDetail',
     component: ArticleDetailView
+  },
+  {
+    path: '/food/:foodPk',
+    name: 'FoodDetailView',
+    component: FoodDetailView
   },
   {
     path: '/404',
