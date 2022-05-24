@@ -14,7 +14,7 @@ def recommend():
         m_g =[]
         genres = movie.genres.all()
         for genre in genres:
-            m_g.append(genre.genre_name)
+            m_g.append(genre.name)
         g_list+=[m_g]  
     g_list = [[" ".join(x)] for x in g_list]  # 장르 공백 기준으로 구별하기 [['a b'], ['b c'], ['a b']]
 
@@ -25,14 +25,14 @@ def recommend():
     c_vector_genre = count_vector.fit_transform(movie_data['g_list'])
     genre_c_sim = cosine_similarity(c_vector_genre, c_vector_genre).argsort()[:,::-1]  # 2차원
 
-    def get_recommend_movie(df, movie_title, top=20):
+    def get_recommend_movie(df, movie_title, top=10):
         target_movie_index = df[df['title'] == movie_title].index.values
         # cosine similarity 중 해당 값과 비슷한 cosine similarity 20개를 구함
         sim_index = genre_c_sim[target_movie_index, : top].reshape(-1)
         # 이름이 같은 영화는 제외
         sim_index = sim_index[sim_index != target_movie_index]
 
-        result = df.iloc[sim_index].sort_values('vote_count', ascending=False)[:5]
+        result = df.iloc[sim_index][:10]
         result = result[['id', 'title']]
         return result
     for movie in movies:

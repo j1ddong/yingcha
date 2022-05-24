@@ -5,7 +5,7 @@ from movies.models import Movie, Genre
 
 class Taste(models.Model):
     taste_name = models.CharField(max_length=20)
-    taste_algo = models.ManyToManyField(Genre, through='Algo')
+    genres = models.ManyToManyField(Genre, related_name='tastes')
 
     def __str__(self):
         return self.taste_name
@@ -37,9 +37,9 @@ class Comment(models.Model):
     content = models.TextField()
 
 
-# Food, Genre간 중개 테이블; 추천 알고리즘에 사용
-class Algo(models.Model):       
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    taste = models.ForeignKey(Taste, on_delete=models.CASCADE)
+# # Food, Genre간 중개 테이블; 추천 알고리즘에 사용
+# class Algo(models.Model):       
+#     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+#     taste = models.ForeignKey(Taste, on_delete=models.CASCADE)
 
 

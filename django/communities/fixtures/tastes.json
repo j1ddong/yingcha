@@ -1,0 +1,151 @@
+[
+{
+    "model": "communities.taste",
+    "pk": 1,
+    "fields": {
+        "taste_name": "sweet",
+        "genres": [
+            12,
+            16,
+            18,
+            35,
+            99,
+            10402,
+            10749,
+            10751,
+            10770
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 2,
+    "fields": {
+        "taste_name": "sour",
+        "genres": [
+            27,
+            28,
+            53,
+            80,
+            9648
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 3,
+    "fields": {
+        "taste_name": "salty",
+        "genres": [
+            12,
+            14,
+            18,
+            27,
+            28,
+            53,
+            80,
+            878,
+            10752
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 4,
+    "fields": {
+        "taste_name": "spicy",
+        "genres": [
+            12,
+            14,
+            18,
+            27,
+            28,
+            35,
+            37,
+            53,
+            80,
+            878,
+            9648,
+            10749,
+            10752
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 5,
+    "fields": {
+        "taste_name": "umami",
+        "genres": [
+            12,
+            14,
+            16,
+            18,
+            28,
+            35,
+            37,
+            878,
+            9648,
+            10402,
+            10749,
+            10751,
+            10770
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 6,
+    "fields": {
+        "taste_name": "bitter",
+        "genres": [
+            27,
+            53,
+            80,
+            10752
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 7,
+    "fields": {
+        "taste_name": "oily",
+        "genres": [
+            14,
+            18,
+            28,
+            35,
+            37,
+            53,
+            80,
+            878,
+            9648,
+            10402,
+            10749,
+            10751,
+            10770
+        ]
+    }
+},
+{
+    "model": "communities.taste",
+    "pk": 8,
+    "fields": {
+        "taste_name": "fresh",
+        "genres": [
+            12,
+            14,
+            16,
+            18,
+            35,
+            99,
+            9648,
+            10402,
+            10749,
+            10751,
+            10770
+        ]
+    }
+}
+]

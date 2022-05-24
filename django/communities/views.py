@@ -1,3 +1,4 @@
+import imp
 from django.shortcuts import get_object_or_404
 from .models import Food, Article
 from .serializers import ArticleSerializer, FoodListSerializer
@@ -6,6 +7,7 @@ from movies.models import Movie
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from .recommned import recommend as rec
 
 
 
@@ -78,3 +80,8 @@ def get_article_list(request, food_pk):
     food = get_object_or_404(Food, pk=food_pk)
     articles = food.article_set.all()
     print(articles)
+
+
+def recommend(requst):
+    rec()
+    return
