@@ -5,6 +5,7 @@ import MovieDetailView from '@/views/MovieDetailView'
 import FoodCreateView from '@/views/FoodCreateView'
 import ArticleDetailView from '@/views/ArticleDetailView'
 import FoodDetailView from '@/views/FoodDetailView'
+import ArticleEditView from '@/views/ArticleEditView'
 
 import LoginView from '@/views/LoginView.vue'
 import LogoutView from '@/views/LogoutView.vue'
@@ -51,9 +52,14 @@ const routes = [
     component: FoodCreateView
   },
   {
-    path: '/communities/:articlePk',
+    path: '/communities/:articlepk',
     name: 'ArticleDetail',
     component: ArticleDetailView
+  },
+  {
+    path: '/communities/:articlepk/edit',
+    name: 'ArticleEdit',
+    component: ArticleEditView
   },
   {
     path: '/food/:foodPk',

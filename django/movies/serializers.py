@@ -92,7 +92,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields =('id', 'title',)
+        fields =('id', 'title', 'poster_url',)
 
 
 class ReviewUpdateSerializer(serializers.ModelSerializer):
