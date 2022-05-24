@@ -5,6 +5,7 @@ from movies.models import Movie, Genre
 
 class Taste(models.Model):
     taste_name = models.CharField(max_length=20)
+    taste_algo = models.ManyToManyField(Genre, through='Algo')
 
     def __str__(self):
         return self.taste_name
@@ -13,7 +14,6 @@ class Taste(models.Model):
 class Food(models.Model):
     food_name = models.CharField(max_length=50)    
     food_image = models.TextField()
-    food_blacklist = models.ManyToManyField(Genre, through='BlackList')
     taste = models.ManyToManyField(Taste, related_name="food_taste")
 
     def __str__(self):
@@ -38,9 +38,8 @@ class Comment(models.Model):
 
 
 # Food, Genre간 중개 테이블; 추천 알고리즘에 사용
-class BlackList(models.Model):       
+class Algo(models.Model):       
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    food = models.ForeignKey(Food, on_delete=models.CASCADE)
-    dislike = models.IntegerField()
+    taste = models.ForeignKey(Taste, on_delete=models.CASCADE)
 
 

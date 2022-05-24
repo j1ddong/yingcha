@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework import status
+from .recommend import recommend as reco
 
 
 API_KEY = '44f9d36b9d8fa8e880839899c577f866'
@@ -144,3 +145,8 @@ def create_review(request, movie_pk):
         reviews = movie.review_set.all()
         serializer = ReviewUpdateSerializer(reviews, many=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+def recommend(request):
+    reco()
+    return
