@@ -36,6 +36,7 @@ class Movie(models.Model):
     directors = models.ManyToManyField(Director, related_name='movies')
     actors = models.ManyToManyField(Actor, related_name='movies')
     providers = models.ManyToManyField(Provider, related_name='movies')
+    recommend_movies = models.ManyToManyField('self', symmetrical=False, related_name = 'recommended')
 
     def __str__(self) :
         return self.title

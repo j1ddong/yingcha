@@ -12,9 +12,7 @@ const BASIC_URL_FOR_IMAGE = 'https://image.tmdb.org/t/p/w200'
 
 export default {
   state: {
-    movieDetail: {
-      title: null, posterUrl: null, overview: null, release_date: null, genres: [], original_title: null
-    },
+    movieDetail: [],
     movieProvider: [],
     movieDirector: null,
     movieDirectorUrl: null,
