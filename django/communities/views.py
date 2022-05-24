@@ -1,13 +1,11 @@
-import imp
 from django.shortcuts import get_object_or_404
 from .models import Food, Article
 from .serializers import ArticleSerializer, FoodListSerializer
-from movies.serializers import MovieListSerializer
+from movies.serializers import MovieIdSerializer, MovieListSerializer
 from movies.models import Movie
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .recommned import recommend as rec
 
 
 
@@ -67,21 +65,32 @@ def search_food(request):
 
 
 @api_view(['GET'])
-def article_detail(request, article_pk):
+def get_article(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
-
     serializer = ArticleSerializer(article)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def get_article_list(request, food_pk):
-    print(request)
+    # print(request)
     food = get_object_or_404(Food, pk=food_pk)
     articles = food.article_set.all()
-    print(articles)
+    # print(articles)
+    serializers = ArticleSerializer(articles, many=True)
+    return Response(serializers.data)
 
 
-def recommend(requst):
-    rec()
-    return
+@api_view(['GET'])
+def search_movie_title(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieListSerializer(movie)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def search_food_title(request, food_pk):
+    food = get_object_or_404(Food, pk=food_pk)
+    serializer = FoodListSerializer(food)
+    return Response(serializer.data)
+

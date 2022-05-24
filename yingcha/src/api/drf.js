@@ -63,6 +63,12 @@ export default {
     },
     food(foodPk) {
       return HOST + COMMUNITIES + 'food/' + `${foodPk}/`
+    },
+    movietitle(moviePk) {
+      return HOST + COMMUNITIES + 'search/movie/' + `${moviePk}/`
+    },
+    foodtitle(foodPk) {
+      return HOST + COMMUNITIES + 'search/food/' + `${foodPk}/`
     }
   }
 }

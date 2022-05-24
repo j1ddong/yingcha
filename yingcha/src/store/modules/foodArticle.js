@@ -17,7 +17,10 @@ export default {
     foodArticles : [],
     article: {},
     keywords: '',
-    foods: ''
+    foods: '',
+    movieTitle: '',
+    foodTitle: '',
+
   },
   getters: {
     articles: state => state.articles,
@@ -25,6 +28,9 @@ export default {
     article: state => state.article,
     keywords: state => state.keywords,
     foods: state => state.foods,
+    movieTitle: state => state.movieTitle,
+    foodTitle: state => state.foodTitle,
+
     // isAuthor: (state, getters) => {
     //   return state.article.user?.username === getters.currentUser.username
     // },
@@ -36,6 +42,9 @@ export default {
     GET_ARTICLE: (state, article) => state.article = article,
     GET_KEYWORD: (state, keywords) => state.keywords = keywords,
     GET_FOOD: (state, foods) => state.foods = foods,
+    GET_MOVIETITLE: (state, movieTitle) => state.movieTitle = movieTitle,
+    GET_FOODTITLE: (state, foodTitle) => state.foodTitle = foodTitle,
+
 
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
@@ -65,7 +74,7 @@ export default {
         })
       })
     },
-    fetchArticles({ commit, getters }) {
+    fetchArticle({ commit, getters }, articlePk) {
       /* 게시글 목록 받아오기
       GET: articles URL (token)
         성공하면
@@ -74,11 +83,11 @@ export default {
           에러 메시지 표시
       */
       axios({
-        url: drf.communities.articles(),
+        url: drf.communities.article(articlePk),
         method: 'get',
         headers: getters.authHeader,
       })
-        .then(res => commit('SET_ARTICLES', res.data))
+        .then(res => commit('GET_ARTICLE', res.data))
         .catch(err => console.error(err.response))
     },
     fetchFoodArticle({ commit, getters }, foodPk) {
@@ -99,8 +108,9 @@ export default {
         headers: getters.authHeader,
       })
       .then(res => {
-        console.log('into then')
-        commit('GET_FOODARTICLE', res.data)
+        // console.log('into then') //ok
+        commit('GET_FOODARTICLES', res.data)
+        // console.log(res.data) //ok
       })  
       .catch(err => {
         console.error(err.response)
@@ -133,6 +143,27 @@ export default {
       .then(res =>{
         // console.log(foods)
         commit('GET_FOOD', res.data)
+      })
+    },
+    getMovieTitle({commit, getters}, moviePk) {
+      axios({
+        url: drf.communities.movietitle(moviePk),
+        method: 'get',
+        headers: getters.authHeader
+      })
+      .then(res => {
+        commit('GET_MOVIETITLE', res.data)
+      })
+    },
+    getFoodTitle({commit, getters}, foodPk) {
+      // console.log('ok') //ok
+      axios({
+        url: drf.communities.foodtitle(foodPk),
+        method: 'get',
+        headers: getters.authHeader
+      })
+      .then(res => {
+        commit('GET_FOODTITLE', res.data)
       })
     }
   }

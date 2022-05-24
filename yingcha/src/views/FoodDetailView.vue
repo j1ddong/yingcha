@@ -1,12 +1,13 @@
 <template>
   <div>
-    <food-movie-article-list></food-movie-article-list>
+    <food-movie-article-list :foodArticles="foodArticles"></food-movie-article-list>
+    <!-- <p>{{ foodArticles }}</p> -->
   </div>
 </template>
 
 <script>
 import FoodMovieArticleList from '@/components/fooddetail/FoodMovieArticleList.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 
 export default {
@@ -19,7 +20,9 @@ export default {
       foodPk: this.$route.params.foodPk
     }
   },
-  computed : {},
+  computed : {
+    ...mapGetters(['foodArticles'])
+  },
   methods : {
     ...mapActions(['fetchFoodArticle'])
   },

@@ -51,7 +51,7 @@ const routes = [
     component: FoodCreateView
   },
   {
-    path: '/article/:articlePk',
+    path: '/communities/:articlePk',
     name: 'ArticleDetail',
     component: ArticleDetailView
   },
