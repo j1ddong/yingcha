@@ -14,12 +14,14 @@ Vue.use(Vuex)
 export default {
   state: {
     articles: [],
+    foodArticles : [],
     article: {},
     keywords: '',
     foods: ''
   },
   getters: {
     articles: state => state.articles,
+    foodArticles: state => state.foodArticles,
     article: state => state.article,
     keywords: state => state.keywords,
     foods: state => state.foods,
@@ -30,6 +32,7 @@ export default {
   },
   mutations: {
     GET_ARTICLES: (state, articles) => state.articles = articles,
+    GET_FOODARTICLES: (state, foodArticles) => state.foodArticles = foodArticles,
     GET_ARTICLE: (state, article) => state.article = article,
     GET_KEYWORD: (state, keywords) => state.keywords = keywords,
     GET_FOOD: (state, foods) => state.foods = foods,
@@ -62,7 +65,23 @@ export default {
         })
       })
     },
-    fetchArticle({ commit, getters }, articlePk) {
+    fetchArticles({ commit, getters }) {
+      /* 게시글 목록 받아오기
+      GET: articles URL (token)
+        성공하면
+          응답으로 받은 게시글들을 state.articles에 저장
+        실패하면
+          에러 메시지 표시
+      */
+      axios({
+        url: drf.communities.articles(),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+        .then(res => commit('SET_ARTICLES', res.data))
+        .catch(err => console.error(err.response))
+    },
+    fetchFoodArticle({ commit, getters }, foodPk) {
       /* 단일 게시글 받아오기
       GET: article URL (token)
         성공하면
@@ -73,17 +92,21 @@ export default {
           404 에러일 때는
             NotFound404 로 이동
       */
+      // console.log('fetchfoodarticle') // ok
       axios({
-        url: drf.communities.article(articlePk),
+        url: drf.communities.food(foodPk),
         method: 'get',
         headers: getters.authHeader,
       })
-        .then(res => commit('GET_ARTICLE', res.data))
-        .catch(err => {
-          console.error(err.response)
-          if (err.response.status === 404) {
-            router.push({ name: 'NotFound404' })
-          }
+      .then(res => {
+        console.log('into then')
+        commit('GET_FOODARTICLE', res.data)
+      })  
+      .catch(err => {
+        console.error(err.response)
+        if (err.response.status === 404) {
+          router.push({ name: 'NotFound404' })
+        }
         })
     },
     searchKeyword({commit, getters}, keywords) {
@@ -108,6 +131,7 @@ export default {
         headers: getters.authHeader
       })
       .then(res =>{
+        // console.log(foods)
         commit('GET_FOOD', res.data)
       })
     }
