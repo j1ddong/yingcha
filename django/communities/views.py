@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Food
+from django.shortcuts import get_object_or_404
+from .models import Food, Article
 from .serializers import ArticleSerializer, FoodListSerializer
 from movies.serializers import MovieListSerializer
 from movies.models import Movie
@@ -11,15 +11,20 @@ from rest_framework import status
 
 @api_view(['POST'])
 def create_article(request):
-    print(request)
-    print('------------------')
+    print(request.data)
+    # print('------------------')
     serializer = ArticleSerializer(data=request.data)    
-    print(serializer)
-    print('------------------')
+    # print(serializer)
+    # print('------------------')
+    food = get_object_or_404(Food, pk=request.data['food_id'])
+    movie = get_object_or_404(Movie, pk=request.data['movie_id'])
+    # print(food, movie)
+    # print(type(food), type(movie))
+    # print('------------------')
     if serializer.is_valid(raise_exception=True):
+        # print('ok') # 여기까진 출력됨
+        serializer.save(user=request.user, food=food, movie=movie)
         # print(serializer.data)
-        # print('------------------')
-        serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -57,3 +62,10 @@ def search_food(request):
     serializers = FoodListSerializer(foods, many=True)
     # print(serializers.data)
     return Response(serializers.data)
+
+
+def article_detail(request, article_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+
+    serializer = ArticleSerializer(article)
+    return Response(serializer.data)

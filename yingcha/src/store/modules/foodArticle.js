@@ -3,6 +3,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import _ from 'lodash'
+import router from '@/router'
 import drf from '@/api/drf'
 
 Vue.use(Vuex)
@@ -12,13 +13,13 @@ Vue.use(Vuex)
 
 export default {
   state: {
-    // articles: [],
+    articles: [],
     article: {},
     keywords: '',
     foods: ''
   },
   getters: {
-    // articles: state => state.articles,
+    articles: state => state.articles,
     article: state => state.article,
     keywords: state => state.keywords,
     foods: state => state.foods,
@@ -28,7 +29,7 @@ export default {
     // isArticle: state => !_.isEmpty(state.article),
   },
   mutations: {
-    // SET_ARTICLES: (state, articles) => state.articles = articles,
+    GET_ARTICLES: (state, articles) => state.articles = articles,
     GET_ARTICLE: (state, article) => state.article = article,
     GET_KEYWORD: (state, keywords) => state.keywords = keywords,
     GET_FOOD: (state, foods) => state.foods = foods,
@@ -55,11 +56,35 @@ export default {
       .then(res => {
         // console.log(res.data)
         commit('GET_ARTICLE', res.data)
-        // router.push({
-        //   name: 'article',
-        //   params: { articlePk: getters.article.pk }
-        // })
+        router.push({
+          name: 'article',
+          params: { articlePk: getters.article.pk }
+        })
       })
+    },
+    fetchArticle({ commit, getters }, articlePk) {
+      /* 단일 게시글 받아오기
+      GET: article URL (token)
+        성공하면
+          응답으로 받은 게시글들을 state.articles에 저장
+        실패하면
+          단순 에러일 때는
+            에러 메시지 표시
+          404 에러일 때는
+            NotFound404 로 이동
+      */
+      axios({
+        url: drf.communities.article(articlePk),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+        .then(res => commit('GET_ARTICLE', res.data))
+        .catch(err => {
+          console.error(err.response)
+          if (err.response.status === 404) {
+            router.push({ name: 'NotFound404' })
+          }
+        })
     },
     searchKeyword({commit, getters}, keywords) {
       //console.log('before axios') //이것도 ok

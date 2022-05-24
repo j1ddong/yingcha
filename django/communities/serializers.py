@@ -46,9 +46,10 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     user = UserSerializer(read_only=True)
     # like_users = UserSerializer(read_only=True, many=True)
-    food_id = FoodIdSerializer()
-    movie_id = MovieIdSerializer()
+    # food_id = FoodIdSerializer(read_only=True)
+    # movie_id = MovieIdSerializer(read_only=True)
 
     class Meta:
         model = Article
         fields = ('pk', 'user', 'title', 'content','food_id', 'movie_id',)
+        read_only_fields = ('food_id', 'movie_id',)
