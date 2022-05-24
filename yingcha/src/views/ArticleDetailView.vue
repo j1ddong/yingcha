@@ -6,12 +6,12 @@
     <article-image :moviePk="article.movie_id" :foodPk="article.food_id"></article-image>
     <article-content :article="article"></article-content>
     <div v-if="isAuthor">
-      <!-- <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
+       <router-link :to="{ path:`/communities/${article.id}/edit`}">
         <button>Edit</button>
-      </router-link> -->
-      |
+      </router-link>
+      
       <!-- <button @click="deleteArticle(articlePk)">Delete</button> -->
-    </div>
+    </div> 
 
   </div>
 </template>
@@ -28,11 +28,6 @@ export default {
     ArticleContent,
     ArticleImage,
   },
-  data () {
-    return {
-      articlePk: this.$route.params.articlePk
-    }
-  },
   computed: {
       ...mapGetters(['article']),
       // likeCount() {
@@ -48,7 +43,7 @@ export default {
     },
     created() {
       // console.log(this.articlePk)
-      this.fetchArticle(this.articlePk)
+      this.fetchArticle(this.article.pk)
     },
 
 }

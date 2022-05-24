@@ -51,6 +51,9 @@ export default {
       // 유저 정보 저장
 
         this.createArticle(this.newArticle)
+        this.$router.push(
+          {path: `communities/${this.article.pk}`}
+        )
       },
       movieIdSave (movieId) {
         // console.log('movieid') // ok
