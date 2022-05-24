@@ -13,11 +13,14 @@ export default {
   name: 'FoodCreateView',
   components:{
     FoodCreateForm,
+
   },
   data() {
     return {
       article :{
         pk: null,
+        food_id: '',
+        movie_id: '',
         title: '',
         content: '',
       }

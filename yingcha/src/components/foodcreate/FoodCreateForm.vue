@@ -1,7 +1,7 @@
 <template>
   <div>
-    <food-select></food-select>
-    <movie-select></movie-select>
+    <food-select @emit-food-id="foodIdSave"></food-select>
+    <movie-select @emit-movie-id="movieIdSave"></movie-select>
 
     <form @submit.prevent="onSubmit">
       <div>
@@ -25,40 +25,46 @@ import MovieSelect from '@/components/foodcreate/MovieSelect.vue'
 
 export default {
   name: 'FoodCreateForm',
-  components: {
-    FoodSelect,
-    MovieSelect,
-  },
   props: {
     article: Object,
     // action: String,
+  },
+  components:{
+    FoodSelect,
+    MovieSelect,
   },
   data() {
     return {
       newArticle : {
         title: this.article.title,
         content: this.article.content,
+        food_id : '',
+        movie_id : '',
+      }
         // buttonLabel : null,
       }
-    }
-  },
-  computed: {
-    // buttonLabel() {
-    //   if (this.action === 'create') {
-    //     return '작성하기'
-    //   } else {
-    //     return '수정하기'
-    //   }
-    // }
-  },
+    },
   methods :{
-    ...mapActions(['createArticle',]),
-     onSubmit() {
-     // console.log(1111)
-      this.createArticle(this.newArticle)
+      ...mapActions(['createArticle',]),
+      onSubmit() {
+      // console.log(1111)
+      // 유저 정보 저장
+
+        this.createArticle(this.newArticle)
+      },
+      movieIdSave (movieId) {
+        // console.log('movieid') // ok
+        this.newArticle.movie_id = movieId
+      },
+      foodIdSave(foodId) {
+        // console.log('foodid') // ok
+        this.newArticle.food_id = foodId
+        // console.log(this.newArticle.food_id)
+      }
     }
   }
-}
+
+ 
 </script>
 
 <style>

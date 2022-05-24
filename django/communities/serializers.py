@@ -5,16 +5,18 @@ from django.contrib.auth import get_user_model
 from movies.models import Movie
 
 from .models import Article, Food, Taste
-from movies.serializers import MovieSerializer
+from movies.serializers import MovieSerializer, MovieIdSerializer
 
 User = get_user_model()
 
-class FoodSerializer(serializers.ModelSerializer):
 
-    class TasteSerializer(serializers.ModelSerializer):
+class TasteSerializer(serializers.ModelSerializer):
         class Meta:
             model = Taste
             fields = '__all__'
+
+
+class FoodSerializer(serializers.ModelSerializer):
 
     taste = TasteSerializer(many=True)
 
@@ -22,6 +24,18 @@ class FoodSerializer(serializers.ModelSerializer):
         model = Food
         fields = ('id', 'food_name', 'food_image', 'taste',)
 
+class FoodIdSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Food
+        fields = ('id',)
+
+
+class FoodListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Food
+        fields = ('id', 'food_name',)
 
 class ArticleSerializer(serializers.ModelSerializer):
 
@@ -31,10 +45,10 @@ class ArticleSerializer(serializers.ModelSerializer):
             fields = ('pk', 'username')
 
     user = UserSerializer(read_only=True)
-    like_users = UserSerializer(read_only=True, many=True)
-    food = FoodSerializer()
-    movie = MovieSerializer()
+    # like_users = UserSerializer(read_only=True, many=True)
+    food_id = FoodIdSerializer()
+    movie_id = MovieIdSerializer()
 
     class Meta:
         model = Article
-        fields = ('pk', 'user', 'title', 'content', 'like_users', 'food', 'movie',)
+        fields = ('pk', 'user', 'title', 'content','food_id', 'movie_id',)

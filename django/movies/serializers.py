@@ -1,3 +1,4 @@
+from msilib.schema import MoveFile
 from rest_framework import serializers
 from .models import Movie, Genre, Director, Actor, Provider, Review, Reply
 from django.contrib.auth import get_user_model
@@ -31,6 +32,13 @@ class ProviderSerializer(serializers.ModelSerializer):
         model = Provider
         fields = '__all__'
 
+
+class MovieIdSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('id',)
+        
 
 class MovieSerializer(serializers.ModelSerializer):
     
