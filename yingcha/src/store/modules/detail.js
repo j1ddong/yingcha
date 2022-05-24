@@ -2,6 +2,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import drf from '@/api/drf'
+import router from '@/router'
 
 Vue.use(Vuex)
 const API_KEY = '44f9d36b9d8fa8e880839899c577f866'
@@ -118,8 +119,9 @@ export default {
           commit('GET_REVIEWS', res.data.review_set)
         })
     },
-    updateReview({ commit, getters }, { moviePk, reviewPk, content }) {
-      const review = { content }
+    updateReview({ commit, getters }, { moviePk, reviewPk, content, voteAverage }) {
+      const review = { content, vote_average: voteAverage}
+      console.log(review)
       axios({
         url: drf.movies.review(moviePk, reviewPk),
         method: 'put',
@@ -131,8 +133,10 @@ export default {
         })
         .catch(err => console.error(err.response))
     },
-    deleteReview({ commit, getters }, { moviePk, reviewPk }) {
-        if (confirm('정말 삭제하시겠습니까?')) {
+    deleteReview({ getters, commit}, { moviePk, reviewPk }) {
+      if (confirm('정말 삭제하시겠습니까?')) {
+          // const idx = state.reviews.findIndex(item => item.pk == reviewPk )
+          // state.reviews.splice(idx, 1)
           axios({
             url: drf.movies.review(moviePk, reviewPk),
             method: 'delete',
@@ -140,8 +144,8 @@ export default {
             headers: getters.authHeader,
           })
             .then(res => {
-              console.log(res.data)
               commit('SET_ARTICLE_REVIEWS', res.data)
+              router.go(router.currentRoute)
             })
             .catch(err => console.error(err.response))
         }
@@ -156,8 +160,8 @@ export default {
           commit('SET_ARTICLE_REVIEWS', res.data)})
         .catch(err => console.error(err.response))
     },
-		createReview({ commit, getters }, { moviePk, content }) {
-      const review = { content }
+		createReview({ commit, getters }, { moviePk, content, voteAverage }) {
+      const review = { content, vote_average: voteAverage }
       axios({
         url: drf.movies.reviews(moviePk),
         method: 'post',

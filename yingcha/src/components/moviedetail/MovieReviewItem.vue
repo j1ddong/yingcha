@@ -5,10 +5,11 @@
       </router-link>:  -->
       작성자: {{ review.user.username }}
       좋아요 개수: {{likeCount}}
-      
+      <span v-if="!isEditing">평점: {{ payload.voteAverage }}</span>
       <span v-if="!isEditing">내용: {{ payload.content }}</span>
 
       <span v-if="isEditing">
+        <input type="number" v-model="payload.voteAverage" @keyup.enter="onUpdate">
         <input type="text" v-model="payload.content" @keyup.enter="onUpdate">
         <button @click="onUpdate">Update</button> |
         <button @click="switchIsEditing">Cancle</button>
@@ -16,7 +17,7 @@
 
       <span v-if="currentUser.username === review.user.username && !isEditing">
         <button @click="switchIsEditing">Edit</button> |
-        <button @click="deleteReview(payload)">Delete</button> | 
+        <button @click="deleteItem">Delete</button> | 
         <button @click="likeReview(payload)">좋아요</button>
       </span>
     </li>
@@ -37,24 +38,32 @@ export default {
       payload: {
         moviePk: this.review.movie,
         reviewPk: this.review.pk,
-        content: this.review.content
+        content: this.review.content,
+        voteAverage: this.review.vote_average
       },
+      forDelete: {
+        moviePk: this.review.movie,
+        reviewPk: this.review.pk,
+      }
     }
   },
   computed: {
-    ...mapGetters(['currentUser']),
+    ...mapGetters(['currentUser',]),
     likeCount() {
       return this.review.like_user?.length
     }
   },
   methods: {
-    ...mapActions(['updateReview', 'deleteReview', 'likeReview']),
+    ...mapActions(['updateReview', 'deleteReview', 'likeReview', 'fetchReviews']),
     switchIsEditing() {
       this.isEditing = !this.isEditing
     },
     onUpdate() {
       this.updateReview(this.payload)
       this.isEditing = false
+    },
+    deleteItem () {
+      this.deleteReview(this.forDelete)
     }
   },
 
