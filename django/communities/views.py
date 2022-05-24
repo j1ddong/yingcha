@@ -11,8 +11,14 @@ from rest_framework import status
 
 @api_view(['POST'])
 def create_article(request):
+    print(request)
+    print('------------------')
     serializer = ArticleSerializer(data=request.data)    
+    print(serializer)
+    print('------------------')
     if serializer.is_valid(raise_exception=True):
+        # print(serializer.data)
+        # print('------------------')
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -49,5 +55,5 @@ def search_food(request):
     # print('------------------')
 
     serializers = FoodListSerializer(foods, many=True)
-    print(serializers.data)
+    # print(serializers.data)
     return Response(serializers.data)

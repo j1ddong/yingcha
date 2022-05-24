@@ -40,33 +40,31 @@ export default {
         content: this.article.content,
         food_id : '',
         movie_id : '',
+      }
         // buttonLabel : null,
       }
-    }
-  },
-  computed: {
-    // buttonLabel() {
-    //   if (this.action === 'create') {
-    //     return '작성하기'
-    //   } else {
-    //     return '수정하기'
-    //   }
-    // }
-  },
+    },
   methods :{
-    ...mapActions(['createArticle',]),
-     onSubmit() {
-     // console.log(1111)
-      this.createArticle(this.newArticle)
-    },
-    movieIdSave (movieId) {
-      this.movie_id = movieId
-    },
-    foodIdSave(foodId) {
-      this.food_id = foodId
+      ...mapActions(['createArticle',]),
+      onSubmit() {
+      // console.log(1111)
+      // 유저 정보 저장
+
+        this.createArticle(this.newArticle)
+      },
+      movieIdSave (movieId) {
+        // console.log('movieid') // ok
+        this.newArticle.movie_id = movieId
+      },
+      foodIdSave(foodId) {
+        // console.log('foodid') // ok
+        this.newArticle.food_id = foodId
+        // console.log(this.newArticle.food_id)
+      }
     }
   }
-}
+
+ 
 </script>
 
 <style>
