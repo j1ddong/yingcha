@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1></h1>
-    <article-image></article-image>
+    <h1>detail</h1>
+    <!-- <p>{{article}}</p> -->
+    <!-- <p>food_id, movie_id 이용해서 이미지 가져오기</p> -->
+    <article-image :moviePk="article.movie_id" :foodPk="article.food_id"></article-image>
     <article-content :article="article"></article-content>
     <div v-if="isAuthor">
       <!-- <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
@@ -32,7 +34,7 @@ export default {
     }
   },
   computed: {
-      ...mapGetters(['isAuthor', 'article']),
+      ...mapGetters(['article']),
       // likeCount() {
       //   return this.article.like_users?.length
       // }

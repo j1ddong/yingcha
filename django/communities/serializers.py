@@ -28,14 +28,14 @@ class FoodIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Food
-        fields = ('id',)
+        fields = ('id')
 
 
 class FoodListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Food
-        fields = ('id', 'food_name',)
+        fields = ('id', 'food_name', 'food_image',)
 
 class ArticleSerializer(serializers.ModelSerializer):
 
