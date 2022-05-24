@@ -108,3 +108,5 @@ class ReviewUpdateSerializer(serializers.ModelSerializer):
         model = Review
         fields = ('pk', 'user', 'content', 'movie', 'vote_average')
         read_only_fields = ('movie',)
+
+

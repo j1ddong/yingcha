@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Genre, Movie, Director, Actor, Review
 import random
-from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, MovieSerializer, ReviewSerializer, ReviewUpdateSerializer
+from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, MovieSerializer, ReviewSerializer, ReviewUpdateSerializer, MovieIdSerializer
 from rest_framework.response import Response
 from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
@@ -157,3 +157,11 @@ def create_review(request, movie_pk):
 def recommend(request):
     reco()
     return
+
+
+@api_view(['GET'])
+def movie_recommend(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    recommend = movie.recommend_movies.all()
+    serializers = MovieIdSerializer(recommend, many=True)
+    return Response(serializers.data)

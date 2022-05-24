@@ -46,6 +46,9 @@ export default {
     },
     reviews (moviePk) {
       return HOST + MOVIES + `${moviePk}/` + REVIEWS
+    },
+    recommend (moviePk) {
+      return HOST + MOVIES + 'recommend/' + `${moviePk}/`
     }
   },
   communities: {
