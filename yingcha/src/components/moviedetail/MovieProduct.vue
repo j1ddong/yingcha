@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>감독: {{ movieDirector.name }}</p>
+    <p>감독: {{ movieDetail.director }}</p>
     <img :src="movieDirectorUrl" alt="directorImage">
     <movie-actor v-for="actor in movieActors" :key="actor" :actor="actor"></movie-actor>
   </div>
@@ -17,7 +17,7 @@ export default {
     MovieActor, 
   },
   computed:{
-    ...mapGetters(['movieDirector', 'movieActors', 'movieDirectorUrl'])
+    ...mapGetters(['movieDetail', 'movieActors', 'movieDirectorUrl'])
   },
 }
 </script>

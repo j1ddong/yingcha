@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Genre, Movie, Director, Actor, Review
 import random
-from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, ReviewSerializer, ReviewUpdateSerializer
+from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, MovieSerializer, ReviewSerializer, ReviewUpdateSerializer
 from rest_framework.response import Response
 from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
@@ -58,6 +58,13 @@ def index(request):
     # print(movies_json)
 
     return JsonResponse(movies_json, safe=False)
+
+
+@api_view(['GET'])
+def movie_detail(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
 
 
 @api_view(['GET'])
