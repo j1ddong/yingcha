@@ -17,7 +17,7 @@
 
       <span v-if="currentUser.username === review.user.username && !isEditing">
         <button @click="switchIsEditing">Edit</button> |
-        <button @click="deleteReview(payload)">Delete</button> | 
+        <button @click="deleteItem">Delete</button> | 
         <button @click="likeReview(payload)">좋아요</button>
       </span>
     </li>
@@ -41,22 +41,29 @@ export default {
         content: this.review.content,
         voteAverage: this.review.vote_average
       },
+      forDelete: {
+        moviePk: this.review.movie,
+        reviewPk: this.review.pk,
+      }
     }
   },
   computed: {
-    ...mapGetters(['currentUser']),
+    ...mapGetters(['currentUser',]),
     likeCount() {
       return this.review.like_user?.length
     }
   },
   methods: {
-    ...mapActions(['updateReview', 'deleteReview', 'likeReview']),
+    ...mapActions(['updateReview', 'deleteReview', 'likeReview', 'fetchReviews']),
     switchIsEditing() {
       this.isEditing = !this.isEditing
     },
     onUpdate() {
       this.updateReview(this.payload)
       this.isEditing = false
+    },
+    deleteItem () {
+      this.deleteReview(this.forDelete)
     }
   },
 
