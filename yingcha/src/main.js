@@ -6,6 +6,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import PortalVue from 'portal-vue'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 
 Vue.config.productionTip = false

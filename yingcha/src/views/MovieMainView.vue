@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>yingcha</h1>
     <main-carousel></main-carousel>
     <movie-list-box :boxofficemovies="boxoffices"></movie-list-box>
     <movie-list-popular :popularmovies="popularmovies"></movie-list-popular>
