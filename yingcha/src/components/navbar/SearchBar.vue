@@ -1,12 +1,17 @@
 <template>
   <div id="nav">
     <div class="menu-nav">
-      <form @submit.prevent="showFoodDetail(selectedFoodId)">
+      <b-form class="d-flex" @submit.prevent="showFoodDetail(selectedFoodId)">
+        <b-form-input type="text" v-model="apple" @keyup.space="inputSearchFood" value="inputSelectedSearchValue" id="searchInput">
+        </b-form-input>     
+        <b-button>검색</b-button>
+      </b-form>
+      <!-- <form @submit.prevent="showFoodDetail(selectedFoodId)">
         <input type="text" v-model="apple" placeholder="검색되는 음식만 선택 가능합니다." 
         @keyup.space="inputSearchFood"
         value="inputSelectedSearchValue" id="searchInput">
         <button>검색</button>
-      </form>
+      </form> -->
     </div>
     <div id="resultSearchUl" style="display: none;">
       <ul v-show="!!foods" v-for="food in foods" :key="food.id">
