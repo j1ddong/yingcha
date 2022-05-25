@@ -2,9 +2,10 @@
   <div>
     <i class="fa-solid fa-angle-left fa-3x arrow-left"></i>
     <i class="fa-solid fa-angle-right fa-3x arrow-right"></i>
-    <div class="margin">
-      <h1 class="text-left">천만영화</h1>
-      <VueSlickCarousel v-bind="settings">
+    <div>
+      <h2 class="text-left fw-bold mb-3">천만영화</h2>
+      <!-- <vue-slick-carousel v-bind="settings" ref="carousel" v-if="slides.length"> <div v-for="(item, id) in slides" :key="id" > -->
+      <VueSlickCarousel v-bind="settings" ref="carousel">
         <movie-list-popular-items 
         v-for="movie in popularmovies" :key="movie.id" :movie="movie"
         ></movie-list-popular-items>
@@ -44,19 +45,16 @@ export default {
 </script>
 
 <style>
-.margin {
-  margin: 10px 15rem 0 19rem;
-}
 .arrow-left {
-  position: relative;
+  /* position: relative;
   top: 220px;
-  left: 230px;
+  left: 230px; */
   cursor: pointer;
 }
 .arrow-right {
-  position: relative;
+  /* position: relative;
   top: 220px;
-  left: 1600px;
+  left: 1600px; */
   cursor: pointer;
 }
 </style>

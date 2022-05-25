@@ -116,7 +116,7 @@ button, input[type="submit"] {
 }
 .h-120 {
   width: 300px;
-  height: 30px;
+  height: 45px;
 }
 input::placeholder {
   font-size: 14px;

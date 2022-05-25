@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="top margin">
+    <div class="top">
       <b-navbar toggleable="lg" type="dark" variant="light">
         <b-navbar-brand :to="{ name: 'MovieMain' }" type="dark" class="text-dark">
           <img src="@/image/yingcha-logo.png" alt="logo">
@@ -67,8 +67,5 @@ export default {
 .dropdown-item {
   color: white!important;
   display:inline!important;
-}
-.margin {
-  margin : 10px 15rem 0 19rem
 }
 </style>

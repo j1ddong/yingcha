@@ -2,8 +2,8 @@
   <div>
       <i class="fa-solid fa-angle-left fa-3x arrow-left"></i>
       <i class="fa-solid fa-angle-right fa-3x arrow-right"></i>
-    <div class="margin">
-      <h2 class="text-left">박스오피스 순위</h2>
+    <div>
+      <h2 class="text-left fw-bold mb-3">박스오피스 순위</h2>
       <VueSlickCarousel v-bind="settings">
       <movie-list-box-items
       v-for="movie in boxofficemovies" :key="movie.id" :movie="movie"
@@ -68,9 +68,6 @@ export default {
 </script>
 
 <style>
-.margin {
-  margin: 10px 15rem 0 19rem;
-}
 .arrow-left {
   position: relative;
   top: 220px;
