@@ -3,7 +3,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import _ from 'lodash'
-// import router from '@/router'
+import router from '@/router'
 import drf from '@/api/drf'
 
 Vue.use(Vuex)
@@ -16,11 +16,13 @@ export default {
     movieTitle: '',
     foodTitle: '',
     foodArticles : [],
+    recommendMovie: [],
   },
   getters: {
     movieTitle: state => state.movieTitle,
     foodTitle: state => state.foodTitle,
     foodArticles: state => state.foodArticles,
+    recommendMovie: state => state.recommendMovie
     // isAuthor: (state, getters) => {
     //   return state.article.user?.username === getters.currentUser.username
     // },
@@ -30,6 +32,7 @@ export default {
     GET_MOVIETITLE: (state, movieTitle) => state.movieTitle = movieTitle,
     GET_FOODTITLE: (state, foodTitle) => state.foodTitle = foodTitle,
     GET_FOODARTICLES: (state, foodArticles) => state.foodArticles = foodArticles,
+    GET_RECOMMEND_MOVIE: (state, movies) => state.recommendMovie = movies
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
   actions: {
@@ -76,5 +79,15 @@ export default {
         }
         })
     },
+    fetchRecommendMovie({ commit, getters }, foodPk) {
+      axios({
+        url: drf.communities.foodRecommend(foodPk),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('GET_RECOMMEND_MOVIE', res.data)
+        })
+    }
   }
 }
