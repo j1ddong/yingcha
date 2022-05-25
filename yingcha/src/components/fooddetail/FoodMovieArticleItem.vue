@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-link :to="{ path: `/communities/${foodArticle.pk}`}">
+    <!-- {{foodArticle}} -->
+    <!-- router-link: article detail로 넘어감 -->
+    <router-link :to="{ name: 'ArticleDetail', params : {articlePk: foodArticle.pk}}">
       <p>{{ foodArticle.user.username}}: {{foodArticle.title}} </p>
       <p>{{ foodTitle.food_name }} // {{ movieTitle.title }} </p>
     </router-link>
@@ -18,7 +20,7 @@ export default {
   data () {
     return {
       moviePk : this.foodArticle.movie_id,
-      foodPk : this.foodArticle.food_id
+      foodPk : this.foodArticle.food_id,
     }
   },
   computed: {

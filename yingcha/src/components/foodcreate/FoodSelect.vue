@@ -2,8 +2,10 @@
   <div id="nav">
     <div class="menu-nav">
       <form @submit.prevent="inputFood">
+        <!-- {{ action }} -->
+        <!-- {{ foodPk }} -->
         <label for="input">음식 선택: </label>
-        <input type="text" v-model="apple" placeholder="검색되는 음식만 선택 가능합니다." 
+        <input type="text" v-model="apple" :placeholder="placeholder" 
         @keyup.space="inputFood"
         value="inputSelectedValue" id="input">
         <button>검색</button>
@@ -31,14 +33,19 @@ export default {
     return {
       apple: '',
       inputSelectedValue : '',
-      selectedFoodId: ''
+      selectedFoodId: '',
+      placeholder: '',
     }
   },
+  props: {
+    action: String,
+    foodId: Number,
+  },
   computed: {
-    ...mapGetters(['foods'])
+    ...mapGetters(['foods', 'foodTitle', 'isAuthor',])
   },
   methods: {
-    ...mapActions(['searchFood']),
+    ...mapActions(['searchFood', 'getFoodTitle',]),
     // searchFood () {
     //   console.log('search food') //이것도 ok
     //   console.log(this.keyword) // undefined
@@ -84,6 +91,18 @@ export default {
     //   const searchList = document.querySelector('#noneText')
     //   searchList.style.visibility = "visible"
     // }
+    },
+    created () {
+      // console.log(this.foodPk) //ok
+      if (this.action === 'update') {
+        // selectedFoodId로 음식이름 불러오고(store에 접근)
+        this.getFoodTitle(this.foodId)
+        // this.placeholder에 해당 음식이름 저장
+        // console.log(this.foodTitle)
+        this.placeholder = this.foodTitle.food_name
+      } else {
+        this.placeholder = '검색되는 음식만 선택 가능합니다.'
+      }
     }
 }
 

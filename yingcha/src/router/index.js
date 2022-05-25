@@ -52,17 +52,17 @@ const routes = [
     component: FoodCreateView
   },
   {
-    path: '/communities/:articlepk',
+    path: '/communities/:articlePk',
     name: 'ArticleDetail',
     component: ArticleDetailView
   },
   {
-    path: '/communities/:articlepk/edit',
+    path: '/communities/:articlePk/edit',
     name: 'ArticleEdit',
     component: ArticleEditView
   },
   {
-    path: '/food/:foodPk',
+    path: '/food/:foodPk/',
     name: 'FoodDetailView',
     component: FoodDetailView
   },

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <food-select @emit-food-id="foodIdSave"></food-select>
-    <movie-select @emit-movie-id="movieIdSave"></movie-select>
-
+    <food-select @emit-food-id="foodIdSave" :action="action" :foodId="newArticle.foodId"></food-select>
+    <movie-select @emit-movie-id="movieIdSave" :action="action" :movieId="newArticle.movieId"></movie-select>
+    
     <form @submit.prevent="onSubmit">
       <div>
         <input v-model="newArticle.title" type="text" id="title" placeholder="제목을 입력하세요">
@@ -11,7 +11,7 @@
         <textarea v-model="newArticle.content" type="text" id="content" placeholder="내용을 입력하세요"></textarea>
       </div>
       <div>
-        <button>create</button>
+        <button>{{ action }}</button>
       </div>
     </form>
   </div>
@@ -24,10 +24,10 @@ import MovieSelect from '@/components/foodcreate/MovieSelect.vue'
 
 
 export default {
-  name: 'FoodCreateForm',
+  name: 'ArticleForm',
   props: {
     article: Object,
-    // action: String,
+    action: String,
   },
   components:{
     FoodSelect,
@@ -38,22 +38,26 @@ export default {
       newArticle : {
         title: this.article.title,
         content: this.article.content,
-        food_id : '',
-        movie_id : '',
+        movieId: this.article.movie_id,
+        foodId: this.article.food_id,
       }
         // buttonLabel : null,
       }
     },
   methods :{
-      ...mapActions(['createArticle',]),
+      ...mapActions(['createArticle', 'updateArticle']),
       onSubmit() {
       // console.log(1111)
       // 유저 정보 저장
-
-        this.createArticle(this.newArticle)
-        this.$router.push(
-          {path: `communities/${this.article.pk}`}
-        )
+      if (this.action === 'create') {
+          this.createArticle(this.newArticle)
+      } else if (this.action === 'update') {
+        const payload = {
+          pk: this.article.pk,
+          ...this.newArticle,
+          }
+          this.updateArticle(payload)
+        }
       },
       movieIdSave (movieId) {
         // console.log('movieid') // ok

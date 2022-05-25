@@ -1,18 +1,18 @@
 <template>
   <div>
     <h1>user님만의 꿀조합을 알려주세요!</h1>
-    <food-create-form :article="article" action="create"></food-create-form>
+    <article-form :article="article" action="create"></article-form>
   </div>
 </template>
 
 <script>
-import FoodCreateForm from '@/components/foodcreate/FoodCreateForm.vue'
+import ArticleForm from '@/components/articledetail/ArticleForm.vue'
 
 
 export default {
   name: 'FoodCreateView',
   components:{
-    FoodCreateForm,
+    ArticleForm,
 
   },
   data() {

@@ -2,7 +2,7 @@
   <div>
     <recommend-movie-list></recommend-movie-list>
     <food-movie-article-list :foodArticles="foodArticles"></food-movie-article-list>
-    <!-- <p>{{ foodArticles }}</p> -->
+    <!-- {{ foodPk }} -->
   </div>
 </template>
 

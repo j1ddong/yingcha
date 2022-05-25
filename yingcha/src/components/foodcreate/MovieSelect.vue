@@ -3,7 +3,7 @@
     <div class="menu-nav">
       <form @submit.prevent="inputKeyword">
         <label for="inputMovie">영화 선택: </label>
-        <input type="text" v-model="apple" placeholder="검색되는 영화만 선택 가능합니다." 
+        <input type="text" v-model="apple" :placeholder="placeholder" 
         @keyup.space="inputKeyword"
         value="inputSelectedMovieValue" id="inputMovie">
         <button>검색</button>
@@ -31,14 +31,19 @@ export default {
     return {
       apple: '',
       inputSelectedMovieValue : '',
-      selectedMovieId: ''
-    }
+      selectedMovieId: '',
+      placeholder: '',
+  }
+  },
+  props: {
+    action: String,
+    movieId: Number,
   },
   computed: {
-    ...mapGetters(['keywords'])
+    ...mapGetters(['keywords', 'movieTitle',])
   },
   methods: {
-    ...mapActions(['searchKeyword']),
+    ...mapActions(['searchKeyword', 'getMovieTitle',]),
     // searchFood () {
     //   console.log('search food') //이것도 ok
     //   console.log(this.keyword) // undefined
@@ -86,6 +91,18 @@ export default {
     //   const searchList = document.querySelector('#noneText')
     //   searchList.style.visibility = "visible"
     // }
+    },
+    created () {
+      // console.log(this.foodId) //ok
+      if (this.action === 'update') {
+        // selectedFoodId로 음식이름 불러오고(store에 접근)
+        this.getMovieTitle(this.movieId)
+        // this.placeholder에 해당 음식이름 저장
+        // console.log(this.foodTitle)
+        this.placeholder = this.movieTitle.title
+      } else {
+        this.placeholder = '검색되는 영화만 선택 가능합니다.'
+      }
     }
 }
 
