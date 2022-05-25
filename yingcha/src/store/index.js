@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 import createPersistedState from "vuex-persistedstate"
 import movies from './modules/movies'
 import detail from './modules/detail'
-import foodArticle from './modules/foodArticle'
+import fooddetail from './modules/fooddetail'
+import article from './modules/article'
 import accounts from './modules/accounts'
 
 
@@ -13,6 +14,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   plugins: [createPersistedState()],
   modules: {
-    movies, detail, foodArticle, accounts
+    movies, detail, fooddetail, article, accounts
   }
 })
