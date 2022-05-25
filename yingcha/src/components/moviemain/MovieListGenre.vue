@@ -2,8 +2,8 @@
   <div>
     <i class="fa-solid fa-angle-left fa-3x arrow-left"></i>
       <i class="fa-solid fa-angle-right fa-3x arrow-right"></i>
-    <div class="margin">
-      <h2 class="text-left">장르별 추천 영화</h2>
+    <div>
+      <h2 class="text-left fw-bold mb-3">장르별 추천 영화</h2>
       <VueSlickCarousel v-bind="settings">
       <movie-list-genre-items v-for="movie in genremovies" :key="movie.id" :movie="movie"></movie-list-genre-items>
       </VueSlickCarousel>
@@ -67,9 +67,6 @@ export default {
 </script>
 
 <style>
-.margin {
-  margin: 10px 15rem 0 19rem;
-}
 .arrow-left {
   position: relative;
   top: 220px;
