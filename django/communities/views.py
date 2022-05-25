@@ -95,6 +95,23 @@ def search_food_title(request, food_pk):
     serializer = FoodListSerializer(food)
     return Response(serializer.data)
 
+@api_view(['PUT'])
+def edit_article(request, article_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+    if request.user == article.user:
+        serializer = ArticleSerializer(instance=article, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
+
+@api_view(['DELETE'])
+def delete_article(request, article_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+    if request.user == article.user:
+        article.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 @api_view(['GET'])
 def recommend(request, food_pk):
@@ -107,6 +124,5 @@ def recommend(request, food_pk):
         movies.append(genre.movies.order_by('?').first())
     serializer = RecommendMovieSerializer(movies, many=True)
     return Response(serializer.data)
-
 
 

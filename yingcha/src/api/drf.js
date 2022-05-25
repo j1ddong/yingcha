@@ -56,8 +56,14 @@ export default {
     articles() {
       return HOST + COMMUNITIES + 'create/' 
     },
+    articleedit(articlePk) {
+      return HOST + COMMUNITIES + `${articlePk}/` + 'edit/'
+    },
     article(articlePk) {
       return HOST + COMMUNITIES + `${articlePk}/`
+    },
+    delete(articlePk) {
+      return HOST + COMMUNITIES + `${articlePk}/` +  'delete/'
     },
     search(keyword) {
       return HOST + COMMUNITIES + `search/movie?keyword=${keyword}`

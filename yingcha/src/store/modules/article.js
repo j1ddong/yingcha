@@ -2,7 +2,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import _ from 'lodash'
+import _ from 'lodash'
 import router from '@/router'
 import drf from '@/api/drf'
 
@@ -23,11 +23,10 @@ export default {
     foods: state => state.foods,
     articles: state => state.articles,
     article: state => state.article,
-
-    // isAuthor: (state, getters) => {
-    //   return state.article.user?.username === getters.currentUser.username
-    // },
-    // isArticle: state => !_.isEmpty(state.article),
+    isArticle: state => !_.isEmpty(state.article),
+    isAuthor: (state, getters) => {
+      return state.article.user?.username === getters.currentUser.username
+    },
   },
   mutations: {
     GET_KEYWORD: (state, keywords) => state.keywords = keywords,
@@ -77,21 +76,67 @@ export default {
       .then(res => {
         // console.log(res.data)
         commit('GET_ARTICLE', res.data)
+        // console.log(getters.article.pk)
         router.push({
-          name: 'article',
-          params: { articlePk: getters.article.pk }
-        })
+          name: 'ArticleDetail',
+          params: {articlePk: getters.article.pk}
+       })
       })
     },
-    fetchArticle({ commit, getters }, articlePk) {
+    fetchArticle({ commit, getters, dispatch }, articlePk) {
       // article detail 받아오기 (read)
+      // console.log(articlePk)
       axios({
         url: drf.communities.article(articlePk),
         method: 'get',
         headers: getters.authHeader,
       })
-        .then(res => commit('GET_ARTICLE', res.data))
+        .then(res => {
+          commit('GET_ARTICLE', res.data)
+        })
+        .then(() => {
+          dispatch('getMovieTitle', getters.article.movie_id)
+          dispatch('getFoodTitle', getters.article.food_id)
+        })
         .catch(err => console.error(err.response))
+    },
+    updateArticle({ commit, getters }, { pk, title, content}) {
+      // 게시글 수정
+      axios({
+        url: drf.communities.articleedit(pk),
+        method: 'put',
+        data: { title, content },
+        headers: getters.authHeader,
+      })
+      .then(res => {
+        commit('GET_ARTICLE', res.data)
+        router.push({
+          name: 'ArticleDetail',
+          params: {articlePk: getters.article.pk}
+       })
+      })
+    },
+    deleteArticle({ commit, getters }, {articlePk, foodId}) {
+      // 게시글 삭제
+      // console.log('deleteArticle success')
+      // console.log(articlePk)
+      // console.log(foodId)
+      if (confirm('정말 삭제하시겠습니까?')) {
+        axios({
+          url: drf.communities.delete(articlePk),
+          method: 'delete',
+          headers: getters.authHeader,
+        })
+          .then(() => {
+            // console.log('into then') // ok
+            commit('GET_ARTICLE', {})
+            router.push({ 
+              name: 'FoodDetailView',
+              params : {foodPk: foodId}
+            })
+          })
+          .catch(err => console.error(err.response))
+      }
     },
   }
 }
