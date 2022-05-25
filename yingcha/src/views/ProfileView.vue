@@ -2,19 +2,19 @@
   <div>
     <h1>{{ profile.username }}</h1>
 
-    <h2>작성한 글</h2>
+    <h2>내가 선택한 조합</h2>
     <ul>
-      <li v-for="article in profile.articles" :key="article.pk">
-        <router-link :to="{ name: 'article', params: { articlePk: article.pk } }">
+      <li v-for="article in profile.article_set" :key="article.pk">
+        <router-link :to="{ name: 'ArticleDetail', params: { articlepk: article.pk } }">
           {{ article.title }}
         </router-link>
       </li>
     </ul>
 
-    <h2>좋아요 한 글</h2>
+    <h2>내가 좋아한 조합</h2>
     <ul>
       <li v-for="article in profile.like_articles" :key="article.pk">
-        <router-link :to="{ name: 'article', params: { articlePk: article.pk } }">
+        <router-link :to="{ name: 'ArticleDetail', params: { articlepk: article.pk } }">
           {{ article.title }}
         </router-link>
       </li>

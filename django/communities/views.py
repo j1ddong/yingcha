@@ -1,11 +1,12 @@
 from django.shortcuts import get_object_or_404
 from .models import Food, Article
-from .serializers import ArticleSerializer, FoodListSerializer
+from .serializers import ArticleSerializer, FoodListSerializer, RecommendMovieSerializer
 from movies.serializers import MovieIdSerializer, MovieListSerializer
 from movies.models import Movie
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+import random
 
 
 
@@ -110,3 +111,18 @@ def delete_article(request, article_pk):
     if request.user == article.user:
         article.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def recommend(request, food_pk):
+    food = get_object_or_404(Food, pk=food_pk)
+    tastes = food.taste.all()  # <QuerySet [<Taste: umami>, <Taste: oily>]>
+    taste = random.choice(tastes)
+    genres = taste.genres.all()
+    movies = []
+    for genre in genres:
+        movies.append(genre.movies.order_by('?').first())
+    serializer = RecommendMovieSerializer(movies, many=True)
+    return Response(serializer.data)
+
+

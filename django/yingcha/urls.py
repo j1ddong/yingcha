@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/movies/', include('movies.urls')),
     path('api/communities/', include('communities.urls')),
+    path('api/accounts/', include('accounts.urls')),
 
     path('api/accounts/', include('dj_rest_auth.urls')),  # 로그인/ 로그아웃
     path('api/accounts/signup/', include('dj_rest_auth.registration.urls')),  # 회원가입

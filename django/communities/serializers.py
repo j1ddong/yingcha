@@ -1,9 +1,6 @@
-from pyexpat import model
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-
 from movies.models import Movie
-
 from .models import Article, Food, Taste
 from movies.serializers import MovieSerializer, MovieIdSerializer
 
@@ -53,3 +50,10 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = ('pk', 'user', 'title', 'content','food_id', 'movie_id',)
         read_only_fields = ('food_id', 'movie_id',)
+
+
+class RecommendMovieSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('pk', 'title', 'poster_url')
