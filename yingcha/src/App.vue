@@ -4,7 +4,6 @@
     <nav>
       <router-link :to="{ name: 'MovieDetail', params: {moviepk: 282631} }">Detail</router-link> |
       <router-link :to="{ name: 'FoodCreate'}">Food Create</router-link> |
-      <router-link :to="{ name: 'ArticleDetail'}">Article Detail</router-link> 
       <!-- <router-link :to="{ name: 'login'}">Login</router-link> |
       <router-link :to="{ name: 'login'}">Login</router-link> |
       <router-link :to="{ name: 'signup'}">signup</router-link> |
