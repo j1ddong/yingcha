@@ -3,7 +3,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import _ from 'lodash'
-// import router from '@/router'
+import router from '@/router'
 import drf from '@/api/drf'
 
 Vue.use(Vuex)
