@@ -18,6 +18,7 @@ export default {
       return HOST + ACCOUNTS +  'signup/'
     },
     currentUserInfo: () => HOST + ACCOUNTS + 'user/',
+    profile: username => HOST + ACCOUNTS + 'profile/' + username,
   },
   movies: {
     movies () {
@@ -72,6 +73,9 @@ export default {
     },
     foodtitle(foodPk) {
       return HOST + COMMUNITIES + 'search/food/' + `${foodPk}/`
+    },
+    foodRecommend(foodPk) {
+      return HOST + COMMUNITIES + 'recommend/' + `${foodPk}/`
     }
   }
 }
