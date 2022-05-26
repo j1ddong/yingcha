@@ -14,14 +14,14 @@ export default {
   state: {
     movieDetail: [],
     movieDirectorUrl: null,
-    movieActorUrl: [],
+    movieActors: [],
     relatedMovies: [],
     reviews: []
   },
   getters: {
     movieDetail: state => state.movieDetail,
     movieDirector: state => state.movieDirector,
-    movieActorUrl: state => state.movieActorUrl,
+    movieActors: state => state.movieActors,
     relatedMovies: state => state.relatedMovies,
     movieDirectorUrl: state => state.movieDirectorUrl,
     reviews: state => state.reviews
@@ -42,7 +42,7 @@ export default {
       state.reviews = reviews
     },
     SET_MOVIE_REVIEWS: (state, reviews) => (state.reviews = reviews),
-    GET_MOVIE_ACTORS_URL: (state, url) => (state.movieActorUrl = url)
+    GET_MOVIE_ACTORS: (state, actors) => (state.movieActors = actors)
   },
   actions: {
     fetchMovieDetail ({commit, getters, dispatch}, moviePk) {
@@ -82,14 +82,14 @@ export default {
       // })
     },
     fetchActorUrl ({commit, getters}) {
-      const actorsUrl = []
+      const actors = []
       getters.movieDetail.actors.forEach(actor => {
         axios.get(URL_BASE + `/person/${actor.id}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
           .then(res => {
-            actorsUrl.push(BASIC_URL_FOR_IMAGE + res.data.profile_path)
+            actors.push({name: actor.name, url: BASIC_URL_FOR_IMAGE + res.data.profile_path})
           })
       })
-      commit('GET_MOVIE_ACTORS_URL', actorsUrl)
+      commit('GET_MOVIE_ACTORS', actors)
     },
     fetchReviews ({commit, getters}, moviePk ) {
       axios({
