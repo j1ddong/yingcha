@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>Detail</p>
     <movie-detail></movie-detail>
     <movie-product></movie-product>
     <movie-review></movie-review>
@@ -31,17 +30,8 @@ export default {
     fetchMovieDetail () {
       this.$store.dispatch('fetchMovieDetail', this.moviePk)
     },
-    fetchMovieProvider () {
-      this.$store.dispatch('fetchMovieProvider', this.moviePk)
-    },
-    fetchMovieCredits () {
-      this.$store.dispatch('fetchMovieCredits', this.moviePk)
-    },
     fetchRelatedName () {
       this.$store.dispatch('fetchRelatedName', this.moviePk)
-    },
-    fetchMovieDirector () {
-      this.$store.dispatch('fetchMovieDirector', this.moviePk)
     },
     fetchReviews () {
       this.$store.dispatch('fetchReviews', this.moviePk)
@@ -49,10 +39,7 @@ export default {
   },
   created () {
     this.fetchMovieDetail(),
-    this.fetchMovieProvider(),
-    this.fetchMovieCredits(),
-    this.fetchRelatedName(),
-    this.fetchMovieDirector(),
+    this.fetchRelatedName()
     this.fetchReviews()
   }
 }

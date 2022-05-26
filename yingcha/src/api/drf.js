@@ -50,7 +50,10 @@ export default {
     },
     recommend (moviePk) {
       return HOST + MOVIES + 'recommend/' + `${moviePk}/`
-    }
+    },
+    popularMovie () {
+      return HOST + MOVIES + 'popular/'
+    },
   },
   communities: {
     articles() {

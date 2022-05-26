@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Genre, Movie, Director, Actor, Review
 import random
-from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, MovieSerializer, ReviewSerializer, ReviewUpdateSerializer, MovieIdSerializer
+from .serializers import DirectorSerializer, ActorSerializer, MovieDirectorSerializer, MovieReviewSerializer, MovieSerializer, ReviewSerializer, ReviewUpdateSerializer, MovieIdSerializer, MovieListSerializer
 from rest_framework.response import Response
 from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
@@ -12,9 +12,7 @@ from .recommend import recommend as reco
 API_KEY = '44f9d36b9d8fa8e880839899c577f866'
 URL_BASE = 'https://api.themoviedb.org/3'
 params = {'api_key': API_KEY, 'language': 'ko', 'region': 'KR'}
-# PATH = f'/movie/{movie_id}'  # movie.detail
-# r1 = requests.get(URL_BASE + PATH, params=params) 
-# movie = r1.json()
+
 
 def index(request):
 
@@ -34,7 +32,6 @@ def index(request):
                 movie_genre = random.choice(movies)
             return movie_genre
             
-
         # random_one이 result 배열 내에 없으면, result에 넣기
         chosen_movie = check(movie_genre, movies_json)
     
@@ -44,19 +41,7 @@ def index(request):
                 'title': chosen_movie.title,
                 'poster_url': chosen_movie.poster_url,
                 'genre': genre.name,
-                # 'release_date' : movie_genre.release_date,
-                # 'description': movie_genre.description,
-                # 'run_time': movie_genre.run_time,
-                # 'original_title': movie_genre.original_title,
-                # 'adult': movie_genre.adult,
-                # 'country': movie_genre.country,
-                # 'actor': movie_genre.actor,
-                # 'director': movie_genre.director,
-                # 'provider': movie_genre.provider,
             })
-    
-    # print(movies_json)
-
     return JsonResponse(movies_json, safe=False)
 
 
@@ -165,3 +150,14 @@ def movie_recommend(request, movie_pk):
     recommend = movie.recommend_movies.all()
     serializers = MovieIdSerializer(recommend, many=True)
     return Response(serializers.data)
+
+
+@api_view(['GET'])
+def popular(request):
+    movies_id = [282631, 567646, 397567, 313108, 299534, 330457, 346646, 19995, 1255, 124157, 158445, 291549, 420817, 133200, 45035, 518068, 437068, 11658, 396535, 33196, 242452, 299536, 19644, 99861, 496243, 157336, 109445]
+    movies = []
+    for movie in movies_id:
+        movies.append(get_object_or_404(Movie, pk=movie))
+    serializers = MovieListSerializer(movies, many=True)
+    return Response(serializers.data)
+
