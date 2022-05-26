@@ -23,7 +23,6 @@
         prev-text="Prev"
         next-text="Next"
         last-text="Last"
-        @page-click="pageClick"
       >
       
       </b-pagination>
@@ -51,31 +50,20 @@ export default {
         pagenatedArticles: Array,
       }
   },
-  methods :{
-    // 해당 페이지 번호를 클릭을 하면
-    // 가져온 데이터의 (현재 페이지)*(페이지 당 보여줄 아티클 수) -4 ~ (현재 페이지+1)*(페이지 당 보여줄 아티클 수)
-    pageClick() {
-      // console.log('a') // ok
-      console.log(this.currentPage)
+  watch : {
+    currentPage (newValue) {
       const articles = this.foodArticles
-      const start = (this.currentPage-1)*this.perPage
+      const start = (newValue-1)*this.perPage
       console.log(start)
-      // console.log(articles)
       this.pagenatedArticles = articles.slice(start, start+this.perPage)
-      // console.log(this.pagenatedArticles)
       console.log(this.pagenatedArticles)
     }
   },
   created() {
     this.rows = this.foodArticles.length // ok
     const articles = this.foodArticles
-    // const startPage = document.querySelector('#foodArticleItem1')
-    // console.log(startPage)
     this.pagenatedArticles = articles.slice(0, this.perPage)
     console.log(this.pagenatedArticles)
-    // const a = document.querySelectorAll('button.page-link')
-    // console.log(a)
-    // a.addEventListener("click", this.showArticles)
     }
   }
 
