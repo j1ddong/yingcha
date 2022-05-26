@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p>Review</p>
+  <div class="my-5">
     <movie-review-form></movie-review-form>
     <movie-review-item v-for="review in reviews" :key="review.id" :review="review"></movie-review-item>
   </div>

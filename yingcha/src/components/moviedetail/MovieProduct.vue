@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <p>감독: {{ directorName }}</p>
+  <div class="mt-5">
+    <h3 class="fw-bold mb-4">✨ 출연 / 제작</h3>
     <VueSlickCarousel v-bind="settings">
-    <img :src="movieDirectorUrl" alt="directorImage">
+    <div class="d-flex flex-column text-center">
+      <img :src="movieDirectorUrl" alt="directorImage" class="b-radius mx-2">
+      <p class="mt-2 mb-0 fw-bold fs-5">감독</p>
+      <p class="mt-1 fw-bold">{{ directorName }}</p>
+    </div>
     <movie-actor v-for="(actor, idx) in movieActors" :key="actor.id" :actor="actor" :idx="idx"></movie-actor>
     </VueSlickCarousel>
   </div>

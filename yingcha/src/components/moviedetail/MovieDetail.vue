@@ -1,17 +1,28 @@
 <template>
-  <div class="d-flex">
-    <img :src="posterUrl" alt="moviePoster">
-    <div class="d-flex flex-column">
-      <h1 class="item movie-margin"><strong>{{ movieDetail.title }}</strong></h1>
-    <div class="my-3 movie-margin">
-      <p class="item"> 개봉일: {{ movieDetail.release_date }}</p>
-      <p class="item">장르: {{ genre }}</p>
-      <p class="item">{{ movieDetail.original_title }}</p>
-      <span class="item">now streamig: {{ provider }}</span>
-    </div>
+  <div class="d-flex mt-5">
+    <img :src="posterUrl" alt="moviePoster" class="b-radius">
+    <div class="ms-4 mb-5">
+      <h2 class="item mt-4 fw-bold">{{ movieDetail.title }} </h2>
+      <h5 class="item ms-1 mt-3 fw-bold">{{ movieDetail.original_title }}</h5>
+      <hr style="width:200px;" class="mb-4">
+      <div class="my-3 movie-margin">
+        <div class="d-flex">
+          <p class="item fw-bold fs-5 me-3"> 💎 개봉일 </p>
+          <p class="fs-5">{{ movieDetail.release_date }}</p>
+        </div>
+        <div class="d-flex">
+          <p class="item fw-bold fs-5 me-3">💎 장르</p>
+          <p class="item fs-5" 
+            v-for="(item,index) in genre" :key="index"
+          >{{ item }} /</p>
+        </div>
+        <span class="item fw-bold fs-5">💎 시청 가능 플랫폼</span>
+        <p class="fs-5 mt-2 ms-3"
+          v-for="(item, index) in provider" :key="index">{{ item }} /</p>
+      </div>
     <div class="mt-5 movie-margin">
-      <h4>줄거리</h4>
-      <p>{{ movieDetail.description }}</p>
+      <h4 class="fw-bold fs-5">💎 줄거리</h4>
+      <p class="ms-2">{{ movieDetail.description }}</p>
     </div>
     </div>  
     <!-- 빈 배열이면 안나오게 lodash도움 받아서 고치기 -->
@@ -43,7 +54,4 @@ export default {
 </script>
 
 <style>
-.movie-margin {
-  margin: 50px 0 50px 50px;
-}
 </style>
