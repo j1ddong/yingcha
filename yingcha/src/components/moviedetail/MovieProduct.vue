@@ -1,9 +1,10 @@
 <template>
   <div>
     <p>감독: {{ directorName }}</p>
+    <!-- {{movieActors}} -->
     <VueSlickCarousel v-bind="settings">
     <img :src="movieDirectorUrl" alt="directorImage">
-    <movie-actor v-for="(actor, idx) in movieActors" :key="actor.id" :actor="actor" :idx="idx"></movie-actor>
+    <movie-actor v-for="actor in movieActors" :key="actor.id" :actor="actor"></movie-actor>
     </VueSlickCarousel>
   </div>
 </template>
@@ -22,13 +23,10 @@ export default {
     MovieActor, VueSlickCarousel
   },
   computed:{
-    ...mapGetters(['movieDetail', 'movieDirectorUrl',]),
+    ...mapGetters(['movieDetail', 'movieDirectorUrl', 'movieActors']),
     directorName () {
       return this.movieDetail.directors[0].name
     },
-    movieActors () {
-      return this.movieDetail.actors
-    }
   },
   data () {
     return {
@@ -39,32 +37,6 @@ export default {
         "speed": 500,
         "slidesToShow": 5,
         "initialSlide": 0,
-        "responsive": [
-          {
-            "breakpoint": 1024,
-            "settings": {
-              "slidesToShow": 3,
-              "slidesToScroll": 3,
-              "infinite": true,
-              "dots": true
-            }
-          },
-          {
-            "breakpoint": 600,
-            "settings": {
-              "slidesToShow": 2,
-              "slidesToScroll": 2,
-              "initialSlide": 2
-            }
-          },
-          {
-            "breakpoint": 480,
-            "settings": {
-              "slidesToShow": 1,
-              "slidesToScroll": 1
-            }
-          }
-        ]
       }
     }
   },
