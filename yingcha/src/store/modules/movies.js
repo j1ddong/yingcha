@@ -2,7 +2,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import _ from 'lodash'
+// import _ from 'lodash'
 import drf from '@/api/drf'
 
 Vue.use(Vuex)
@@ -43,22 +43,15 @@ export default {
         // console.log(typeof(state.boxoffices))
       })
     },
-    fecthPopularMovie: function ({commit}) {
-      // django와 통신하기 
-      const koreaPopular = [282631, 567646, 397567, 313108, 299534, 330457, 346646, 19995, 1255, 124157, 158445, 291549, 420817, 133200, 45035, 518068, 437068, 11658, 396535, 33196, 242452, 299536, 19644, 99861, 496243, 157336, 109445]
-      const popularRandom = _.sampleSize(koreaPopular, 10)
-      let resultObject = []
-      popularRandom.forEach(popularId => {
-        axios.get(`${URL_BASE}/movie/${popularId}`, {params:
-          {'api_key': API_KEY, 'language': 'ko', 'region': 'KR'}
-        })
+    fecthPopularMovie: function ({ commit, getters }) {
+      axios({
+        method: 'get',
+        url: drf.movies.popularMovie(),
+        headers: getters.authHeader,
+      })
         .then(res => {
-          // console.log(typeof(res.data))
-          resultObject.push(res.data)
+          commit('GET_POPULARMOVIE', res.data)
         })
-      });
-      commit('GET_POPULARMOVIE', resultObject)
-      // console.log(resultObject)
     },
     fetchBestMovie: function ({commit}) {
       axios.get(URL_BASE + '/movie/top_rated', {params:
@@ -70,10 +63,11 @@ export default {
         // console.log(state.bestmovies)
       })
     },
-    fetchGenreMovie: function ({commit}) {
+    fetchGenreMovie: function ({commit, getters}) {
       axios({
         url: drf.movies.movies(),
         method: 'get',
+        headers: getters.authHeader,
       })
       .then(res => commit('GET_GENREMOVIE', res.data))
       }

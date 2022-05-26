@@ -12,11 +12,7 @@ const BASIC_URL_FOR_IMAGE = 'https://image.tmdb.org/t/p/w200'
 
 export default {
   state: {
-    movieDetail: {
-      title: null, posterUrl: null, overview: null, release_date: null, genres: [], original_title: null
-    },
-    movieProvider: [],
-    movieDirector: null,
+    movieDetail: [],
     movieDirectorUrl: null,
     movieActors: [],
     relatedMovies: [],
@@ -24,7 +20,6 @@ export default {
   },
   getters: {
     movieDetail: state => state.movieDetail,
-    movieProvider: state => state.movieProvider,
     movieDirector: state => state.movieDirector,
     movieActors: state => state.movieActors,
     relatedMovies: state => state.relatedMovies,
@@ -32,29 +27,13 @@ export default {
     reviews: state => state.reviews
   },
   mutations: {
-    GET_MOVIE_DETAIL ({ movieDetail }, movie) {
-      movieDetail.title = movie.title,
-      movieDetail.posterUrl = BASIC_URL_FOR_IMAGE + movie.poster_path,
-      movieDetail.overview = movie.overview,
-      movieDetail.release_date = movie.release_date
-      movieDetail.genres = movie.genres.map(genre => genre.name) 
-      movieDetail.original_title = movie.original_title
-    },
-    GET_MOVIE_PROVIDER (state, providers) {
-      state.movieProvider = providers.map(provider => provider.provider_name)
-    },
-    GET_MOVIE_CREDITS (state, crews) {
-      state.movieActors = crews.cast.splice(0,5).map(crew => {
-        return crew.id
-      })
+    GET_MOVIE_DETAIL (state, movie) {
+      state.movieDetail = movie
     },
     GET_RELATED_NAME (state, relatedMovies) {
       state.relatedMovies = relatedMovies.map(movie => {
         return movie.id
       })
-    },
-    GET_MOVIE_DIRECTOR (state, director) {
-      state.movieDirector = director 
     },
     GET_MOVIE_DIRECTOR_URL (state, url) {
       state.movieDirectorUrl = BASIC_URL_FOR_IMAGE + url
@@ -65,22 +44,25 @@ export default {
     SET_MOVIE_REVIEWS: (state, reviews) => (state.reviews = reviews),
   },
   actions: {
-    fetchMovieDetail ({ commit }, moviePk) {
-      axios.get(URL_BASE + `/movie/${moviePk}`, {params: {'api_key': API_KEY, 'language': 'ko' }})
+    fetchMovieDetail ({commit, getters, dispatch}, moviePk) {
+      axios({
+        method: 'get',
+        url: drf.movies.movie(moviePk),
+        headers: getters.authHeader,
+      })
         .then(res => {
+          console.log(res.data)
           commit('GET_MOVIE_DETAIL', res.data)
         })
-       },
-    fetchMovieProvider ({ commit }, moviePk) {
-      axios.get(URL_BASE + `/movie/${moviePk}/watch/providers`, {params: {'api_key': API_KEY}})
-        .then(res => {
-          commit('GET_MOVIE_PROVIDER', res.data.results.KR.rent)
-        })
+        .then(() => {
+          dispatch('fetchDirectorUrl')
+            // console.log(getters.movieDetail.directors[0].id)
+          })
     },
-    fetchMovieCredits ({ commit }, moviePk) {          
-      axios.get(URL_BASE + `/movie/${moviePk}/credits`, {params: {'api_key': API_KEY, 'language': 'ko'}})
+    fetchDirectorUrl ({commit, getters}) {
+      axios.get(URL_BASE + `/person/${getters.movieDetail.directors[0].id}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
       .then(res => {
-        commit('GET_MOVIE_CREDITS', res.data)
+        commit('GET_MOVIE_DIRECTOR_URL', res.data.profile_path)
       })
     },
     fetchRelatedName ({ getters, commit }, moviePk) {
@@ -97,26 +79,6 @@ export default {
       //   console.log(res.data.results)
       //   commit('GET_RELATED_NAME', res.data.results)
       // })
-    },
-    fetchMovieDirector ({ commit, getters, dispatch }, moviePk) {
-      axios({
-        method: 'get',
-        url: drf.movies.movieDirectorId(moviePk),
-        headers: getters.authHeader,
-      })
-        .then(res => {
-          commit('GET_MOVIE_DIRECTOR', res.data.directors[0])
-        })
-         .then(res => {
-            res
-            dispatch('fetchDirectorUrl')
-         })
-    },
-    fetchDirectorUrl ({commit, getters}) {
-      axios.get(URL_BASE + `/person/${getters.movieDirector.id}`, {params: {'api_key': API_KEY, 'language': 'ko'}})
-      .then(res => {
-        commit('GET_MOVIE_DIRECTOR_URL', res.data.profile_path)
-      })
     },
     fetchReviews ({commit, getters}, moviePk ) {
       axios({
@@ -169,7 +131,7 @@ export default {
           commit('SET_MOVIE_REVIEWS', res.data)})
         .catch(err => console.error(err.response))
     },
-		createReview({ commit, getters }, { moviePk, content, voteAverage }) {
+    createReview({ commit, getters }, { moviePk, content, voteAverage }) {
       const review = { content, vote_average: voteAverage }
       axios({
         url: drf.movies.reviews(moviePk),
@@ -182,5 +144,5 @@ export default {
         })
         .catch(err => console.error(err.response))
     },
-  },
+  }
 }

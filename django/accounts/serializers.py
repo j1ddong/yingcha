@@ -5,18 +5,6 @@ from movies.models import Movie
 
 class ProfileSerializer(serializers.ModelSerializer):
 
-    # class FoodSerializer(serializers.ModelSerializer):
-
-    #     class Meta:
-    #         model = Food
-    #         field = ('food_name', 'food_image',)
-
-    # class MovieSerializer(serializers.ModelSerializer):
-
-    #     class Meta:
-    #         model = Movie
-    #         field = ('title', 'poster_url',)
-
     class ArticleSerializer(serializers.ModelSerializer):
         
         class Meta:

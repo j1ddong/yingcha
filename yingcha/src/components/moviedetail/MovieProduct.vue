@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p v-if="movieDirector">감독: {{ movieDirector }}</p>
-    <img v-if="movieDirector" :src="movieDirectorUrl" alt="directorImage">
-    <movie-actor v-for="actor in movieActors" :key="actor" :actor="actor"></movie-actor>
+    {{movieDetail.directors[0].id}}
+    <p>감독: {{ directorName }}</p>
+    <img :src="movieDirectorUrl" alt="directorImage">
+    <movie-actor v-for="actor in movieActors" :key="actor.id" :actor="actor"></movie-actor>
   </div>
 </template>
 
@@ -17,7 +18,13 @@ export default {
     MovieActor, 
   },
   computed:{
-    ...mapGetters(['movieDetail', 'movieActors', 'movieDirectorUrl', 'movieDirector'])
+    ...mapGetters(['movieDetail', 'movieDirectorUrl',]),
+    directorName () {
+      return this.movieDetail.directors[0].name
+    },
+    movieActors () {
+      return this.movieDetail.actors
+    }
   },
 }
 </script>
