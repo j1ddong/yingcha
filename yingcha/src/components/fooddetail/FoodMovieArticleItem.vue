@@ -2,10 +2,12 @@
   <div>
     <!-- {{foodArticle}} -->
     <!-- router-link: article detail로 넘어감 -->
-    <router-link :to="{ name: 'ArticleDetail', params : {articlePk: foodArticle.pk}}">
-      <p>{{ foodArticle.user.username}}: {{foodArticle.title}} </p>
-      <p>{{ foodTitle.food_name }} // {{ movieTitle.title }} </p>
+    <router-link :to="{ name: 'ArticleDetail', params : {articlePk: foodArticle.pk}}"  class="text-decoration-none text-dark">
+      <h5 class="fw-bold mb-3">🎈{{ foodArticle.user.username}}님의 추천</h5>
+      <p class="fw-bold">🍜 {{ foodTitle.food_name }} & 🎭{{ movieTitle.title }} </p>
+      <!-- <p>: {{foodArticle.title}} </p> -->
     </router-link>
+    <hr>
   </div>
 </template>
 

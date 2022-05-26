@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <h1>Edit Article</h1>
-    <article-form v-if="isArticle" :article="article" action="update">
+  <div class="mt-5 text-center">
+    <div class="d-flex justify-content-center">
+      <router-link :to="{ name: 'ArticleDetail', params : {articlePk: article.pk}}">
+        <button class="fw-bold border-0 p-1 me-5 mt-1 bg-white font-main-color">&lt; 뒤로</button>
+      </router-link>
+      <h2 class="fw-bold">게시글 수정하기</h2>
+    </div>
+    <article-form v-if="isArticle" :article="article" action="update" class="mt-5">
   
     </article-form>
-    <router-link :to="{ name: 'ArticleDetail', params : {articlePk: article.pk}}">
-      <button>뒤로 가기</button>
-    </router-link>
+    
   </div>
 
 </template>
@@ -36,4 +39,8 @@ import { mapGetters, mapActions } from 'vuex'
   }
 </script>
 
-<style></style>
+<style>
+.font-main-color {
+  color: #1ec800
+}
+</style>

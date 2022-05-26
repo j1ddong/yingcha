@@ -1,7 +1,9 @@
 <template>
   <div>
-    <p>{{movie.title}}</p>
-    <img :src="posterUrl" alt="">
+    <router-link :to="{ path: `/movies/${movie.id}/`}"  class="text-decoration-none text-dark">
+      <img :src="posterUrl" :alt="movie.title" class="h-285">
+      <p class="text-center mt-3 ps-3 pe-4">{{movie.title}}</p>
+    </router-link>
   </div>
 </template>
 

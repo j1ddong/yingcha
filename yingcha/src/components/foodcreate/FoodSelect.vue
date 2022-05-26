@@ -1,23 +1,24 @@
 <template>
-  <div id="nav">
+  <div id="nav" class="mb-2">
     <div class="menu-nav">
       <form @submit.prevent="inputFood">
         <!-- {{ action }} -->
         <!-- {{ foodPk }} -->
-        <label for="input">음식 선택: </label>
+        <label for="input" class="fw-bold me-3 fs-5">🍜 음식</label>
         <input type="text" v-model="apple" :placeholder="placeholder" 
         @keyup.space="inputFood"
-        value="inputSelectedValue" id="input">
-        <button>검색</button>
+        value="inputSelectedValue" id="input" class="border-main-color s-200">
       </form>
     </div>
     <div id="resultUl" style="display: none;">
-      <ul v-show="!!foods" v-for="food in foods" :key="food.id">
-        <li @click="[saveOnInput(food.id), emitFoodId()]" :id="`selectedTitle${food.id}`"> {{ food.food_name }}</li>
+      <ul v-show="!!foods" v-for="food in foods" :key="food.id" class="p-0">
+        <li @click="[saveOnInput(food.id), emitFoodId()]" 
+        :id="`selectedTitle${food.id}`" class="list-unstyled my-2"> 
+        🔎 {{ food.food_name }}</li>
       </ul>
       <ul id="noneText" v-if="isEmpty(foods)">
         <!-- <li>{{ keywords }}</li> -->
-        <li>검색 결과가 없습니다.</li>
+        <li class="list-unstyled my-2">🔎 검색 결과가 없습니다.</li>
       </ul>
     </div>
   </div>
@@ -101,7 +102,7 @@ export default {
         // console.log(this.foodTitle)
         this.placeholder = this.foodTitle.food_name
       } else {
-        this.placeholder = '검색되는 음식만 선택 가능합니다.'
+        this.placeholder = '🔎 검색되는 음식만 선택 가능합니다.'
       }
     }
 }
@@ -109,5 +110,8 @@ export default {
 </script>
 
 <style>
-
+.s-200 {
+  width: 250px;
+  height: 30px;
+}
 </style>

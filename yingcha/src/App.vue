@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <nav>
-      <router-link :to="{ name: 'FoodCreate'}">Food Create</router-link> |
-    </nav>
+    <!-- <nav>
+      <router-link :to="{ name: 'FoodCreate'}">Food Create</router-link> | 
+    </nav> -->
     <router-view/>
   </div>
 </template>
