@@ -82,6 +82,8 @@ export default {
     showFoodDetail(foodPk) {
       // console.log(`this is ${foodPk}`) // ok
       this.$router.push(`/food/${foodPk}`)
+      this.$router.go()
+      this.apple = ''
       // console.log(`this is ${foodPk}`)
     },
     

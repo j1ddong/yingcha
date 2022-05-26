@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from .models import Food, Article, Taste
-from .serializers import ArticleSerializer, FoodListSerializer, RecommendMovieSerializer
+from .serializers import ArticleSerializer, FoodListSerializer, RecommendMovieSerializer, ArticleDetailSerializer
 from movies.serializers import MovieIdSerializer, MovieListSerializer
 from movies.models import Movie
 from rest_framework.decorators import api_view
@@ -78,7 +78,7 @@ def get_article_list(request, food_pk):
     food = get_object_or_404(Food, pk=food_pk)
     articles = food.article_set.all()
     # print(articles)
-    serializers = ArticleSerializer(articles, many=True)
+    serializers = ArticleDetailSerializer(articles, many=True)
     return Response(serializers.data)
 
 

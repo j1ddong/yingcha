@@ -4,15 +4,15 @@
       <label for="reivew" class="fs-5 fw-bold">💌 리뷰 작성하기 </label>
       <div class="d-flex my-4 text-end">
         <div class="star-rating space-x-4">
-          <input type="radio" id="5-stars" name="rating" value="5" v-model="newComment.voteAverage" @click="changeText"/>
+          <input type="radio" id="5-stars" name="rating" value="5" v-model="newComment.voteAverage" />
           <label for="5-stars" class="star pr-4">★</label>
-          <input type="radio" id="4-stars" name="rating" value="4" v-model="newComment.voteAverage" @click="changeText"/>
+          <input type="radio" id="4-stars" name="rating" value="4" v-model="newComment.voteAverage" />
           <label for="4-stars" class="star">★</label>
-          <input type="radio" id="3-stars" name="rating" value="3" v-model="newComment.voteAverage" @click="changeText"/>
+          <input type="radio" id="3-stars" name="rating" value="3" v-model="newComment.voteAverage" />
           <label for="3-stars" class="star">★</label>
-          <input type="radio" id="2-stars" name="rating" value="2" v-model="newComment.voteAverage" @click="changeText"/>
+          <input type="radio" id="2-stars" name="rating" value="2" v-model="newComment.voteAverage" />
           <label for="2-stars" class="star">★</label>
-          <input type="radio" id="1-star" name="rating" value="1" v-model="newComment.voteAverage" @click="changeText"/>
+          <input type="radio" id="1-star" name="rating" value="1" v-model="newComment.voteAverage" />
           <label for="1-star" class="star">★</label>
         </div>
         <div class="ms-3">
@@ -45,6 +45,30 @@ export default {
       return this.$route.params.moviepk
     },
   },
+  watch: {
+    newComment: {
+      deep: true,
+      handler(newValue) {
+        switch (newValue.voteAverage) {
+          case "1":
+            this.text = "💤 싫어요"
+            break
+          case "2":
+            this.text = "💢 별로예요"
+            break
+          case "3":
+            this.text = "👌 보통이에요"
+            break
+          case "4":
+            this.text = "👍 재미있어요"
+            break
+          case "5":
+            this.text = "💯 최고예요"
+            break
+        }
+      }
+    }
+  },
   methods: {
     ...mapActions(['createReview']),
     onSubmit() {
@@ -52,25 +76,6 @@ export default {
       this.newComment.voteAverage = null
       this.newComment.content = null
     },
-    changeText () {
-      switch (this.newComment.voteAverage) {
-        case 0:
-          this.text = "💤 싫어요"
-          break
-        case "1":
-          this.text = "💢 별로예요"
-          break
-        case "2":
-          this.text = "👌 보통이에요"
-          break
-        case "3":
-          this.text = "👍 재미있어요"
-          break
-        case "4":
-          this.text = "💯 최고예요"
-          break
-      }
-    }
   }
 }
 </script>
