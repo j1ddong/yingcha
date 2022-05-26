@@ -114,10 +114,6 @@ export default {
       })
     },
     deleteArticle({ commit, getters }, {articlePk, foodId}) {
-      // 게시글 삭제
-      // console.log('deleteArticle success')
-      // console.log(articlePk)
-      // console.log(foodId)
       if (confirm('정말 삭제하시겠습니까?')) {
         axios({
           url: drf.communities.delete(articlePk),
@@ -125,8 +121,9 @@ export default {
           headers: getters.authHeader,
         })
           .then(() => {
-            // console.log('into then') // ok
-            commit('GET_ARTICLE', {})
+            commit('DELETE_ARTICLE',)
+          })
+          .then(() => {
             router.push({ 
               name: 'FoodDetailView',
               params : {foodPk: foodId}

@@ -34,6 +34,31 @@ class FoodListSerializer(serializers.ModelSerializer):
         model = Food
         fields = ('id', 'food_name', 'food_image',)
 
+
+class ArticleDetailSerializer(serializers.ModelSerializer):
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ('pk', 'username')
+    class foodSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Food
+            fields = ('food_name',)
+    class movieSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Movie
+            fields = ('title',)
+    
+    user = UserSerializer(read_only=True)
+    movie = movieSerializer(read_only=True)
+    food = foodSerializer(read_only=True)
+
+    class Meta:
+        model = Article
+        fields = ('pk', 'user', 'movie', 'food',)
+
+
 class ArticleSerializer(serializers.ModelSerializer):
 
     class UserSerializer(serializers.ModelSerializer):
@@ -42,9 +67,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             fields = ('pk', 'username')
 
     user = UserSerializer(read_only=True)
-    # like_users = UserSerializer(read_only=True, many=True)
-    # food_id = FoodIdSerializer(read_only=True)
-    # movie_id = MovieIdSerializer(read_only=True)
+
 
     class Meta:
         model = Article

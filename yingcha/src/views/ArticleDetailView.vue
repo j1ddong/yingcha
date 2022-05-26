@@ -15,14 +15,13 @@
 
     <div class="d-flex justify-content-center">
       <div>
-        <!-- {{foodTitle.id}} -->
-        <router-link :to="{ name: 'FoodDetailView', params : {foodPk: foodTitle.id}}" class="text-decoration-none mt-5">
+        <router-link :to="{ name: 'FoodDetailView', params : {foodPk: foodTitle.id} }" class="text-decoration-none mt-5">
           <button class="text-white fw-bold b-radius p-1 me-2">뒤로</button>
         </router-link>
       </div>
 
       <div v-if="isAuthor">
-        <router-link :to="{ name: 'ArticleEdit', params : {articlePk: article.pk}}">
+        <router-link :to="{ name: 'ArticleEdit', params : {articlePk: article.pk} }">
           <button class="text-white fw-bold b-radius p-1 mx-2 orange">수정하기</button>
         </router-link>
         <button @click="deleteThisArticle" class="text-white fw-bold b-radius p-1 ms-2 orange">삭제하기</button>
