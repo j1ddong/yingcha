@@ -13,10 +13,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     like_articles = ArticleSerializer(many=True)  # 내가 좋아요한 조합
     article_set = ArticleSerializer(many=True)  # 내가 작성한 조합
-    # food = FoodSerializer(many=True)
-    # movie = MovieSerializer(many=True)
-
     class Meta:
         model = get_user_model()
         fields = ('pk', 'username', 'like_articles', 'article_set',)
-        #  ('pk', 'username', 'like_articles', 'articles', 'food', 'movie',)

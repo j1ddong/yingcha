@@ -30,15 +30,11 @@ export default {
     GET_FOOD: (state, foods) => state.foods = foods,
     GET_ARTICLES: (state, articles) => state.articles = articles,
     GET_ARTICLE: (state, article) => state.article = article,
-
-
     // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
   actions: {
     searchKeyword({commit, getters}, keywords) {
       // 검색창, article create 페이지에서 영화 검색
-      //console.log('before axios') //이것도 ok
-      // console.log(keyword) //여기로 keyword가 안넘어 온다.
       axios({
         url: drf.communities.search(keywords),
         method: 'get',
@@ -115,15 +111,15 @@ export default {
     },
     deleteArticle({ commit, getters }, {articlePk, foodId}) {
       if (confirm('정말 삭제하시겠습니까?')) {
+        // console.log(getters.foodArticles)
         axios({
           url: drf.communities.delete(articlePk),
           method: 'delete',
           headers: getters.authHeader,
         })
           .then(() => {
-            commit('DELETE_ARTICLE',)
-          })
-          .then(() => {
+            // dispatch('fetchFoodArticle', foodId)
+            commit('GET_ARTICLE', {})
             router.push({ 
               name: 'FoodDetailView',
               params : {foodPk: foodId}

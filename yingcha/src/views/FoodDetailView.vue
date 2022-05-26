@@ -2,8 +2,8 @@
   <div>
     <!-- <h1>{{foodTitle.food_name}}</h1> -->
     <recommend-movie-list :foodTitle="foodTitle.food_name"></recommend-movie-list>
+    <!-- {{ foodArticles }} -->
     <food-movie-article-list :foodArticles="foodArticles"></food-movie-article-list>
-    <!-- {{ foodPk }} -->
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
     }
   },
   computed : {
-    ...mapGetters(['foodTitle', 'foodArticles'])
+    ...mapGetters(['foodTitle', 'foodArticles', 'article'])
   },
   methods : {
     ...mapActions(['getFoodTitle', 'fetchFoodArticle', 'fetchRecommendMovie'])
@@ -33,7 +33,7 @@ export default {
     this.getFoodTitle(this.foodPk)
     this.fetchFoodArticle(this.foodPk)
     this.fetchRecommendMovie(this.foodPk)
-  }
+  },
 }
 </script>
 
