@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="text-start">
     <form @submit.prevent="onSubmit">
-      <label for="reivew" class="fs-5 fw-bold me-3 mb-3">💌 리뷰 작성하기 </label>
-      <div class="d-flex">
-        <div class="star-rating space-x-4 m">
+      <label for="reivew" class="fs-5 fw-bold">💌 리뷰 작성하기 </label>
+      <div class="d-flex my-4 text-end">
+        <div class="star-rating space-x-4">
           <input type="radio" id="5-stars" name="rating" value="5" v-model="newComment.voteAverage" @click="changeText"/>
           <label for="5-stars" class="star pr-4">★</label>
           <input type="radio" id="4-stars" name="rating" value="4" v-model="newComment.voteAverage" @click="changeText"/>
@@ -15,10 +15,10 @@
           <input type="radio" id="1-star" name="rating" value="1" v-model="newComment.voteAverage" @click="changeText"/>
           <label for="1-star" class="star">★</label>
         </div>
-        <div>
+        <div class="ms-3">
           <input type="text" v-model="newComment.content" 
-          :placeholder="text" class="border-main-color ms-3">
-          <button>Review</button>
+          :placeholder="text" class="border-main-color ms-3 s-review">
+          <button class="text-white p-1">저장</button>
         </div>
       </div>
     </form>
@@ -108,5 +108,13 @@ export default {
 }
 input::placeholder {
   font-size: 16px;
+}
+.s-review {
+  width:300px;
+  height: 38px;
+}
+.review-border {
+  border: 3px solid rgb(128,128,128,0.1);
+  border-radius: 5%;
 }
 </style>
