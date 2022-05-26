@@ -14,7 +14,7 @@
 
     <div class="overflow-auto mt-4">
       <!-- Use text in props -->
-      <b-pagination
+      <b-pagination class="pagination"
         v-model="currentPage"
         :total-rows="rows"
         :per-page="perPage"
@@ -70,5 +70,7 @@ export default {
 </script>
 
 <style>
-
+.pagination {
+  justify-content: center;
+}
 </style>

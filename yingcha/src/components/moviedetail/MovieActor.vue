@@ -1,22 +1,17 @@
 <template>
   <div>
     {{ actor.name }}
-    <img :src="movieActorUrl[idx]" alt="">
+    <img :src="actor.url" alt="">
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'MovieActor',
   props: {
-    actor: Object,
-    idx: Number
+    actor: Object
   },
-  computed:{
-    ...mapGetters(['movieActorUrl'])
-  }
 }
 </script>
 

@@ -9,26 +9,18 @@
         <b-navbar-toggle target="nav-collapse" class="text-dark"></b-navbar-toggle>
 
         <b-collapse  class="justify-content-end" id="nav-collapse" is-nav>
-
-          <!-- Right aligned nav items -->
           <b-navbar-nav>
               <search-bar class="me-5" style="z-index:999;"></search-bar>
-
-              <!-- <b-form-input inline size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button> -->
-
-
-            <b-nav-item-dropdown right >
-              <!-- Using 'button-content' slot -->
-              <template #button-content>
-                <span class="me-3">User</span>
-              </template>
-              <div>
-                <b-dropdown-item href="#" class="my-1">내 프로필</b-dropdown-item>
-                <b-dropdown-item href="#" class="my-1">로그아웃</b-dropdown-item>
-              </div>
-            </b-nav-item-dropdown>
           </b-navbar-nav>
+          <div v-if="isLoggedIn">
+            <b-link :to="{ name: 'FoodCreate'}" class="link-line">작성하기</b-link>
+            <b-link :to="{ name: 'profile', params: {username: currentUser.username } }" class="link-line">마이페이지</b-link>  
+            <b-link :to="{ name: 'logout'}" class="link-line">로그아웃</b-link>
+          </div>
+          <div v-if="!isLoggedIn">
+            <b-link :to="{ name: 'login'}" class="link-line">로그인</b-link>  
+            <b-link :to="{ name: 'signup'}" class="link-line">회원가입</b-link>
+          </div>
         </b-collapse>
       </b-navbar>
     </div>
@@ -37,13 +29,17 @@
   
 <script>
 import SearchBar from '@/components/navbar/SearchBar.vue'
-// import image from '../../../public/yingcha_logo.png'
+import { mapGetters } from 'vuex'
+
 
 export default {
   name: 'NavBar',
   components : {
     SearchBar
   },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'currentUser']),
+  }
 }
 </script>
 
@@ -67,5 +63,9 @@ export default {
 .dropdown-item {
   color: white!important;
   display:inline!important;
+}
+.link-line {
+  text-decoration-line: none;
+  margin-right: 10px;
 }
 </style>
