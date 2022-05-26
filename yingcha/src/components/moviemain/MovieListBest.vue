@@ -1,7 +1,7 @@
 <template>
   <div>
-    <i class="fa-solid fa-angle-left fa-3x arrow-left"></i>
-    <i class="fa-solid fa-angle-right fa-3x arrow-right"></i>
+    <i class="fa-solid fa-angle-left fa-3x a-left"></i>
+    <i class="fa-solid fa-angle-right fa-3x a-right"></i>
     <div>
       <h2 class="text-left fw-bold mb-3">평점이 높은 영화</h2>
       <VueSlickCarousel v-bind="settings">
@@ -42,7 +42,7 @@ export default {
 
 <style>
 
-.arrow-left {
+/* .arrow-left {
   position: relative;
   top: 220px;
   left: 230px;
@@ -53,5 +53,5 @@ export default {
   top: 220px;
   left: 1600px;
   cursor: pointer;
-}
+} */
 </style>

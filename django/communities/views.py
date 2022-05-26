@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from .models import Food, Article
+from .models import Food, Article, Taste
 from .serializers import ArticleSerializer, FoodListSerializer, RecommendMovieSerializer
 from movies.serializers import MovieIdSerializer, MovieListSerializer
 from movies.models import Movie

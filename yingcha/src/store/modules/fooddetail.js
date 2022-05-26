@@ -80,12 +80,15 @@ export default {
         })
     },
     fetchRecommendMovie({ commit, getters }, foodPk) {
+      // console.log('into')
       axios({
         url: drf.communities.foodRecommend(foodPk),
         method: 'get',
         headers: getters.authHeader,
       })
         .then(res => {
+          // console.log('then')
+          // console.log(foodPk)
           commit('GET_RECOMMEND_MOVIE', res.data)
         })
     }

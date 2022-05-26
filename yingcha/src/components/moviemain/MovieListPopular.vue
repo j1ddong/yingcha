@@ -1,8 +1,8 @@
 <template>
   <div>
-    <i class="fa-solid fa-angle-left fa-3x arrow-left"></i>
-    <i class="fa-solid fa-angle-right fa-3x arrow-right"></i>
     <div>
+      <i class="fa-solid fa-angle-left fa-3x a-left"></i>
+      <i class="fa-solid fa-angle-right fa-3x a-right"></i>
       <h2 class="text-left fw-bold mb-3">천만영화</h2>
       <!-- <vue-slick-carousel v-bind="settings" ref="carousel" v-if="slides.length"> <div v-for="(item, id) in slides" :key="id" > -->
       <VueSlickCarousel v-bind="settings" ref="carousel">
@@ -45,16 +45,16 @@ export default {
 </script>
 
 <style>
-.arrow-left {
-  /* position: relative;
-  top: 220px;
-  left: 230px; */
-  cursor: pointer;
-}
-.arrow-right {
-  /* position: relative;
-  top: 220px;
-  left: 1600px; */
-  cursor: pointer;
-}
+ .a-left {
+   position: relative;
+   top: 240px;
+   left: -40px;
+   cursor: pointer;
+ }
+ .a-right {
+   position: relative;
+   top: 240px;
+   left: 1031px;
+   cursor: pointer;
+ }
 </style>
