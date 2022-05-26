@@ -68,7 +68,7 @@ export default {
         headers: getters.authHeader,
       })
       .then(res => {
-        // console.log('into then') //ok
+        // console.log(res.data) //ok
         commit('GET_FOODARTICLES', res.data)
         // console.log(res.data) //ok
       })  
@@ -87,8 +87,6 @@ export default {
         headers: getters.authHeader,
       })
         .then(res => {
-          // console.log('then')
-          // console.log(foodPk)
           commit('GET_RECOMMEND_MOVIE', res.data)
         })
     }

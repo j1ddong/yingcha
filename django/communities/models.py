@@ -37,9 +37,4 @@ class Comment(models.Model):
     content = models.TextField()
 
 
-# # Food, Genre간 중개 테이블; 추천 알고리즘에 사용
-# class Algo(models.Model):       
-#     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-#     taste = models.ForeignKey(Taste, on_delete=models.CASCADE)
-
 

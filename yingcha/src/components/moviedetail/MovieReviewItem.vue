@@ -28,7 +28,7 @@
             <button @click="deleteItem" class="text-white px-2 me-3 b-radius">삭제</button> 
           </span>
           <span v-else>
-            <button @click="likeReview(payload)" class="text-white px-2 me-3 b-radius orange">좋아요</button>
+            <button @click="likeReview(payload)" class="text-white px-2 me-3 b-radius orange">{{like}}</button>
           </span>
 
           </div>
@@ -59,7 +59,8 @@ export default {
       forDelete: {
         moviePk: this.review.movie,
         reviewPk: this.review.pk,
-      }
+      },
+      like: "좋아요"
     }
   },
   computed: {
@@ -79,9 +80,17 @@ export default {
     },
     deleteItem () {
       this.deleteReview(this.forDelete)
-    }
+    },
   },
-
+  watch: {
+    likeCount () {
+      if (this.review.like_user.includes(this.currentUser.pk)) {
+        this.like = "좋아요 취소"
+      } else {
+        this.like = "좋아요"
+      }
+    }
+  }
 }
 </script>
 

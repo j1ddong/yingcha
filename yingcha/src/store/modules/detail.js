@@ -142,7 +142,7 @@ export default {
           commit('SET_MOVIE_REVIEWS', res.data)})
         .catch(err => console.error(err.response))
     },
-    createReview({ commit, getters }, { moviePk, content, voteAverage }) {
+    createReview({ commit, getters, dispatch }, { moviePk, content, voteAverage }) {
       const review = { content, vote_average: voteAverage }
       axios({
         url: drf.movies.reviews(moviePk),
@@ -152,6 +152,7 @@ export default {
       })
         .then(res => {
           commit('SET_MOVIE_REVIEWS', res.data)
+          dispatch('fetchReviews', moviePk)
         })
         .catch(err => console.error(err.response))
     },
