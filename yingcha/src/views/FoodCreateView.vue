@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>user님만의 꿀조합을 알려주세요!</h1>
-    <article-form :article="article" action="create"></article-form>
+  <div class="mt-5 text-center">
+    <h2 class="fw-bold">user님만의 꿀조합을 알려주세요!</h2>
+    <article-form :article="article" action="create" class="mt-5"></article-form>
   </div>
 </template>
 

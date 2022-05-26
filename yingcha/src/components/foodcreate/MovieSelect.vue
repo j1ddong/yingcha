@@ -1,21 +1,22 @@
 <template>
-  <div id="nav">
+  <div id="nav" class="mb-2">
     <div class="menu-nav">
       <form @submit.prevent="inputKeyword">
-        <label for="inputMovie">영화 선택: </label>
+        <label for="inputMovie" class="fw-bold me-3 fs-5">🎭 영화</label>
         <input type="text" v-model="apple" :placeholder="placeholder" 
         @keyup.space="inputKeyword"
-        value="inputSelectedMovieValue" id="inputMovie">
-        <button>검색</button>
+        value="inputSelectedMovieValue" id="inputMovie" class="border-main-color s-200">
       </form>
     </div>
     <div id="resultMovieUl" style="display: none;">
       <ul v-show="!!keywords" v-for="keyword in keywords" :key="keyword.id">
-        <li @click="[saveOnMovieInput(keyword.id), emitMovieId()]" :id="`selectedMovieTitle${keyword.id}`"> {{ keyword.title }}</li>
+        <li @click="[saveOnMovieInput(keyword.id), emitMovieId()]" 
+        :id="`selectedMovieTitle${keyword.id}`" class="list-unstyled my-2"
+        >🔎 {{ keyword.title }}</li>
       </ul>
       <ul id="noneText" v-if="isEmpty(keywords)">
         <!-- <li>{{ keywords }}</li> -->
-        <li>검색 결과가 없습니다.</li>
+        <li class="list-unstyled my-2">🔎 검색 결과가 없습니다.</li>
       </ul>
     </div>
   </div>
@@ -101,7 +102,7 @@ export default {
         // console.log(this.foodTitle)
         this.placeholder = this.movieTitle.title
       } else {
-        this.placeholder = '검색되는 영화만 선택 가능합니다.'
+        this.placeholder = '🔎 검색되는 영화만 선택 가능합니다.'
       }
     }
 }
