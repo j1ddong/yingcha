@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img :src="movieUrl" :alt="movieTitle" class="">
-    <p>{{ movieTitle }}</p>
+    <img :src="movieUrl" :alt="movieTitle" class="h-285">
+    <p class="text-center mt-3 ps-3 pe-4 fw-bold">{{ movieTitle }}</p>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <img :src="posterUrl" alt="moviePoster" class="b-radius">
     <div class="ms-4 mb-5">
       <h2 class="item mt-4 fw-bold">{{ movieDetail.title }} </h2>
-      <h5 class="item ms-1 mt-3 fw-bold">{{ movieDetail.original_title }}</h5>
+      <h5 class="item ms-1 mt-3 fw-bold f-opaque">{{ movieDetail.original_title }}</h5>
       <hr style="width:200px;" class="mb-4">
       <div class="my-3 movie-margin">
         <div class="d-flex">
@@ -16,11 +16,13 @@
             v-for="(item,index) in genre" :key="index"
           >{{ item }} /</p>
         </div>
-        <span class="item fw-bold fs-5">💎 시청 가능 플랫폼</span>
-        <p class="fs-5 mt-2 ms-3"
-          v-for="(item, index) in provider" :key="index">{{ item }} /</p>
+        <div>
+          <p class="item fw-bold fs-5 mb-3">💎 시청 가능 플랫폼</p>
+          <p class="fs-5 ms-3 mt-1"
+            v-for="(item, index) in provider" :key="index">⚡ {{ item }}</p>
+        </div>
       </div>
-    <div class="mt-5 movie-margin">
+    <div class="mt-4 movie-margin">
       <h4 class="fw-bold fs-5">💎 줄거리</h4>
       <p class="ms-2">{{ movieDetail.description }}</p>
     </div>
@@ -54,4 +56,7 @@ export default {
 </script>
 
 <style>
+  .f-opaque {
+    color: rgb(0,0,0, 0.4)
+  }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mt-5">
+    <h3 class="fw-bold fs-4 mb-3">⚡ 당신이 좋아할 만한 영화</h3>
     <VueSlickCarousel v-bind="settings">
     <movie-detail-recommend-item v-for="movie in relatedMovies" :key="movie" :movie="movie"></movie-detail-recommend-item>
     </VueSlickCarousel>
