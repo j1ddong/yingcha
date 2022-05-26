@@ -54,16 +54,13 @@ export default {
     currentPage (newValue) {
       const articles = this.foodArticles
       const start = (newValue-1)*this.perPage
-      console.log(start)
       this.pagenatedArticles = articles.slice(start, start+this.perPage)
-      console.log(this.pagenatedArticles)
     }
   },
   created() {
     this.rows = this.foodArticles.length // ok
     const articles = this.foodArticles
     this.pagenatedArticles = articles.slice(0, this.perPage)
-    console.log(this.pagenatedArticles)
     }
   }
 

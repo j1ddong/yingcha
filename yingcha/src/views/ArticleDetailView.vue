@@ -60,13 +60,9 @@ export default {
     ...mapActions([
       'fetchArticle',
       'deleteArticle', 
-      // 'getMovieTitle', 
-      // 'getFoodTitle'
-      // 'likeArticle',
     ]),
     deleteThisArticle() {
-      // console.log(this.article.pk)
-      // console.log(this.article.food_id)
+
       const payload = {
         articlePk: this.article.pk,
         foodId : this.article.food_id
@@ -75,8 +71,6 @@ export default {
     }
     },
     created() {
-      // console.log(this.articlePk)
-      // console.log('-----')
       this.fetchArticle(this.articlePk)
     },
 

@@ -23,7 +23,7 @@ def recommend():
     movie_data['g_list'] = movie_data['g_list'].apply(lambda x: " ".join(x))  # 괄호 없애기
     count_vector = CountVectorizer(ngram_range=(1,3))  # 각 장르별 문자열 값을 숫자로 벡터화
     c_vector_genre = count_vector.fit_transform(movie_data['g_list'])
-    genre_c_sim = cosine_similarity(c_vector_genre, c_vector_genre).argsort()[:,::-1]  # 2차원
+    genre_c_sim = cosine_similarity(c_vector_genre, c_vector_genre).argsort()[:,::-1]  # 2차원 뒤집기
 
     def get_recommend_movie(df, movie_title, top=10):
         target_movie_index = df[df['title'] == movie_title].index.values
